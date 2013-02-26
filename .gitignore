@@ -6,6 +6,7 @@
 *.ear
 .classpath
 .project
+.cproject
 .settings
 *.metadata
 build.xml
