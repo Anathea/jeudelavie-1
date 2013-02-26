@@ -1,13 +1,12 @@
-********************
-* Le jeu de la vie *
-********************
+#Le jeu de la vie
+#Instructions
 
-Instructions :
+##GIT
 
-***GIT***
+###Configuration
+.gitignore est configuré pour ignorer les fichiers générés par Eclipse et NEtBeans (.classpath, .metadata, ...).
 
-.gitignore configuré pour ignorer les fichiers générés par Eclipse et NEtBeans (.classpath, .metadata, ...).
-
+###Utilisation de Git :
 Se familiariser avec les commandes de base :
 status, add, commit, pull, push
 
@@ -15,41 +14,43 @@ Après avoir installé le client GitHub, vous devez vous créer un répertoire l
 En suite, passez en mode console et effectuez cette commande pour cloner le dépot distant avec votre répertoire local :
 git clone https://github.com/votre_login_github/volley.git votre_repertoire
 
+###Commandes de base
+
 Ensuite, à chaque fois que vous travaillez et que vous voulez envoyer vos fichiers sur le dépot, il faudra effectuer ces commandes :
 
-#Si c'est pas fait, on se place dans le repertoire git local :
+1. Si c'est pas fait, on se place dans le repertoire git local :
 cd votre_repertoire_git
-#On regarde quels sont les fichiers qui ont été modifiés :
+2. On regarde quels sont les fichiers qui ont été modifiés :
 git status
-# Eventuellement on ajoute des fichiers au dépot (si on en a crée) :
+3. Eventuellement on ajoute des fichiers au dépot (si on en a crée) :
 git add le_fichier
-# On commite les fichiers pour dire à Git qu'il faut versionner les fichiers que vous avez modifié :
+3. On commite les fichiers pour dire à Git qu'il faut versionner les fichiers que vous avez modifié :
 git commit -a -m "Message pour décrire la modification effectuée"
-# On récupère les fichiers présents sur le dépot pour avoir tout à jour :
+4. On récupère les fichiers présents sur le dépot pour avoir tout à jour :
 git pull
-#On envoie les fichiers locaux vers le dépot github :
+5. On envoie les fichiers locaux vers le dépot github :
 git push
 
-***Configuration d'Eclipse***
+##Configuration d'Eclipse
 
-Workspace :
+###Workspace
 Travaillez sur celui du projet (le dossier src du dépot), pas sur votre workspace perso!!
 
-Pour que les caractères soient en utf-8 :
+###Pour que les caractères soient en utf-8
 -> Window, General, Workspace, Text file encoding : UTF-8
 
-Pour la javadoc (voir plus bas)
+###Pour la javadoc
 -> Project, Generate Javadoc..., sélectionner le programme javadoc.
 	Par défaut, sur Windows : C:\ProgramFiles\java\jdk1.6.0_01\bin\javadoc.exe
 
-***Javadoc***
+##Javadoc
 
 Pour ne pas s'embéter à rédiger la documentation, nous allons de la demander à Eclipse de la générer.
 Pour cela, il faut insérer des commentaires petit à petit dans le code, avant chaque classe et chaque méthode.
 Il faut placer ces commentaires juste au dessus de la classe ou méthode à commenter.
 Il existe des tags qui seront compréhensibles par la javadoc, ils commencent par '@'.
 
-Cela doit ressembler à ça :
+###Cela doit ressembler à ça :
 
 /**
  * Description de la methode.<br/>
@@ -63,15 +64,15 @@ Cela doit ressembler à ça :
 public Methode (String _chaine, int _i)
 {...
 
-Pour générer la javadoc : Project, Generate Javadoc... , comme vu plus haut.
+###Pour générer la javadoc : Project, Generate Javadoc... , comme vu plus haut.
 
-***Généralités sur le code***
+##Généralités sur le code
 
-Respect du modèle MVC.
+###Respect du modèle MVC.
 Toutes les actions seront traitées dans le controleur.
 On créera une nouvelle classe dans un nouveau fichier pour chaque écouteur.
 
-***Normalisation du code***
+###Normalisation du code
 
 1. Les noms des arguments d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
 ex:
