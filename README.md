@@ -3,7 +3,27 @@
 ##GIT
 
 ###Configuration
-.gitignore est configuré pour ignorer les fichiers générés par Eclipse et NEtBeans (.classpath, .metadata, ...).
+* Travailler sur la branche dev :
+`git checkout -b dev origin/dev`
+
+* Associer son mail à Git :
+Test pour savoir s'il existe : `git config --global user.email`
+Si rien ne s'affiche, associer un nouveau nom : `git config --global user.eamil "exemple@gmail.com"`
+
+* Associer son nom à Git :
+Test pour savoir s'il existe : `git config --global user.name`
+Si rien ne s'affiche, associer un nouveau nom : `git config --global user.name "Martin Dupont"`
+
+* Pour utiliser SSH, il faut générer une clé. Voir la page github dédiée : https://help.github.com/articles/generating-ssh-keys
+
+/!\ Le protocole ssh utilise le port 22 qui n'est pas autorisé à l'IUT. Il est donc nécessaire de passer par l'https quand on y est.
+Pour cela, il faut éditer un fichier de configuration local :
+1. Se place dans le dépot local de Git
+2. `git config --local -e`
+3. En dessous de la ligne _url=https://github.com/roipoussiere/jeudelavie.git_, ajouter : _url=git@github.com:roipoussiere/jeudelavie.git_
+4. Commenter l'une ou l'autre ligne pour passer de ssh à https.
+
+* .gitignore est configuré pour ignorer les fichiers générés par Eclipse et NEtBeans (.classpath, .metadata, ...).
 
 ###Utilisation de Git :
 Se familiariser avec les commandes de base :
@@ -51,27 +71,16 @@ Il existe des tags qui seront compréhensibles par la javadoc, ils commencent pa
 
 ###Cela doit ressembler à ça :
 
-`/**`
-
-`Description de la methode.<br/>`
-
-`Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.`
-
-`@author Votre nom et prénom (si la classe a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule). On ne peut placer ce tag que sur une classe (pas sur une méthode).`
-
-`@param _chaine Description du 1er parametre.`
-
-`@param _i Description du 2eme parametre.`
-
-`@return Description de la valeur de retour.`
-
-`@see package.Classe#methodeInteresante()`
-
-`*/`
-
-`public Methode (String _chaine, int _i)`
-
-`{...`
+/**
+Description de la methode.<br/>
+Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.
+@author Votre nom et prénom (si la classe a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule). On ne peut placer ce tag que sur une classe (pas sur une méthode).
+@param _chaine Description du 1er parametre.
+@param _i Description du 2eme parametre.
+@return Description de la valeur de retour.
+@see package.Classe#methodeInteresante()*/
+public Methode (String _chaine, int _i)
+{...
 
 ###Pour générer la javadoc : Project, Generate Javadoc... , comme vu plus haut.
 
@@ -98,5 +107,3 @@ ex:
 3. Les arguments de la classe seront toujours appelés par this
 ex:
 this.bouton = new JButton ("Bouton");
-
-
