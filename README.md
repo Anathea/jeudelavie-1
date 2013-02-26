@@ -11,7 +11,7 @@ status, add, commit, pull, push
 
 Après avoir installé le client GitHub, vous devez vous créer un répertoire local dans le quel vous mettrez tous les fichiers du projet.
 En suite, passez en mode console et effectuez cette commande pour cloner le dépot distant avec votre répertoire local :
-git clone https://github.com/votre_login_github/volley.git votre_repertoire
+`git clone https://github.com/roipoussiere/jeudelavie.git votre_repertoire`
 
 ###Commandes de base
 
@@ -39,8 +39,7 @@ Travaillez sur celui du projet (le dossier src du dépot), pas sur votre workspa
 -> Window, General, Workspace, Text file encoding : UTF-8
 
 ###Pour la javadoc
--> Project, Generate Javadoc..., sélectionner le programme javadoc.
-	Par défaut, sur Windows : C:\ProgramFiles\java\jdk1.6.0_01\bin\javadoc.exe
+Project, Generate Javadoc..., sélectionner le programme javadoc.
 
 ##Javadoc
 
@@ -84,17 +83,17 @@ On créera une nouvelle classe dans un nouveau fichier pour chaque écouteur.
 ###Normalisation du code
 
 * Les noms des arguments d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
+
 ex: `public Methode (String _chaine, int _i)`
 
 * Les accolades seront toujours sur une nouvelle ligne
 ex:
-`public Methode ()
-{
-...
-}`
 
-3. Les arguments de la classe seront toujours appelés par this
+`public Methode () { ... }`
+
+* Les arguments de la classe seront toujours appelés par this
 ex:
-this.bouton = new JButton ("Bouton");
+
+`this.bouton = new JButton ("Bouton");`
 
 
