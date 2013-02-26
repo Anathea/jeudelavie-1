@@ -1,5 +1,4 @@
 #Le jeu de la vie
-#Instructions
 
 ##GIT
 
@@ -18,17 +17,17 @@ git clone https://github.com/votre_login_github/volley.git votre_repertoire
 
 Ensuite, à chaque fois que vous travaillez et que vous voulez envoyer vos fichiers sur le dépot, il faudra effectuer ces commandes :
 
-1. Si c'est pas fait, on se place dans le repertoire git local :
+* Si c'est pas fait, on se place dans le repertoire git local :
 cd votre_repertoire_git
-2. On regarde quels sont les fichiers qui ont été modifiés :
+* On regarde quels sont les fichiers qui ont été modifiés :
 git status
-3. Eventuellement on ajoute des fichiers au dépot (si on en a crée) :
+* Eventuellement on ajoute des fichiers au dépot (si on en a crée) :
 git add le_fichier
-3. On commite les fichiers pour dire à Git qu'il faut versionner les fichiers que vous avez modifié :
+* On commite les fichiers pour dire à Git qu'il faut versionner les fichiers que vous avez modifié :
 git commit -a -m "Message pour décrire la modification effectuée"
-4. On récupère les fichiers présents sur le dépot pour avoir tout à jour :
+* On récupère les fichiers présents sur le dépot pour avoir tout à jour :
 git pull
-5. On envoie les fichiers locaux vers le dépot github :
+* On envoie les fichiers locaux vers le dépot github :
 git push
 
 ##Configuration d'Eclipse
@@ -52,17 +51,17 @@ Il existe des tags qui seront compréhensibles par la javadoc, ils commencent pa
 
 ###Cela doit ressembler à ça :
 
-/**
- * Description de la methode.<br/>
- * Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.
- * @author Votre nom et prénom (si la classe a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule). On ne peut placer ce tag que sur une classe (pas sur une méthode).
- * @param _chaine Description du 1er parametre.
- * @param _i Description du 2eme parametre.
- * @return Description de la valeur de retour.
- * @see package.Classe#methodeInteresante()
+`/**
+Description de la methode.<br/>
+Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.
+@author Votre nom et prénom (si la classe a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule). On ne peut placer ce tag que sur une classe (pas sur une méthode).
+@param _chaine Description du 1er parametre.
+@param _i Description du 2eme parametre.
+@return Description de la valeur de retour.
+@see package.Classe#methodeInteresante()
  */
 public Methode (String _chaine, int _i)
-{...
+{...`
 
 ###Pour générer la javadoc : Project, Generate Javadoc... , comme vu plus haut.
 
@@ -74,16 +73,16 @@ On créera une nouvelle classe dans un nouveau fichier pour chaque écouteur.
 
 ###Normalisation du code
 
-1. Les noms des arguments d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
+* Les noms des arguments d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
 ex:
 public Methode (String _chaine, int _i)
 
-2. Les accolades seront toujours sur une nouvelle ligne
+* Les accolades seront toujours sur une nouvelle ligne
 ex:
-public Methode ()
+`public Methode ()
 {
 ...
-}
+}`
 
 3. Les arguments de la classe seront toujours appelés par this
 ex:
