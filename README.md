@@ -86,12 +86,14 @@ On créera une nouvelle classe dans un nouveau fichier pour chaque écouteur.
 * Les noms des arguments d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
 ex: `public Methode (String _chaine, int _i)`
 
-* Les accolades seront toujours sur une nouvelle ligne
+* L'accolade ouvrante suit la déclaration de la méthode/classe, l'accolade fermante est sur une nouvelle ligne
 ex:
-`public Methode ()
-{
-...
-}`
+
+`public Methode () {`
+
+`...`
+
+`}`
 
 3. Les arguments de la classe seront toujours appelés par this
 ex:

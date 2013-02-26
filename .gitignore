@@ -9,6 +9,8 @@
 .cproject
 .settings
 *.metadata
+.dep.inc
+Makefile
 build.xml
 nbproject
 /build/
