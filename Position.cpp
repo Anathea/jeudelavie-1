@@ -19,6 +19,11 @@ Position::~Position() {
 	// TODO Auto-generated destructor stub
 }
 
+void Position::setPos(unsigned int _posx, unsigned int _posy){
+	posx=_posx;
+	posy=_posy;
+}
+
 unsigned int Position::getPosX() const {
 	return posx;
 }
