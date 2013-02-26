@@ -51,15 +51,15 @@ Il existe des tags qui seront compréhensibles par la javadoc, ils commencent pa
 
 ###Cela doit ressembler à ça :
 
-`/**
-Description de la methode.<br/>
-Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.
-@author Votre nom et prénom (si la classe a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule). On ne peut placer ce tag que sur une classe (pas sur une méthode).
-@param _chaine Description du 1er parametre.
-@param _i Description du 2eme parametre.
-@return Description de la valeur de retour.
-@see package.Classe#methodeInteresante()
- */
+`/**`
+`Description de la methode.<br/>`
+`Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.`
+`@author Votre nom et prénom (si la classe a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule). On ne peut placer ce tag que sur une classe (pas sur une méthode).`
+`@param _chaine Description du 1er parametre.`
+`@param _i Description du 2eme parametre.`
+`@return Description de la valeur de retour.`
+`@see package.Classe#methodeInteresante()`
+`*/`
 public Methode (String _chaine, int _i)
 {...`
 
@@ -74,8 +74,7 @@ On créera une nouvelle classe dans un nouveau fichier pour chaque écouteur.
 ###Normalisation du code
 
 * Les noms des arguments d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
-ex:
-public Methode (String _chaine, int _i)
+ex: `public Methode (String _chaine, int _i)`
 
 * Les accolades seront toujours sur une nouvelle ligne
 ex:
