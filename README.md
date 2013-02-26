@@ -98,3 +98,6 @@ ex:
 this.bouton = new JButton ("Bouton");
 
 
+== Instruction Git ==
+
+Suivre la branche dev : git checkout -b dev origin/dev
