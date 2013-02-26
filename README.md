@@ -1,28 +1,15 @@
-volley
-======
-
-Roipoussiere ; julienA974 ; Scytes ; Xavier31
-
-Logiciel d'aide à la mise en place de stratégies de volley-ball.
+********************
+* Le jeu de la vie *
+********************
 
 Instructions :
 
 ***GIT***
 
-Le répertoire src correspond au workspace Eclipse
-J'ai configuré Git pour ques les fichiers générés par Eclipse (.classpath, .metadata, ...) soient ignorés par Git.
+.gitignore configuré pour ignorer les fichiers générés par Eclipse et NEtBeans (.classpath, .metadata, ...).
 
-Il existe un client github pour windows téléchargeable ici :
-http://windows.github.com/
-
-Il existe aussi un addon Eclipse mais c'est un peu la misère à utiliser, je vous le déconseille.
-
-Par contre il y a un très bon tutoriel pour git ici :
-http://www.siteduzero.com/informatique/tutoriels/gerez-vos-codes-source-avec-git
-
-Vous devez surtout vous familiariser avec ces commandes :
+Se familiariser avec les commandes de base :
 status, add, commit, pull, push
-Les commandes de git sont les mêmes sous Windows et Linux.
 
 Après avoir installé le client GitHub, vous devez vous créer un répertoire local dans le quel vous mettrez tous les fichiers du projet.
 En suite, passez en mode console et effectuez cette commande pour cloner le dépot distant avec votre répertoire local :
@@ -42,8 +29,6 @@ git commit -a -m "Message pour décrire la modification effectuée"
 git pull
 #On envoie les fichiers locaux vers le dépot github :
 git push
-
-Tout cela vous parait un peu fastidieu mais vous vous y ferez très vite.
 
 ***Configuration d'Eclipse***
 
@@ -69,7 +54,7 @@ Cela doit ressembler à ça :
 /**
  * Description de la methode.<br/>
  * Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.
- * @author Votre nom et prénom (si la méthode a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule).
+ * @author Votre nom et prénom (si la classe a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule). On ne peut placer ce tag que sur une classe (pas sur une méthode).
  * @param _chaine Description du 1er parametre.
  * @param _i Description du 2eme parametre.
  * @return Description de la valeur de retour.
@@ -88,18 +73,18 @@ On créera une nouvelle classe dans un nouveau fichier pour chaque écouteur.
 
 ***Normalisation du code***
 
-Les noms des paramètres d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
+1. Les noms des arguments d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
 ex:
 public Methode (String _chaine, int _i)
 
-Les accolades seront toujours sur une nouvelle ligne
+2. Les accolades seront toujours sur une nouvelle ligne
 ex:
 public Methode ()
 {
 ...
 }
 
-Les arguments de la classe seront toujours appelés par this
+3. Les arguments de la classe seront toujours appelés par this
 ex:
 this.bouton = new JButton ("Bouton");
 
