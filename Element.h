@@ -9,25 +9,28 @@
 #define	ELEMENT_H
 
 #include <string>
+#include "Position.h"
 using namespace ::std;
 
 class Element {
 public:
+	// Constructeurs
 	Element();
-	Element(string & _nom, Position & _pos);
-	Element(string & _nom, int & _posX, int & _posY);
-	Element(const Element& orig);
+	Element(const Position & _pos, const string & _nom);
+	Element(const unsigned int & _posX, const unsigned int & _posY, const string & _nom);
 	virtual ~Element();
 	
-	string getNom();
-	setNom(string _nom);
-	Position getPos();
-	setPos(string _pos);
+	// Getters & setters
+	string getNom() const;
+	void setNom(const string _nom);
+	Position getPos() const;
+	void setPos(const Position _pos);
 
+	// Autres méthodes
+	
 private:
-	string nom;
 	Position pos;
+	string nom;
 };
 
 #endif	/* ELEMENT_H */
-

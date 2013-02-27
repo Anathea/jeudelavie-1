@@ -9,39 +9,41 @@
 #define	HUMAIN_H
 
 #include <string>
+#include "Mobile.h"
 using namespace ::std;
 
 class Humain : public Mobile {
 public:
-	Humain();
-	Humain(const Mobile & _elt, const unsigned int & _age, const unsigned int & _vision,
-		const unsigned int & _vie, const unsigned int & _espVie);
-	Humain(const Element & _elt, const unsigned int & _vitesse, const Monde * _monde,
-		const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie, const unsigned int & _espVie);
+	//Constructeurs
+	Humain(Monde * _monde);
+	Humain(const Mobile & _mob, const unsigned int & _age, const unsigned int & _vision,
+	const unsigned int & _vie, const unsigned int & _espVie);
+	Humain(const Element & _elt, Monde * _monde, const unsigned int & _vitesse,
+	const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie, const unsigned int & _espVie);
 	Humain(const Position & _pos, const string & _nom, const unsigned int & _vitesse, Monde * _monde,
-		const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie, const unsigned int & _espVie);
+	const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie, const unsigned int & _espVie);
 	Humain(const unsigned int & _posX, const unsigned int & _posY, const string & _nom, const unsigned int & _vitesse,
-		const Monde * _monde, const unsigned int & _age, const unsigned int & _vision,
+		Monde * _monde, const unsigned int & _age, const unsigned int & _vision,
 		const unsigned int & _vie, const unsigned int & _espVie);
-	
-	Humain(const Humain& orig);
 	virtual ~Humain();
 	
-	int getAge();
-	setAge(int _age);
-	int getVision();
-	setVision(int _vision);
-	int getVie();
-	setVie(int _vie);
-	int getEspVie();
-	setEspVie(int _espVie);
-	
+	// Getters & setters
+	unsigned int getAge() const;
+	void setAge(const unsigned int _age);
+	unsigned int getVision() const;
+	void setVision(const unsigned int _vision);
+	unsigned int getVie() const;
+	void setVie(const unsigned int _vie);
+	unsigned int getEspVie() const;
+	void setEspVie(const unsigned int _espVie);
+
+	// Autres méthodes
+
 private:
-	int age;
-	int vision;
-	int vie;
-	int espVie;
+	unsigned int age;
+	unsigned int vision;
+	unsigned int vie;
+	unsigned int espVie;
 };
 
 #endif	/* HUMAIN_H */
-

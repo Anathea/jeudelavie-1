@@ -8,16 +8,21 @@
 #ifndef MONDE_H
 #define	MONDE_H
 #include "Position.h"
+#include "Element.h"
 #include <vector>
 
 using namespace std;
 
 class Monde {
 public:
-	Monde();
-	
-	Monde(const Monde& orig);
+	// Constructeurs
+	Monde();	
 	virtual ~Monde();
+
+	// Getters & setters
+
+	// Autres méthodes
+
 private:
 	vector<Element> elts;
 };

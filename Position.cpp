@@ -7,22 +7,24 @@
 
 #include "Position.h"
 
+Position::Position() : posX(0), posY(0) {}
+
 Position::Position(const unsigned int _posX, const unsigned int _posY) {
-	// TODO Auto-generated constructor stub
-
-	posx=_posX;
-	posy=_posY;
-
+	posX = _posX;
+	posY = _posY;
 }
 
-Position::~Position() {
-	// TODO Auto-generated destructor stub
-}
+Position::~Position() {}
 
 unsigned int Position::getPosX() const {
-	return posx;
+	return posX;
 }
 
 unsigned int Position::getPosY() const {
-	return posy;
+	return posY;
+}
+
+void Position::setPos(const unsigned int _posX, const unsigned int _posY) {
+	posX = _posX;
+	posY = _posY;
 }

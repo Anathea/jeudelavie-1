@@ -8,29 +8,28 @@
 #include "Element.h"
 
 Element::Element() :
-	nom("Inconnu"), Position(Position()) {}
+	pos(), nom("Inconnu") {}
 
 Element::Element(const Position & _pos, const string & _nom) :
-	nom(_nom), Position(_pos) {}
+	pos(_pos), nom(_nom) {}
 
 Element::Element(const unsigned int & _posX, const unsigned int & _posY, const string & _nom) :
-	nom(_nom), Position(_posX, _posY) {}
+	pos(_posX, _posY), nom(_nom) {}
 
-Element::Element(const Element& orig) {}
 Element::~Element() {}
 
-string Element::getNom() {
+string Element::getNom() const {
 	return nom;
 }
 
-Element::setNom(string _nom) {
+void Element::setNom(string _nom) {
 	nom = _nom;
 }
 
-Element::getPos() {
-	Position pos;
+Position Element::getPos() const {
+	return pos;
 }
 
-Element::setPos() {
-	Position pos;
+void Element::setPos(Position _pos) {
+	pos = _pos;
 }

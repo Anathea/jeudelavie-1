@@ -7,6 +7,6 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-	cout << "It work's !\n";
+	cout << "It works !\n";
 	return 0;
 }

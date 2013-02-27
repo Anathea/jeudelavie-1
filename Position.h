@@ -9,18 +9,22 @@
 #define POSITION_H_
 
 class Position {
-
-	private:
-		unsigned int posx;
-		unsigned int posy;
-
 	public:
+		// Constructeurs
+		Position();
 		Position(const unsigned int, const unsigned int);
 		virtual ~Position();
 
+		// Getters & setters
 		void setPos(const unsigned int, const unsigned int);
 		unsigned int getPosX() const;
 		unsigned int getPosY() const;
+		
+		// Autres méthodes
+
+	private:
+		unsigned int posX;
+		unsigned int posY;
 };
 
 #endif /* POSITION_H_ */

@@ -13,57 +13,56 @@
 //Humain(const int & _posX, const int & _posY, const string & _nom, const int & _vitesse, Monde * _monde,
 //	int & _age, int & _vision, int & _vie, int & _espVie);
 
-Humain::Humain() :
-	Mobile(), age(0), vision(1), vie(100), espVie(5000) {}
+Humain::Humain(Monde * _monde) :
+	Mobile(_monde), age(0), vision(1), vie(100), espVie(5000) {}
 
 Humain::Humain(const Mobile & _mob, const unsigned int & _age, const unsigned int & _vision,
 	const unsigned int & _vie, const unsigned int & _espVie) :
-	Mobile(), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
+	Mobile(_mob), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
 
-Humain::Humain(const Element & _elt, const unsigned int & _vitesse, const Monde * _monde,
+Humain::Humain(const Element & _elt, Monde * _monde, const unsigned int & _vitesse,
 	const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie, const unsigned int & _espVie) :
-	Mobile(_elt, _vitesse, _monde), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
+	Mobile(_elt, _monde, _vitesse), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
 
-Humain::Humain(const Position & _pos, const string & _nom, const unsigned int & _vitesse, const Monde * _monde,
+Humain::Humain(const Position & _pos, const string & _nom, const unsigned int & _vitesse, Monde * _monde,
 	const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie, const unsigned int & _espVie) :
-	Mobile(Element(_pos, _nom), _vitesse, _monde), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
+	Mobile(_pos, _nom, _monde, _vitesse), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
 
-Humain::Humain(const unsigned int _posX, const unsigned int _posY, const string & _nom, const unsigned int & _vitesse,
-	const Monde * _monde, const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie,
-	const unsigned int & _espVie) :
-	Mobile(Element(Position(_posX, _posY), _nom), _vitesse, _monde), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
+Humain::Humain(const unsigned int & _posX, const unsigned int & _posY, const string & _nom, const unsigned int & _vitesse,
+		Monde * _monde, const unsigned int & _age, const unsigned int & _vision,
+		const unsigned int & _vie, const unsigned int & _espVie) :
+	Mobile(_posX, _posY, _nom, _monde, _vitesse), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
 
-Humain::Humain(const Humain & orig) {}
 Humain::~Humain() {}
 
-int Humain::getAge() {
+unsigned int Humain::getAge() const {
 	return age;
 }
 
-Humain::setAge(int _age) {
+void Humain::setAge(const unsigned int _age) {
 	age = _age;
 }
 
-int Humain::getVision() {
+unsigned int Humain::getVision() const {
 	return vision;
 }
 
-Humain::setVision(int _vision) {
+void Humain::setVision(const unsigned int _vision) {
 	vision = _vision;
 }
 
-int Humain::getVie() {
+unsigned int Humain::getVie() const {
 	return vie;
 }
 
-Humain::setVie(int _vie) {
+void Humain::setVie(const unsigned int _vie) {
 	vie = _vie;
 }
 
-int Humain::getEspVie() {
+unsigned int Humain::getEspVie() const {
 	return espVie;
 }
 
-Humain::setEspVie(int _espVie) {
+void Humain::setEspVie(const unsigned int _espVie) {
 	espVie = _espVie;
 }
