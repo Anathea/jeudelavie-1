@@ -7,14 +7,9 @@
 
 #include "Humain.h"
 
-//Humain(const Mobile & _mob, const int & _vitesse, Monde * _monde, int & _age, int & _vision, int & _vie, int & _espVie);
-//Humain(const Position & _pos, const string & _nom, const int & _vitesse, Monde * _monde,
-//	int & _age, int & _vision, int & _vie, int & _espVie);
-//Humain(const int & _posX, const int & _posY, const string & _nom, const int & _vitesse, Monde * _monde,
-//	int & _age, int & _vision, int & _vie, int & _espVie);
-
-Humain::Humain(Monde * _monde) :
-	Mobile(_monde), age(0), vision(1), vie(100), espVie(5000) {}
+Humain::Humain(Monde * _monde, const unsigned int _age, const unsigned int _vision,
+	const unsigned int _vie, const unsigned int _espVie) :
+	Mobile(_monde), age(_age), vision(_vision), vie(_vie), espVie(_espVie) {}
 
 Humain::Humain(const Mobile & _mob, const unsigned int & _age, const unsigned int & _vision,
 	const unsigned int & _vie, const unsigned int & _espVie) :

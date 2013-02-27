@@ -7,18 +7,18 @@
 
 #include "Mobile.h"
 
-Mobile::Mobile(Monde * _monde) :
-	Element(), monde(_monde), vitesse(1) {}
+Mobile::Mobile(Monde * _monde, const unsigned int _vitesse) :
+	Element(), monde(_monde), vitesse(_vitesse) {}
 
 Mobile::Mobile(const Element & _elt, Monde * _monde, const unsigned int & _vitesse) :
-	Element(_elt), vitesse(_vitesse), monde(_monde) {}
+	Element(_elt), monde(_monde), vitesse(_vitesse) {}
 
 Mobile::Mobile(const Position & _pos, const string & _nom, Monde * _monde, const unsigned int & _vitesse) :
-	Element(_pos, _nom), vitesse(_vitesse), monde(_monde) {}
+	Element(_pos, _nom), monde(_monde), vitesse(_vitesse) {}
 
 Mobile::Mobile(const unsigned int & _posX, const unsigned int & _posY, const string & _nom,
 	Monde * _monde, const unsigned int & _vitesse) :
-	Element(_posX, _posY, _nom), vitesse(_vitesse), monde(_monde) {}
+	Element(_posX, _posY, _nom), monde(_monde), vitesse(_vitesse) {}
 	
 Mobile::~Mobile() {}
 

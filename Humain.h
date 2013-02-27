@@ -15,16 +15,22 @@ using namespace ::std;
 class Humain : public Mobile {
 public:
 	//Constructeurs
-	Humain(Monde * _monde);
+	Humain(Monde * _monde, const unsigned int _age = 0, const unsigned int _vision = 1,
+	const unsigned int _vie = 100, const unsigned int _espVie = 7000);
+
 	Humain(const Mobile & _mob, const unsigned int & _age, const unsigned int & _vision,
 	const unsigned int & _vie, const unsigned int & _espVie);
+
 	Humain(const Element & _elt, Monde * _monde, const unsigned int & _vitesse,
 	const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie, const unsigned int & _espVie);
+
 	Humain(const Position & _pos, const string & _nom, const unsigned int & _vitesse, Monde * _monde,
 	const unsigned int & _age, const unsigned int & _vision, const unsigned int & _vie, const unsigned int & _espVie);
+
 	Humain(const unsigned int & _posX, const unsigned int & _posY, const string & _nom, const unsigned int & _vitesse,
 		Monde * _monde, const unsigned int & _age, const unsigned int & _vision,
 		const unsigned int & _vie, const unsigned int & _espVie);
+
 	virtual ~Humain();
 	
 	// Getters & setters

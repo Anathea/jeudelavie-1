@@ -17,7 +17,7 @@ using namespace ::std;
 class Mobile : public Element {
 public:
 	// Constructeurs
-	Mobile(Monde * _monde);
+	Mobile(Monde * _monde, const unsigned int _vitesse=1);
 	Mobile(const Element & _elt, Monde * _monde, const unsigned int & _vitesse);
 	Mobile(const Position & _pos, const string & _nom, Monde * _monde, const unsigned int & _vitesse);
 	Mobile(const unsigned int & _posX, const unsigned int & _posY, const string & _nom,
@@ -34,8 +34,8 @@ public:
 	void SeDeplacer(const Position _pos);
 
 private:
-	unsigned int vitesse;
 	Monde * monde; // Pour qu'un élement puisse voir autour de lui, il faut qu'il est accès au monde.
+	unsigned int vitesse;
 };
 
 #endif	/* MOBILE_H */

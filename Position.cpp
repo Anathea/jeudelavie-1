@@ -7,12 +7,8 @@
 
 #include "Position.h"
 
-Position::Position() : posX(0), posY(0) {}
-
-Position::Position(const unsigned int _posX, const unsigned int _posY) {
-	posX = _posX;
-	posY = _posY;
-}
+Position::Position(const unsigned int _posX, const unsigned int _posY) :
+	posX(_posX), posY(_posY) {}
 
 Position::~Position() {}
 

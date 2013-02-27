@@ -11,8 +11,7 @@
 class Position {
 	public:
 		// Constructeurs
-		Position();
-		Position(const unsigned int, const unsigned int);
+		Position(const unsigned int _posX = 0, const unsigned int _posY = 0);
 		virtual ~Position();
 
 		// Getters & setters
