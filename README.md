@@ -21,7 +21,7 @@ Pour cela, il faut éditer un fichier de configuration local :
 1. Se place dans le dépot local de Git
 2. `git config --local -e`
 3. En dessous de la ligne _url=https://github.com/roipoussiere/jeudelavie.git_, ajouter : _url=git@github.com:roipoussiere/jeudelavie.git_
-4. Commenter l'une ou l'autre ligne pour passer de ssh à https.
+4. Commenter (#) l'une ou l'autre ligne pour passer de ssh à https.
 
 * .gitignore est configuré pour ignorer les fichiers générés par Eclipse et NEtBeans (.classpath, .metadata, ...).
 
