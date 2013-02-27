@@ -7,7 +7,7 @@
 
 #include "Position.h"
 
-Position::Position(unsigned int _posX, unsigned int _posY) {
+Position::Position(const unsigned int _posX, const unsigned int _posY) {
 	// TODO Auto-generated constructor stub
 
 	posx=_posX;

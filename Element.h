@@ -16,9 +16,14 @@ public:
 	Element();
 	Element(string & _nom, Position & _pos);
 	Element(string & _nom, int & _posX, int & _posY);
-
 	Element(const Element& orig);
 	virtual ~Element();
+	
+	string getNom();
+	setNom(string _nom);
+	Position getPos();
+	setPos(string _pos);
+
 private:
 	string nom;
 	Position pos;

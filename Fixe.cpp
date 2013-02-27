@@ -7,12 +7,9 @@
 
 #include "Fixe.h"
 
-Fixe::Fixe() {
-}
+Fixe::Fixe(const Element & _elt) :
+	Element(Element()) {}
 
-Fixe::Fixe(const Fixe& orig) {
-}
-
-Fixe::~Fixe() {
-}
+Fixe::Fixe(const Fixe & orig) {}
+Fixe::~Fixe() {}
 

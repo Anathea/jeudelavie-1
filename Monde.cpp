@@ -14,9 +14,6 @@ Monde::Monde() {
 	// Carte.insert(pair<Position, unsigned> (pos, size()-1));
 }
 
-Monde::Monde(const Monde& orig) {
-}
-
-Monde::~Monde() {
-}
+Monde::Monde(const Monde & orig) {}
+Monde::~Monde() {}
 

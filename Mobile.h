@@ -13,15 +13,20 @@ using namespace ::std;
 
 class Mobile : public Element {
 public:
-	Mobile();
-	Mobile(const Element & _elt, const int & _vitesse, Monde * _monde);
-	Mobile(const Position & _pos, const string & _nom, const int & _vitesse, Monde * _monde);
-	Mobile(const int & _posX, const int & _posY, const string & _nom, const int & _vitesse, Monde * _monde);
+	Mobile(const Monde * _monde);
+	Mobile(const Element & _elt, const unsigned int & _vitesse, const Monde * _monde);
+	Mobile(const Position & _pos, const string & _nom, const unsigned int & _vitesse, const Monde * _monde);
+	Mobile(const unsigned int & _posX, const unsigned int & _posY, const string & _nom, const unsigned int & _vitesse, const Monde * _monde);
 	
-	SeDeplacer(Position _pos);
-	Mobile(const Mobile& orig);
+	Mobile(const Mobile & orig);
 	virtual ~Mobile();
 	
+	SeDeplacer(Position _pos);
+	Monde * getMonde();
+	setMonde(Monde * _monde);
+	int getVitesse();
+	setVitesse(int _vitesse);
+
 private:
 	Monde * monde; // Pour qu'un élement puisse voir autour de lui, il faut qu'il est accès au monde.
 	int & vitesse;

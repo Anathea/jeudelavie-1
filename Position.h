@@ -15,10 +15,10 @@ class Position {
 		unsigned int posy;
 
 	public:
-		Position(unsigned int, unsigned int);
+		Position(const unsigned int, const unsigned int);
 		virtual ~Position();
 
-		void setPos( unsigned int, unsigned int);
+		void setPos(const unsigned int, const unsigned int);
 		unsigned int getPosX() const;
 		unsigned int getPosY() const;
 };
