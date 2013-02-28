@@ -19,3 +19,15 @@ Monde::~Monde()
 {
 }
 
+unsigned int Monde::estValide(Position _pos) const {
+  unsigned int r = 0;
+  map<Position, unsigned int>::const_iterator it;
+  it = carte.end();
+  
+  if(carte.find(_pos) != it) {
+    r = 1;
+  }
+    
+  return r;
+}
+

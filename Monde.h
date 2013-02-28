@@ -7,16 +7,17 @@
 
 #ifndef MONDE_H
 #define MONDE_H
+#include <vector>
+#include <map>
 #include "Position.h"
 #include "Element.h"
-#include <vector>
 
 using namespace std;
 
-class Monde: public vector<Element>
+class Monde: public vector<Element *>
 {
 public:
-  // Constructeurs
+    // Constructeurs
   Monde();
   virtual
   ~Monde();
@@ -24,7 +25,10 @@ public:
   // Getters & setters
 
   // Autres méthodes
+  unsigned int estValide(Position _pos) const; // Pour vérifier si la position est valide (renvoie 1) ou non (renvoie 0)
 
+private:
+  map<Position, unsigned int> carte;
 };
 
 #endif	/* MONDE_H */

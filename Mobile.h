@@ -38,8 +38,7 @@ public:
   setVitesse(const unsigned int _vitesse);
 
   //Autres méthodes
-  void
-  SeDeplacer(const Position _pos);
+  void seDeplacer(const Position _pos);
 
 private:
   Monde * monde; // Pour qu'un élement puisse voir autour de lui, il faut qu'il est accès au monde.
