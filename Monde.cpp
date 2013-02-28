@@ -20,7 +20,7 @@ Monde::~Monde()
 }
 
 unsigned int Monde::estValide(Position _pos) const {
-  unsigned int r = 0;
+  /*unsigned int r = 0;
   map<Position, unsigned int>::const_iterator it;
   it = carte.end();
   
@@ -28,6 +28,6 @@ unsigned int Monde::estValide(Position _pos) const {
     r = 1;
   }
     
-  return r;
+  return r;*/
 }
 

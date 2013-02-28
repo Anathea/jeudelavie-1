@@ -62,8 +62,9 @@ Mobile::setVitesse(const unsigned int _vitesse)
   vitesse = _vitesse;
 }
 
-void Mobile::seDeplacer(const Position _pos)
+void
+Mobile::seDeplacer(const Position _pos)
 {
-  _pos;
+  setPos(_pos);
 }
         
