@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class Monde
+class Monde: public vector<Element>
 {
 public:
   // Constructeurs
@@ -25,8 +25,6 @@ public:
 
   // Autres méthodes
 
-private:
-  vector<Element> elts;
 };
 
 #endif	/* MONDE_H */

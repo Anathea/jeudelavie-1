@@ -6,7 +6,7 @@
  */
 
 #ifndef FIXE_H
-#define	FIXE_H
+#define FIXE_H
 
 #include <string>
 #include "Element.h"
