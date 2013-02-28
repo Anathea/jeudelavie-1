@@ -6,7 +6,9 @@ using namespace std;
 /*
  * 
  */
-int main(int argc, char** argv) {
-	cout << "It works !\n";
-	return 0;
+int
+main(int argc, char** argv)
+{
+  cout << "It works !\n";
+  return 0;
 }

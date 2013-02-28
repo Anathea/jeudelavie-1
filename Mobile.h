@@ -14,28 +14,36 @@
 
 using namespace ::std;
 
-class Mobile : public Element {
+class Mobile : public Element
+{
 public:
-	// Constructeurs
-	Mobile(Monde * _monde, const unsigned int _vitesse=1);
-	Mobile(const Element & _elt, Monde * _monde, const unsigned int & _vitesse);
-	Mobile(const Position & _pos, const string & _nom, Monde * _monde, const unsigned int & _vitesse);
-	Mobile(const unsigned int & _posX, const unsigned int & _posY, const string & _nom,
-	Monde * _monde, const unsigned int & _vitesse);
-	virtual ~Mobile();
+  // Constructeurs
+  Mobile(Monde * _monde, const unsigned int _vitesse = 1);
+  Mobile(const Element & _elt, Monde * _monde, const unsigned int & _vitesse);
+  Mobile(const Position & _pos, const string & _nom, Monde * _monde,
+      const unsigned int & _vitesse);
+  Mobile(const unsigned int & _posX, const unsigned int & _posY,
+      const string & _nom, Monde * _monde, const unsigned int & _vitesse);
+  virtual
+  ~Mobile();
 
-	// Getters & setters
-	Monde * getMonde() const;
-	void setMonde(Monde * _monde);
-	unsigned int getVitesse() const;
-	void setVitesse(const unsigned int _vitesse);
+  // Getters & setters
+  Monde *
+  getMonde() const;
+  void
+  setMonde(Monde * _monde);
+  unsigned int
+  getVitesse() const;
+  void
+  setVitesse(const unsigned int _vitesse);
 
-	//Autres méthodes
-	void SeDeplacer(const Position _pos);
+  //Autres méthodes
+  void
+  SeDeplacer(const Position _pos);
 
 private:
-	Monde * monde; // Pour qu'un élement puisse voir autour de lui, il faut qu'il est accès au monde.
-	unsigned int vitesse;
+  Monde * monde; // Pour qu'un élement puisse voir autour de lui, il faut qu'il est accès au monde.
+  unsigned int vitesse;
 };
 
 #endif	/* MOBILE_H */

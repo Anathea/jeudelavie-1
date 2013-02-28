@@ -8,6 +8,10 @@
 #include "Fixe.h"
 
 Fixe::Fixe(const Element & _elt) :
-	Element(_elt) {}
+    Element(_elt)
+{
+}
 
-Fixe::~Fixe() {}
+Fixe::~Fixe()
+{
+}

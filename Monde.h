@@ -6,25 +6,27 @@
  */
 
 #ifndef MONDE_H
-#define	MONDE_H
+#define MONDE_H
 #include "Position.h"
 #include "Element.h"
 #include <vector>
 
 using namespace std;
 
-class Monde {
+class Monde
+{
 public:
-	// Constructeurs
-	Monde();	
-	virtual ~Monde();
+  // Constructeurs
+  Monde();
+  virtual
+  ~Monde();
 
-	// Getters & setters
+  // Getters & setters
 
-	// Autres méthodes
+  // Autres méthodes
 
 private:
-	vector<Element> elts;
+  vector<Element> elts;
 };
 
 #endif	/* MONDE_H */

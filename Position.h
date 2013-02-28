@@ -8,22 +8,27 @@
 #ifndef POSITION_H_
 #define POSITION_H_
 
-class Position {
-	public:
-		// Constructeurs
-		Position(const unsigned int _posX = 0, const unsigned int _posY = 0);
-		virtual ~Position();
+class Position
+{
+public:
+  // Constructeurs
+  Position(const unsigned int _posX = 0, const unsigned int _posY = 0);
+  virtual
+  ~Position();
 
-		// Getters & setters
-		void setPos(const unsigned int, const unsigned int);
-		unsigned int getPosX() const;
-		unsigned int getPosY() const;
-		
-		// Autres méthodes
+  // Getters & setters
+  void
+  setPos(const unsigned int, const unsigned int);
+  unsigned int
+  getPosX() const;
+  unsigned int
+  getPosY() const;
 
-	private:
-		unsigned int posX;
-		unsigned int posY;
+  // Autres méthodes
+
+private:
+  unsigned int posX;
+  unsigned int posY;
 };
 
 #endif /* POSITION_H_ */
