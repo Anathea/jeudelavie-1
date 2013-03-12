@@ -12,6 +12,7 @@ Humain::Humain(Monde * _monde, const unsigned int _age,
     const unsigned int _espVie) :
     Mobile(_monde), age(_age), vision(_vision), vie(_vie), espVie(_espVie)
 {
+    cout << "Création d'un Humain...\n";
 }
 
 Humain::Humain(const Mobile & _mob, const unsigned int & _age,

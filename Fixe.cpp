@@ -10,6 +10,7 @@
 Fixe::Fixe(const Element & _elt) :
     Element(_elt)
 {
+    cout << "Création d'un element Fixe...\n";
 }
 
 Fixe::~Fixe()

@@ -7,30 +7,34 @@
 
 #include "Position.h"
 
-Position::Position(const unsigned int _posX, const unsigned int _posY) :
-    posX(_posX), posY(_posY)
-{
-}
+Position::Position(const unsigned int _x, const unsigned int _y) :
+    x(_x), y(_y)
+{}
 
 Position::~Position()
+{}
+
+unsigned int
+Position::getX() const
 {
+  return this->x;
 }
 
 unsigned int
-Position::getPosX() const
+Position::getY() const
 {
-  return posX;
-}
-
-unsigned int
-Position::getPosY() const
-{
-  return posY;
+  return this->y;
 }
 
 void
-Position::setPos(const unsigned int _posX, const unsigned int _posY)
+Position::setPos(const unsigned int _x, const unsigned int _y)
 {
-  posX = _posX;
-  posY = _posY;
+  this->x = _x;
+  this->x = _y;
+}
+
+bool
+Position::operator < (const Position & p2) const
+{
+  return this->x < p2.x || (this->x == p2.x && this->y < p2.y);
 }

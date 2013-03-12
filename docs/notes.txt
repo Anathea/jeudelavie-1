@@ -61,3 +61,12 @@ Monde::Monde()
 	Carte.insert(pair<Position, unsigned> (pos, size()-1));
 }
 • Voir méthode afficher sur Affichage.pdf
+
+Dans Element.h, on doit inclure Monde.h car il possède un pointeur de monde pour qu'un élement ait la visibilité sur ses cases voisines.
+Dans monde.h, on doit inclure Element.h car un monde est composé d'élements.
+-> Problème car ça fait une boucle sur les inclusions
+Solution : compilation séparée :
+- Sur monde.h, remplacer '#include Monde.h' par 'class.h', puis placer le '#include Monde.h' à la fin du fichier.
+- Compiler Monde.h.
+- Décocher l'option 'compile' dans les propriétés du fichier.
+

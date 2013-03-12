@@ -10,6 +10,7 @@
 Mobile::Mobile(Monde * _monde, const unsigned int _vitesse) :
     Element(), monde(_monde), vitesse(_vitesse)
 {
+    cout << "Création d'un element Mobile...\n";
 }
 
 Mobile::Mobile(const Element & _elt, Monde * _monde,

@@ -7,28 +7,28 @@
 
 #ifndef POSITION_H_
 #define POSITION_H_
+using namespace std;
 
 class Position
 {
 public:
   // Constructeurs
-  Position(const unsigned int _posX = 0, const unsigned int _posY = 0);
+  Position(const unsigned int _x = 0, const unsigned int _y = 0);
   virtual
   ~Position();
 
   // Getters & setters
   void
   setPos(const unsigned int, const unsigned int);
-  unsigned int
-  getPosX() const;
-  unsigned int
-  getPosY() const;
+  unsigned int getX() const;
+  unsigned int getY() const;
+  bool operator < (const Position & p2) const;
 
   // Autres méthodes
 
 private:
-  unsigned int posX;
-  unsigned int posY;
+  unsigned int x;
+  unsigned int y;
 };
 
 #endif /* POSITION_H_ */

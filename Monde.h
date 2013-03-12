@@ -12,20 +12,20 @@
 #include "Position.h"
 #include "Element.h"
 
-using namespace std;
+using namespace ::std;
 
 class Monde: public vector<Element *>
 {
 public:
-    // Constructeurs
+  // Constructeurs
   Monde();
-  virtual
-  ~Monde();
+  virtual ~Monde();
 
   // Getters & setters
 
   // Autres méthodes
   unsigned int estValide(Position _pos) const; // Pour vérifier si la position est valide (renvoie 1) ou non (renvoie 0)
+  void ajouter(Element * _elt);
 
 private:
   map<Position, unsigned int> carte;
