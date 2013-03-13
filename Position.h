@@ -9,6 +9,9 @@
 #define POSITION_H_
 using namespace std;
 
+#include <iostream>
+
+
 class Position
 {
 public:
@@ -25,10 +28,13 @@ public:
   bool operator < (const Position & p2) const;
 
   // Autres méthodes
+  void afficher();
 
 private:
   unsigned int x;
   unsigned int y;
 };
+
+ostream & operator << (ostream & Out, const Position &pos);
 
 #endif /* POSITION_H_ */

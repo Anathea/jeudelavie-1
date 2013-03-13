@@ -40,7 +40,7 @@ Element::setNom(string _nom)
   nom = _nom;
 }
 
-Position
+const Position&
 Element::getPos() const
 {
   return pos;
@@ -50,4 +50,10 @@ void
 Element::setPos(Position _pos)
 {
   pos = _pos;
+}
+
+void
+Element::afficher() const
+{
+  cout << "Element " << getNom() << " : " << getPos() << endl;
 }
