@@ -7,10 +7,10 @@
 
 #include "Humain.h"
 
-Humain::Humain(Monde * _monde, const unsigned int _age,
+Humain::Humain(const unsigned int _age,
     const unsigned int _vision, const unsigned int _vie,
-    const unsigned int _espVie) :
-    Mobile(_monde), age(_age), vision(_vision), vie(_vie), espVie(_espVie)
+    const unsigned int _espVie, const unsigned int _vitesse) :
+    vitesse(_vitesse), age(_age), vision(_vision), vie(_vie), espVie(_espVie)
 {
 }
 

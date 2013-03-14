@@ -16,10 +16,7 @@ class Fixe : public Element
 {
 public:
   // Constructeurs
-  Fixe(const Element & _elt);
-  Fixe(const Position & _pos, const string & _nom);
-  Fixe(const unsigned int & _posX, const unsigned int & _posY,
-      const string & _nom);
+  Fixe();
   virtual
   ~Fixe();
 

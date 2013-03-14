@@ -16,9 +16,9 @@ class Humain : public Mobile
 {
 public:
   //Constructeurs
-  Humain(Monde * _monde, const unsigned int _age = 0,
+  Humain(const unsigned int _age = 0,
       const unsigned int _vision = 1, const unsigned int _vie = 100,
-      const unsigned int _espVie = 7000);
+      const unsigned int _espVie = 7000, const unsigned int _vitesse);
 
   Humain(const Mobile & _mob, const unsigned int & _age,
       const unsigned int & _vision, const unsigned int & _vie,
@@ -66,6 +66,7 @@ private:
   unsigned int vision;
   unsigned int vie;
   unsigned int espVie;
+  unsigned int vitesse;
 };
 
 #endif	/* HUMAIN_H */

@@ -7,26 +7,7 @@
 
 #include "Mobile.h"
 
-Mobile::Mobile(Monde * _monde, const unsigned int _vitesse) :
-    Element(), monde(_monde), vitesse(_vitesse)
-{
-}
-
-Mobile::Mobile(const Element & _elt, Monde * _monde,
-    const unsigned int & _vitesse) :
-    Element(_elt), monde(_monde), vitesse(_vitesse)
-{
-}
-
-Mobile::Mobile(const Position & _pos, const string & _nom, Monde * _monde,
-    const unsigned int & _vitesse) :
-    Element(_pos, _nom), monde(_monde), vitesse(_vitesse)
-{
-}
-
-Mobile::Mobile(const unsigned int & _posX, const unsigned int & _posY,
-    const string & _nom, Monde * _monde, const unsigned int & _vitesse) :
-    Element(_posX, _posY, _nom), monde(_monde), vitesse(_vitesse)
+Mobile::Mobile(const unsigned int _vitesse = 1) : vitesse(_vitesse)
 {
 }
 
@@ -34,21 +15,9 @@ Mobile::~Mobile()
 {
 }
 
-/*void Mobile::SeDeplacer(Position _pos) {
+void Mobile::SeDeplacer(Position _pos) {
 
- }*/
-
-Monde *
-Mobile::getMonde() const
-{
-  return monde;
-}
-
-void
-Mobile::setMonde(Monde * _monde)
-{
-  *monde = *_monde;
-}
+ }
 
 unsigned int
 Mobile::getVitesse() const
