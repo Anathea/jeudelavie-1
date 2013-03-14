@@ -10,6 +10,7 @@
 Element::Element() :
     pos(), nom("Inconnu")
 {
+  cout << "Création d'un Element...\n";
 }
 
 Element::Element(const Position & _pos, const string & _nom) :

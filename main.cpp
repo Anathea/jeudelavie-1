@@ -1,7 +1,10 @@
 #include <cstdlib>
-#include<iostream>
+#include <iostream>
+#include "Monde.h"
+#include "Position.h"
+#include "Test.h"
 
-using namespace std;
+using namespace ::std;
 
 /*
  * 
@@ -9,6 +12,10 @@ using namespace std;
 int
 main(int argc, char** argv)
 {
-  cout << "It works !\n";
+  cout << "Lancement du programme\n";
+  Test test;
+
+  Monde monde;
+  
   return 0;
 }

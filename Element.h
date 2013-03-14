@@ -9,6 +9,7 @@
 #define	ELEMENT_H
 
 #include <string>
+#include<iostream>
 #include "Position.h"
 using namespace ::std;
 

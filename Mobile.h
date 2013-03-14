@@ -18,25 +18,27 @@ class Mobile : public Element
 {
 public:
   // Constructeurs
-  Mobile(const unsigned int _vitesse);
+  Mobile(const Position & _pos, const string & _nom,
+      const unsigned int _vitesse=1, const unsigned int _vision=1);
+
   virtual
   ~Mobile();
 
   // Getters & setters
-  Monde *
-  getMonde() const;
-  void
-  setMonde(Monde * _monde);
   unsigned int
   getVitesse() const;
   void
   setVitesse(const unsigned int _vitesse);
+  unsigned int
+  getVision() const;
+  void
+  setVision(const unsigned int _vision);
 
   //Autres méthodes
-  void
-  SeDeplacer(const Position _pos);
+  void seDeplacer(const Position _pos);
 
 private:
+  unsigned int vision;
   unsigned int vitesse;
 };
 

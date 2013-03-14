@@ -9,6 +9,7 @@
 
 Fixe::Fixe()
 {
+    cout << "Création d'un element Fixe...\n";
 }
 
 Fixe::~Fixe()

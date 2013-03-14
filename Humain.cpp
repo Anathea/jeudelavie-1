@@ -7,46 +7,14 @@
 
 #include "Humain.h"
 
-Humain::Humain(const unsigned int _age,
-    const unsigned int _vision, const unsigned int _vie,
-    const unsigned int _espVie, const unsigned int _vitesse) :
-    vitesse(_vitesse), age(_age), vision(_vision), vie(_vie), espVie(_espVie)
+Humain::Humain(
+    const Position & _pos, const string & _nom,
+    const unsigned int _vitesse = 1, const unsigned int _vision = 1,
+    const unsigned int _age = 0, const unsigned int _vie=100, const unsigned int _espVie=7000) : Mobile(_pos, _nom, _vitesse,_vision), age(_age),  vie(_vie), espVie(_espVie)
 {
+    cout << "Création d'un Humain...\n";
 }
 
-Humain::Humain(const Mobile & _mob, const unsigned int & _age,
-    const unsigned int & _vision, const unsigned int & _vie,
-    const unsigned int & _espVie) :
-    Mobile(_mob), age(_age), vision(_vision), vie(_vie), espVie(_espVie)
-{
-}
-
-Humain::Humain(const Element & _elt, Monde * _monde,
-    const unsigned int & _vitesse, const unsigned int & _age,
-    const unsigned int & _vision, const unsigned int & _vie,
-    const unsigned int & _espVie) :
-    Mobile(_elt, _monde, _vitesse), age(_age), vision(_vision), vie(_vie), espVie(
-        _espVie)
-{
-}
-
-Humain::Humain(const Position & _pos, const string & _nom,
-    const unsigned int & _vitesse, Monde * _monde, const unsigned int & _age,
-    const unsigned int & _vision, const unsigned int & _vie,
-    const unsigned int & _espVie) :
-    Mobile(_pos, _nom, _monde, _vitesse), age(_age), vision(_vision), vie(_vie), espVie(
-        _espVie)
-{
-}
-
-Humain::Humain(const unsigned int & _posX, const unsigned int & _posY,
-    const string & _nom, const unsigned int & _vitesse, Monde * _monde,
-    const unsigned int & _age, const unsigned int & _vision,
-    const unsigned int & _vie, const unsigned int & _espVie) :
-    Mobile(_posX, _posY, _nom, _monde, _vitesse), age(_age), vision(_vision), vie(
-        _vie), espVie(_espVie)
-{
-}
 
 Humain::~Humain()
 {
@@ -62,18 +30,6 @@ void
 Humain::setAge(const unsigned int _age)
 {
   age = _age;
-}
-
-unsigned int
-Humain::getVision() const
-{
-  return vision;
-}
-
-void
-Humain::setVision(const unsigned int _vision)
-{
-  vision = _vision;
 }
 
 unsigned int

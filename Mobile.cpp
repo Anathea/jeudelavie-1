@@ -7,17 +7,15 @@
 
 #include "Mobile.h"
 
-Mobile::Mobile(const unsigned int _vitesse = 1) : vitesse(_vitesse)
-{
+Mobile::Mobile(
+    const Position & _pos, const string & _nom,
+    const unsigned int _vitesse , const unsigned int _vision ) :
+    Element( _pos, _nom),vitesse(_vitesse),vision(_vision){
 }
 
 Mobile::~Mobile()
 {
 }
-
-void Mobile::SeDeplacer(Position _pos) {
-
- }
 
 unsigned int
 Mobile::getVitesse() const
@@ -30,3 +28,17 @@ Mobile::setVitesse(const unsigned int _vitesse)
 {
   vitesse = _vitesse;
 }
+
+unsigned int
+Mobile::getVision() const
+{
+  return vision;
+}
+
+void
+Mobile::setVision(const unsigned int _vision)
+{
+  vision = _vision;
+}
+
+        
