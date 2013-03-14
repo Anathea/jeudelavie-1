@@ -28,8 +28,8 @@ void Test::testPosition()
   
   Monde monde;
   if (monde.estValide(posOK))
-    cout << "OK : position [1,3] valide\n";
+    cout << "OK : position " << posOK << " valide\n";
 
   if (!monde.estValide(posNOK))
-    cout << "OK : position [1,4] invalide\n";
+    cout << "OK : position " << posNOK << " invalide\n";
 }

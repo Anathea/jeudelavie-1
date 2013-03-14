@@ -16,6 +16,7 @@ main(int argc, char** argv)
   Test test;
 
   Monde monde;
+  monde.afficher();
   
   return 0;
 }

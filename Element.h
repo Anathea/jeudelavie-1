@@ -9,9 +9,9 @@
 #define	ELEMENT_H
 
 #include <string>
-#include<iostream>
+#include <iostream>
 #include "Position.h"
-using namespace ::std;
+using namespace std;
 
 class Element
 {
@@ -29,12 +29,14 @@ public:
   getNom() const;
   void
   setNom(const string _nom);
-  Position
+  const Position&
   getPos() const;
   void
   setPos(const Position _pos);
 
   // Autres méthodes
+  void
+  afficher() const;
 
 private:
   Position pos;

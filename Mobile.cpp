@@ -10,7 +10,7 @@
 Mobile::Mobile(
     const Position & _pos, const string & _nom,
     const unsigned int _vitesse , const unsigned int _vision ) :
-    Element( _pos, _nom),vitesse(_vitesse),vision(_vision){
+    Element( _pos, _nom),vision(_vision) ,vitesse(_vitesse){
 }
 
 Mobile::~Mobile()

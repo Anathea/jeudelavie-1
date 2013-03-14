@@ -6,11 +6,11 @@
  */
 
 #ifndef HUMAIN_H
-#define	HUMAIN_H
+#define HUMAIN_H
 
 #include <string>
 #include "Mobile.h"
-using namespace ::std;
+using namespace std;
 
 class Humain : public Mobile
 {
