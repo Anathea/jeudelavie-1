@@ -41,7 +41,7 @@ public:
   void seDeplacer(const Position _pos);
 
 private:
-  Monde * monde; // Pour qu'un élement puisse voir autour de lui, il faut qu'il est accès au monde.
+  Monde * monde; // Pour qu'un élement puisse voir autour de lui, il faut qu'il ait accès au monde.
   unsigned int vitesse;
 };
 

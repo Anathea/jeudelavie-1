@@ -13,7 +13,7 @@ Monde::Monde()
   Position pos(1, 3);
   Element * elt = new Element(pos, "Toto");
   push_back(elt); //ajoute un élément dans le vecteur
-  carte.insert(pair<Position, unsigned>(pos, size() - 1)); // size() car Monde hérite de Vecteur
+  wMap.insert(pair<Position, unsigned>(pos, size() - 1)); // size() car Monde hérite de Vecteur
 }
 
 Monde::~Monde()
@@ -25,9 +25,9 @@ Monde::estValide(Position _pos) const
 {
   unsigned int r = 0;
   map<Position, unsigned int>::const_iterator it;
-  it = carte.end();
+  it = wMap.end();
 
-  if (carte.find(_pos) != it)
+  if (wMap.find(_pos) != it)
     r = 1;
 
   return r;
@@ -41,7 +41,7 @@ Monde::afficher() const
     at(i)->afficher();
   cout << "Map : " << endl;
   map<Position, unsigned int>::const_iterator Iter;
-  for (Iter = getCarte().begin(); Iter != getCarte().end(); Iter++)
+  for (Iter = getMap().begin(); Iter != getMap().end(); Iter++)
     cout << Iter->first << " " << Iter->second << endl;
 }
 
@@ -51,12 +51,18 @@ Monde::ajouter(Element * _elt)
   if (estValide(_elt->getPos()))
     {
       push_back(_elt); // ajoute un élément dans le vecteur
-      carte.insert(pair<Position, unsigned>(_elt->getPos(), size() - 1)); // size() car Monde hérite de Vecteur
+      wMap.insert(pair<Position, unsigned>(_elt->getPos(), size() - 1)); // size() car Monde hérite de Vecteur
     }
 }
 
 const map<Position, unsigned int>&
-Monde::getCarte() const
+Monde::getMap() const
 {
-  return carte;
+  return wMap;
+}
+
+const map<Position, unsigned int>&
+Monde::getMap()
+{
+  return wMap;
 }
