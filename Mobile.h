@@ -11,7 +11,18 @@
 #include <string>
 #include "Element.h"
 
-using namespace ::std;
+using namespace std;
+
+typedef enum {
+  NORD,
+  NORDEST,
+  EST,
+  SUDEST,
+  SUD,
+  SUDOUEST,
+  OUEST,
+  NORDOUEST
+} Direction;
 
 class Mobile : public Element
 {
@@ -35,7 +46,7 @@ public:
   setVision(const unsigned int _vision);
 
   //Autres méthodes
-  void seDeplacer(const Position _pos);
+  bool seDeplacer(const Direction _dir);
 
 private:
   unsigned int vision;
