@@ -7,10 +7,15 @@
 
 #include "Humain.h"
 
+Humain::Humain() :
+  Element(), Mobile()
+{
+}
+
 Humain::Humain(
     const Position & _pos, const string & _nom,
     const unsigned int _vitesse = 1, const unsigned int _vision = 1,
-    const unsigned int _age = 0, const unsigned int _vie=100, const unsigned int _espVie=7000) : Mobile(_pos, _nom, _vitesse,_vision), age(_age),  vie(_vie), espVie(_espVie)
+    const unsigned int _age = 0, const unsigned int _vie=100, const unsigned int _espVie=7000) : Mobile(_vitesse,_vision), age(_age),  vie(_vie), espVie(_espVie)
 {
     cout << "Création d'un Humain...\n";
 }
