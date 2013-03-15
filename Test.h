@@ -11,7 +11,6 @@
 class Test {
 public:
   Test();
-  Test(const Test& orig);
   virtual ~Test();
   
   void testPosition();

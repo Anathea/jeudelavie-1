@@ -15,9 +15,6 @@ Test::Test()
   testPosition();
 }
 
-Test::Test(const Test & orig)
-{}
-
 Test::~Test()
 {}
 

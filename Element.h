@@ -37,8 +37,8 @@ public:
   // Autres méthodes
   void
   afficher() const;
-  virtual void
-  agir() const;
+  //virtual void
+  //agir() const;
 
 private:
   Position pos;
