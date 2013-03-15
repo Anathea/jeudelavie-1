@@ -16,8 +16,12 @@ class Humain : public Mobile
 {
 public:
   //Constructeurs
-  Humain(
-      const Position & _pos, const string & _nom,
+  Humain();
+  Humain(const Mobile & _mob ,
+      const unsigned int _age ,
+      const unsigned int _vie ,
+      const unsigned int _espVie);
+  Humain(const Element & _elt, const unsigned int _vitesse=1, const unsigned int _vision=1,
       const unsigned int _vitesse , const unsigned int _vision ,
       const unsigned int _age ,
       const unsigned int _vie ,

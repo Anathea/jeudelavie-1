@@ -18,7 +18,14 @@ class Mobile : public Element
 {
 public:
   // Constructeurs
+
+  Mobile();
+  Mobile(const Element & _elt,
+      const unsigned int _vitesse=1, const unsigned int _vision=1);
   Mobile(const Position & _pos, const string & _nom,
+      const unsigned int _vitesse=1, const unsigned int _vision=1);
+  Mobile(const unsigned int & _posX, const unsigned int & _posY,
+      const string & _nom,
       const unsigned int _vitesse=1, const unsigned int _vision=1);
 
   virtual
