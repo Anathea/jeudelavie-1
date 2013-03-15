@@ -14,12 +14,12 @@
 
 using namespace ::std;
 
-class Mobile : public Element
+class Mobile
 {
 public:
   // Constructeurs
-  Mobile(const Position & _pos, const string & _nom,
-      const unsigned int _vitesse=1, const unsigned int _vision=1);
+  Mobile();
+  Mobile(const unsigned int _vision, const unsigned int _vitesse);
 
   virtual
   ~Mobile();

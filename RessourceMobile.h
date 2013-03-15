@@ -13,7 +13,7 @@
 class RessourceMobile : public Ressource, Mobile
 {
 public:
-  RessourceMobile( );
+  RessourceMobile();
   virtual
   ~RessourceMobile();
 };

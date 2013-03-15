@@ -7,7 +7,8 @@
 
 #include "RessourceFixe.h"
 
-RessourceFixe::RessourceFixe()
+RessourceFixe::RessourceFixe() :
+    Ressource(), Fixe()
 {
   // TODO Auto-generated constructor stub
 

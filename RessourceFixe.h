@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class RessourceFixe : public Ressource, public Fixe
+class RessourceFixe : public Ressource, Fixe
 {
 public:
   RessourceFixe();
