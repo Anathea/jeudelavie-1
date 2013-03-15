@@ -8,19 +8,14 @@
 #ifndef FIXE_H
 #define FIXE_H
 
-#include <string>
-#include "Element.h"
+#include <iostream>
 using namespace ::std;
 
-class Fixe : public Element
+class Fixe
 {
 public:
   // Constructeurs
   Fixe();
-  Fixe(const Element & _elt);
-  Fixe(const Position & _pos, const string & _nom);
-  Fixe(const unsigned int & _posX, const unsigned int & _posY,
-      const string & _nom);
   virtual
   ~Fixe();
 

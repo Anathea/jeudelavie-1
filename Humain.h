@@ -12,7 +12,7 @@
 #include "Mobile.h"
 using namespace std;
 
-class Humain : public Mobile
+class Humain : public Element, Mobile
 {
 public:
   //Constructeurs

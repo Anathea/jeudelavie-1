@@ -7,10 +7,9 @@
 
 #include "RessourceMobile.h"
 
-RessourceMobile::RessourceMobile()
+RessourceMobile::RessourceMobile() :
+  Ressource(), Mobile()
 {
-  // TODO Auto-generated constructor stub
-
 }
 
 RessourceMobile::~RessourceMobile()
