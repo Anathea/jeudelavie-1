@@ -17,6 +17,7 @@ class Humain : public Mobile
 public:
   //Constructeurs
   Humain();
+
   Humain(
       const Position & _pos, const string & _nom,
       const unsigned int _vitesse , const unsigned int _vision ,

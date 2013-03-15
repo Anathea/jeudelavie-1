@@ -28,6 +28,7 @@ class Mobile : public Element
 {
 public:
   // Constructeurs
+
   Mobile();
   Mobile(const Element& _elem, const unsigned int _vision, const unsigned int _vitesse);
   Mobile(const Position & _pos, const string & _nom, const unsigned int _vision, const unsigned int _vitesse);
