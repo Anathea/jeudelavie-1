@@ -20,10 +20,12 @@ main(int argc, char** argv)
   monde.afficher();
   
   Ecran e;
-  e.txtColor("Oh ", 1);
-  e.txtColor("comme ", 2);
-  e.txtColor("c'est ", 4);
-  e.txtColor("joli !", 5);
+  e.affElement(0, Position(1,3));
+  e.affElement(1, Position(8,4));
+  e.affElement(2, Position(5,9));
+  e.affElement(3, Position(4,4));
+  e.affElement(4, Position(6,0));
   
+  e.txtPos(0, 11);
   return 0;
 }

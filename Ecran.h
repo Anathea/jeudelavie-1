@@ -10,6 +10,8 @@
 #include <unistd.h>
 #include <iostream>
 #include <sstream>
+#include "Position.h"
+
 using namespace std;
 
 class Ecran {
@@ -18,7 +20,9 @@ public:
   virtual ~Ecran();
   
   void clear();
-  void txtColor(string txt, int couleur);
+  void affElement(int type, Position _pos);
+  void fondNoir();
+  void txtPos(int _x, int _y);
   void pause();
 private:
   void changeColor(int couleur);
