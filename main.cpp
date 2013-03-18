@@ -20,12 +20,12 @@ main(int argc, char** argv)
   monde.afficher();
   
   Ecran e;
-  e.affElement(0, Position(1,3));
-  e.affElement(1, Position(8,4));
-  e.affElement(2, Position(5,9));
-  e.affElement(3, Position(4,4));
-  e.affElement(4, Position(6,0));
+  e.affElement(2, Position(1,3)); // homme
+  e.affElement(3, Position(8,4)); // femme
+  e.affElement(4, Position(5,9)); // ressource immobile
+  e.affElement(5, Position(4,4)); // ressource mobile
   
   e.txtPos(0, 11);
+
   return 0;
 }

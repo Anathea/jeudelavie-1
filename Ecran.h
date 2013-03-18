@@ -20,6 +20,16 @@ public:
   virtual ~Ecran();
   
   void clear();
+  
+  /*
+ * type :
+ * 0 | . | case inexistante
+ * 1 | * | case vide
+ * 2 | H | homme
+ * 3 | F | femme
+ * 4 | I | ressource immobile
+ * 5 | M | ressource mobile
+ */
   void affElement(int type, Position _pos);
   void fondNoir();
   void txtPos(int _x, int _y);

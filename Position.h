@@ -29,6 +29,7 @@ public:
 
   // Autres méthodes
   void afficher();
+  bool estValide();
 
 private:
   unsigned int x;

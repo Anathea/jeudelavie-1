@@ -55,3 +55,10 @@ operator <<(ostream& Out, const Position& pos)
   Out << "(" << pos.getX() << ";" << pos.getY() << ")";
   return Out;
 }
+
+bool
+Position::estValide ()
+{
+  bool res = (this->x%2 == 0 && this->y%2 == 0) || (this->x%2 != 0 && this->y%2 != 0);
+  return res;
+}

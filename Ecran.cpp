@@ -19,19 +19,31 @@ Ecran::~Ecran()
 
 void Ecran::clear()
 {
+  unsigned int tailleX = 10; // à changer : tailleX/Y doit être dans le fichier paramètres
+  unsigned int tailleY = 10;
+  
   cout << "\033[H\033[2J";
-  for(int x=0 ; x<10 ; x++)
-    for(int y=0 ; y<10 ; y++)
-    affElement(0, Position(x, y));
+  Position pos;
+  for(unsigned int x=0 ; x<tailleX+1 ; x++)
+    for(unsigned int y=0 ; y<tailleY+2 ; y++)
+    {
+      pos = Position(x, y);
+      if (pos.estValide())
+        affElement(1, pos);
+      else
+        affElement(0, pos);
+    }
+
 }
 
 /*
  * type :
- * 0 | . | case vide
- * 1 | H | homme
- * 2 | F | femme
- * 3 | I | ressource immobile
- * 4 | M | ressource mobile
+ * 0 | . | case inexistante
+ * 1 | * | case vide
+ * 2 | H | homme
+ * 3 | F | femme
+ * 4 | I | ressource immobile
+ * 5 | M | ressource mobile
  */
 void Ecran::affElement(int _type, Position _pos)
 {
@@ -41,10 +53,11 @@ void Ecran::affElement(int _type, Position _pos)
   switch(_type)
   {
     case 0 : cout << "."; break;
-    case 1 : cout << "H"; break;
-    case 2 : cout << "F"; break;
-    case 3 : cout << "I"; break;
-    case 4 : cout << "M"; break;
+    case 1 : cout << "*"; break;
+    case 2 : cout << "H"; break;
+    case 3 : cout << "F"; break;
+    case 4 : cout << "I"; break;
+    case 5 : cout << "M"; break;
     default : break;
   }
 
