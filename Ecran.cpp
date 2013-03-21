@@ -5,12 +5,14 @@
  * Created on 15 mars 2013, 11:31
  */
 
+#include <vector>
+
 #include "Ecran.h"
 #include "Position.h"
+#include "Element.h"
 
 Ecran::Ecran()
 {
-  //this->fondNoir();
   this->clear();
 }
 
@@ -36,6 +38,15 @@ void Ecran::clear()
 
 }
 
+void Ecran::affMonde(Monde _monde)
+{
+  for(long unsigned int i=0 ; i<_monde.size() ; i++)
+  {
+    Position pos = _monde.at(i)->getPos();
+    if (pos.estValide())
+      affElement(2, pos);
+  }
+}
 /*
  * type :
  * 0 | . | case inexistante
@@ -72,11 +83,6 @@ void Ecran::changeColor(int couleur)
   cout << "\033[" << ss.str() << "m";
 }
 
-void Ecran::fondNoir()
-{
-  changeColor(10);
-}
-
 void Ecran::txtPos(int _x, int _y)
 {
   cout << "\033[" << _y << ";" << _x << "H";
@@ -84,5 +90,5 @@ void Ecran::txtPos(int _x, int _y)
 
 void Ecran::pause()
 {
-  sleep(5); // à changer : durée de pause est un paramètre
+  sleep(2); // à changer : durée de pause est un paramètre
 }

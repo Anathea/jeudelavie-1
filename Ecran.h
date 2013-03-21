@@ -11,6 +11,7 @@
 #include <iostream>
 #include <sstream>
 #include "Position.h"
+#include "Monde.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ public:
   
   void clear();
   
+  void affMonde(Monde _monde);
   /*
  * type :
  * 0 | . | case inexistante
@@ -31,7 +33,6 @@ public:
  * 5 | M | ressource mobile
  */
   void affElement(int type, Position _pos);
-  void fondNoir();
   void txtPos(int _x, int _y);
   void pause();
 private:
