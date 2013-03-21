@@ -4,13 +4,10 @@
  * 
  * Created on 15 mars 2013, 11:31
  */
-
 #include "Ecran.h"
-#include "Position.h"
 
 Ecran::Ecran()
 {
-  //this->fondNoir();
   this->clear();
 }
 
@@ -33,9 +30,33 @@ void Ecran::clear()
       else
         affElement(0, pos);
     }
-
 }
 
+void Ecran::affMonde(Monde _monde)
+{
+  for(long unsigned int i=0 ; i<_monde.size() ; i++)
+  {
+    Position pos = _monde.at(i)->getPos();
+    int type = 0;
+    if (pos.estValide())
+    {
+      if(typeid(_monde.at(i)) == typeid(Humain))
+        cout << "humain\n";//type = 2;
+      /*else if(typeid(_monde.at(i)) == typeid(Femme))
+        type = 3;*/
+      else if(typeid(_monde.at(i)) == typeid(Fixe))
+        cout << "fixe\n";//type = 4;
+      else if(typeid(_monde.at(i)) == typeid(Mobile))
+        cout << "mobile\n";//type = 5;
+      else
+        cout << "Aucun\n";
+    }
+    else
+      cout << "\n!! Affichage d'un élément à une position non valide !!\n";
+    
+    affElement(type, pos);
+  }
+}
 /*
  * type :
  * 0 | . | case inexistante
@@ -72,11 +93,6 @@ void Ecran::changeColor(int couleur)
   cout << "\033[" << ss.str() << "m";
 }
 
-void Ecran::fondNoir()
-{
-  changeColor(10);
-}
-
 void Ecran::txtPos(int _x, int _y)
 {
   cout << "\033[" << _y << ";" << _x << "H";
@@ -84,5 +100,5 @@ void Ecran::txtPos(int _x, int _y)
 
 void Ecran::pause()
 {
-  sleep(5); // à changer : durée de pause est un paramètre
+  sleep(2); // à changer : durée de pause est un paramètre
 }

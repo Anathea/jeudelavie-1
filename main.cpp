@@ -4,6 +4,7 @@
 #include "Position.h"
 #include "Test.h"
 #include "Ecran.h"
+#include "Parametres.h"
 
 using namespace std;
 
@@ -16,14 +17,9 @@ main(int argc, char** argv)
   cout << "Lancement du programme\n";
   Monde monde;
   Test test(monde);
-  
-//  Ecran e;
-//  e.affElement(2, Position(1,3)); // homme
-//  e.affElement(3, Position(8,4)); // femme
-//  e.affElement(4, Position(5,9)); // ressource immobile
-//  e.affElement(5, Position(4,4)); // ressource mobile
-//
-//  e.txtPos(0, 11);
+  Ecran e;
+  e.affMonde(monde);
 
   return 0;
+
 }

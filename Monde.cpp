@@ -13,6 +13,7 @@ using namespace std;
 Monde::Monde() :
     vector<Element *>(), wMap()
 {
+  srand (time(NULL));
   cout << "Création du Monde...\n";
 }
 
@@ -51,12 +52,16 @@ Monde::afficher() const
 void
 Monde::ajouter(Element *_elt)
 {
-  if (estValide(_elt->getPos()))
-    {
+  if (estValide(_elt->getPos())){
       push_back(_elt); // ajoute un élément dans le vecteur
       wMap.insert(pair<Position, unsigned int>(_elt->getPos(), size() - 1)); // size() car Monde hérite de Vecteur
     }
 }
+
+Position Monde::posAleatoire(){
+  return ( Position(1+rand()%param.getValeurParametre("l_carte"), 1+rand()%param.getValeurParametre("h_carte")));
+}
+
 
 const map<Position, unsigned int>&
 Monde::getMap() const
