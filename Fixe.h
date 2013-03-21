@@ -9,7 +9,7 @@
 #define FIXE_H
 
 #include <iostream>
-using namespace ::std;
+using namespace std;
 
 class Fixe
 {

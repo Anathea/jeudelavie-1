@@ -7,21 +7,26 @@
 
 #include "Element.h"
 
-Element::Element() :
+using namespace std;
+
+Element::Element(Monde *_monde) :
     pos(), nom("Inconnu")
 {
   cout << "Création d'un Element...\n";
+  monde = _monde;
 }
 
-Element::Element(const Position & _pos, const string & _nom) :
+Element::Element(const Position & _pos, const string & _nom, Monde *_monde) :
     pos(_pos), nom(_nom)
 {
+  monde = _monde;
 }
 
-Element::Element(const unsigned int & _posX, const unsigned int & _posY,
-    const string & _nom) :
+Element::Element(const unsigned int _posX, const unsigned int _posY,
+    const string _nom, Monde *_monde) :
     pos(_posX, _posY), nom(_nom)
 {
+  monde = _monde;
 }
 
 Element::~Element()
@@ -50,6 +55,12 @@ void
 Element::setPos(Position _pos)
 {
   pos = _pos;
+}
+
+Monde *
+Element::getMonde() const
+{
+  return monde;
 }
 
 void

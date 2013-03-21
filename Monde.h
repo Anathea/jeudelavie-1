@@ -7,12 +7,13 @@
 
 #ifndef MONDE_H
 #define MONDE_H
+
 #include <vector>
 #include <map>
 #include "Position.h"
 #include "Element.h"
 
-using namespace std;
+class Element; // Contre problème d'inclusion cyclique
 
 class Monde : public vector<Element *>
 {
@@ -25,16 +26,16 @@ public:
   // Getters & setters
   const map<Position, unsigned int>&
   getMap() const;
-  const map<Position, unsigned int>&
+  map<Position, unsigned int>&
   getMap();
 
   // Autres méthodes
   void
   afficher() const;
-  unsigned int
+  bool
   estValide(Position _pos) const; // Pour vérifier si la position est valide (renvoie 1) ou non (renvoie 0)
   void
-  ajouter(Element * _elt);
+  ajouter(Element *_elt);
 
 private:
   map<Position, unsigned int> wMap;

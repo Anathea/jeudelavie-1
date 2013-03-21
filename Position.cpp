@@ -30,6 +30,18 @@ Position::getY() const
 }
 
 void
+Position::setX(unsigned int x)
+{
+  this->x = x;
+}
+
+void
+Position::setY(unsigned int y)
+{
+  this->y = y;
+}
+
+void
 Position::setPos(const unsigned int _x, const unsigned int _y)
 {
   this->x = _x;
@@ -59,6 +71,7 @@ operator <<(ostream& Out, const Position& pos)
 bool
 Position::estValide ()
 {
-  bool res = (this->x%2 == 0 && this->y%2 == 0) || (this->x%2 != 0 && this->y%2 != 0);
+  bool res = (((this->x%2 == 0 && this->y%2 == 0) || (this->x%2 != 0 && this->y%2 != 0)));
   return res;
 }
+

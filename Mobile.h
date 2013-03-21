@@ -16,11 +16,9 @@ using namespace std;
 typedef enum {
   NORD,
   NORDEST,
-  EST,
   SUDEST,
   SUD,
   SUDOUEST,
-  OUEST,
   NORDOUEST
 } Direction;
 
@@ -28,10 +26,9 @@ class Mobile : public Element
 {
 public:
   // Constructeurs
-
-  Mobile();
-  Mobile(const Element& _elem, const unsigned int _vision, const unsigned int _vitesse);
-  Mobile(const Position & _pos, const string & _nom, const unsigned int _vision, const unsigned int _vitesse);
+  Mobile(Monde *_monde);
+  Mobile(const Element &_elem, const unsigned int _vision, const unsigned int _vitesse);
+  Mobile(const Position & _pos, const string & _nom, const unsigned int _vision, const unsigned int _vitesse, Monde *_monde);
 
   virtual
   ~Mobile();

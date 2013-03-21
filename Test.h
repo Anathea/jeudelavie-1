@@ -8,14 +8,19 @@
 #ifndef TEST_H
 #define	TEST_H
 
+#include "Monde.h"
+#include "Mobile.h"
+
 class Test {
 public:
-  Test();
+  Test(Monde &_mondeTest);
   virtual ~Test();
   
   void testPosition();
+  void testDeplacement();
   
 private:
+  Monde mondeTest;
 
 };
 

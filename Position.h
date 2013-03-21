@@ -26,6 +26,10 @@ public:
   unsigned int getX() const;
   unsigned int getY() const;
   bool operator < (const Position & p2) const;
+  void
+  setX(unsigned int x);
+  void
+  setY(unsigned int y);
 
   // Autres méthodes
   void afficher();

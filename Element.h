@@ -10,17 +10,19 @@
 
 #include <string>
 #include <iostream>
+#include "Monde.h"
 #include "Position.h"
-using namespace std;
+
+class Monde;
 
 class Element
 {
 public:
   // Constructeurs
-  Element();
-  Element(const Position & _pos, const string & _nom);
-  Element(const unsigned int & _posX, const unsigned int & _posY,
-      const string & _nom);
+  Element(Monde *_monde);
+  Element(const Position & _pos, const string & _nom, Monde *_monde);
+  Element(const unsigned int _posX, const unsigned int _posY, const string _nom,
+      Monde *_monde);
   virtual
   ~Element();
 
@@ -33,6 +35,8 @@ public:
   getPos() const;
   void
   setPos(const Position _pos);
+  Monde *
+  getMonde() const;
 
   // Autres méthodes
   void
@@ -43,6 +47,8 @@ public:
 private:
   Position pos;
   string nom;
+  Monde *monde;
+
 };
 
 #endif	/* ELEMENT_H */

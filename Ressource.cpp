@@ -7,8 +7,10 @@
 
 #include "Ressource.h"
 
-Ressource::Ressource() :
-    Element()
+using namespace std;
+
+Ressource::Ressource(Monde *_monde) :
+    Element(_monde)
 {
 }
 
@@ -18,14 +20,14 @@ Ressource::Ressource(const Element & _elt) :
   cout << "Création d'une ressource...\n";
 }
 
-Ressource::Ressource(const Position& _pos, const string& _nom) :
-    Element(_pos, _nom)
+Ressource::Ressource(const Position& _pos, const string& _nom, Monde *_monde) :
+    Element(_pos, _nom, _monde)
 {
 }
 
 Ressource::Ressource(const unsigned int& _posX, const unsigned int& _posY,
-    const string& _nom) :
-    Element(_posX, _posY, _nom)
+    const string& _nom, Monde *_monde) :
+    Element(_posX, _posY, _nom, _monde)
 {
 }
 
