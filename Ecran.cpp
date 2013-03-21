@@ -4,12 +4,7 @@
  * 
  * Created on 15 mars 2013, 11:31
  */
-
-#include <vector>
-
 #include "Ecran.h"
-#include "Position.h"
-#include "Element.h"
 
 Ecran::Ecran()
 {
@@ -35,7 +30,6 @@ void Ecran::clear()
       else
         affElement(0, pos);
     }
-
 }
 
 void Ecran::affMonde(Monde _monde)
@@ -43,8 +37,24 @@ void Ecran::affMonde(Monde _monde)
   for(long unsigned int i=0 ; i<_monde.size() ; i++)
   {
     Position pos = _monde.at(i)->getPos();
+    int type = 0;
     if (pos.estValide())
-      affElement(2, pos);
+    {
+      if(typeid(_monde.at(i)) == typeid(Humain))
+        cout << "humain\n";//type = 2;
+      /*else if(typeid(_monde.at(i)) == typeid(Femme))
+        type = 3;*/
+      else if(typeid(_monde.at(i)) == typeid(Fixe))
+        cout << "fixe\n";//type = 4;
+      else if(typeid(_monde.at(i)) == typeid(Mobile))
+        cout << "mobile\n";//type = 5;
+      else
+        cout << "Aucun\n";
+    }
+    else
+      cout << "\n!! Affichage d'un élément à une position non valide !!\n";
+    
+    affElement(type, pos);
   }
 }
 /*

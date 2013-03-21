@@ -10,8 +10,14 @@
 #include <unistd.h>
 #include <iostream>
 #include <sstream>
+#include <typeinfo>
 #include "Position.h"
 #include "Monde.h"
+#include <vector>
+#include "Element.h"
+#include "Fixe.h"
+#include "Mobile.h"
+#include "Humain.h"
 
 using namespace std;
 
@@ -40,4 +46,3 @@ private:
 };
 
 #endif	/* ECRAN_H */
-

@@ -3,9 +3,10 @@
 *****************
 
 Pour compiler et lancer à la main :
-Executer l'executable généré par l'éditeur
+Executer l'executable généré par l'éditeur :
+NetBeans : dist/Debug/GNU-Linux-x86/jeudelavie
 OU
-g++ -Wall -Werror main.cpp Ecran.cpp Element.cpp Fixe.cpp Humain.cpp Mobile.cpp Monde.cpp Position.cpp Test.cpp -o /tmp/jeu_de_la_vie; /tmp/jeu_de_la_vie
+g++ -Wall -Werror main.cpp Ecran.cpp Element.cpp Fixe.cpp Humain.cpp Mobile.cpp Monde.cpp Position.cpp Test.cpp -o /tmp/jeudelavie; /tmp/jeudelavie
 
 **Énoncé**
 

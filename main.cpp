@@ -17,8 +17,6 @@ main(int argc, char** argv)
   Test test;
 
   Monde monde;
-  monde.afficher();
-  
   Ecran e;
   e.affMonde(monde);
 
