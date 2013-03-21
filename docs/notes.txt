@@ -2,6 +2,12 @@
 * Jeu de la vie *
 *****************
 
+Pour compiler et lancer à la main :
+Executer l'executable généré par l'éditeur :
+NetBeans : dist/Debug/GNU-Linux-x86/jeudelavie
+OU
+g++ -Wall -Werror main.cpp Ecran.cpp Element.cpp Fixe.cpp Humain.cpp Mobile.cpp Monde.cpp Position.cpp Test.cpp -o /tmp/jeudelavie; /tmp/jeudelavie
+
 **Énoncé**
 
 • C'est un monde de Gaulois, composés de Gaulois et Gauloises

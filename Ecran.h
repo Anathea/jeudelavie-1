@@ -10,7 +10,14 @@
 #include <unistd.h>
 #include <iostream>
 #include <sstream>
+#include <typeinfo>
 #include "Position.h"
+#include "Monde.h"
+#include <vector>
+#include "Element.h"
+#include "Fixe.h"
+#include "Mobile.h"
+#include "Humain.h"
 
 using namespace std;
 
@@ -21,6 +28,7 @@ public:
   
   void clear();
   
+  void affMonde(Monde _monde);
   /*
  * type :
  * 0 | . | case inexistante
@@ -31,7 +39,6 @@ public:
  * 5 | M | ressource mobile
  */
   void affElement(int type, Position _pos);
-  void fondNoir();
   void txtPos(int _x, int _y);
   void pause();
 private:
@@ -39,4 +46,3 @@ private:
 };
 
 #endif	/* ECRAN_H */
-
