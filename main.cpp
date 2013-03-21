@@ -4,8 +4,9 @@
 #include "Position.h"
 #include "Test.h"
 #include "Ecran.h"
+#include "Parametres.h"
 
-using namespace ::std;
+using namespace std;
 
 /*
  * 
@@ -13,6 +14,7 @@ using namespace ::std;
 int
 main(int argc, char** argv)
 {
+  /*
   cout << "Lancement du programme\n";
   Test test;
 
@@ -27,5 +29,12 @@ main(int argc, char** argv)
   
   e.txtPos(0, 11);
 
+  return 0;
+  */
+  Parametres param;
+
+  cout << param.getValeurParametre("tpause") << endl;
+  param.setValeurParam("tpause", 25);
+  cout << param.getValeurParametre("tpause") << endl;
   return 0;
 }
