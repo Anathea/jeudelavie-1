@@ -14,7 +14,6 @@ using namespace std;
 int
 main(int argc, char** argv)
 {
-  /*
   cout << "Lancement du programme\n";
   Test test;
 
@@ -23,11 +22,5 @@ main(int argc, char** argv)
   e.affMonde(monde);
 
   return 0;
-  */
-  Parametres param;
 
-  cout << param.getValeurParametre("tpause") << endl;
-  param.setValeurParam("tpause", 25);
-  cout << param.getValeurParametre("tpause") << endl;
-  return 0;
 }

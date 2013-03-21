@@ -11,6 +11,9 @@
 #include <map>
 #include "Position.h"
 #include "Element.h"
+#include "Parametres.h"
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -29,15 +32,14 @@ public:
   getMap();
 
   // Autres méthodes
-  void
-  afficher() const;
-  unsigned int
-  estValide(Position _pos) const; // Pour vérifier si la position est valide (renvoie 1) ou non (renvoie 0)
-  void
-  ajouter(Element * _elt);
+  void afficher() const;
+  unsigned int estValide(Position _pos) const; // Pour vérifier si la position est valide (renvoie 1) ou non (renvoie 0)
+  void ajouter(Element * _elt);
+  Position posAleatoire();
 
 private:
   map<Position, unsigned int> wMap;
+  Parametres param;
 };
 
 #endif	/* MONDE_H */
