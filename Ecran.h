@@ -15,8 +15,10 @@
 #include "Monde.h"
 #include <vector>
 #include "Element.h"
-#include "Fixe.h"
-#include "Mobile.h"
+#include "Arbre.h"
+#include "Baie.h"
+#include "Lapin.h"
+#include "Sanglier.h"
 #include "Humain.h"
 
 using namespace std;
@@ -35,8 +37,10 @@ public:
  * 1 | * | case vide
  * 2 | H | homme
  * 3 | F | femme
- * 4 | I | ressource immobile
- * 5 | M | ressource mobile
+ * 4 | H | Arbre
+ * 5 | F | Baie
+ * 6 | M | Sanglier
+ * 7 | I | Lapin
  */
   void affElement(int type, Position _pos);
   void txtPos(int _x, int _y);
