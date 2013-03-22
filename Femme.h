@@ -8,7 +8,7 @@
 #ifndef FEMME_H
 #define	FEMME_H
 
-class Femme {
+class Femme : public Element {
 public:
   Femme();
   Femme(const Femme& orig);

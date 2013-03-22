@@ -8,7 +8,7 @@
 #ifndef LAPIN_H
 #define	LAPIN_H
 
-class Lapin {
+class Lapin : public Element {
 public:
   Lapin();
   Lapin(const Lapin& orig);

@@ -8,7 +8,7 @@
 #ifndef BAIE_H
 #define	BAIE_H
 
-class Baie {
+class Baie : public Element {
 public:
   Baie();
   Baie(const Baie& orig);

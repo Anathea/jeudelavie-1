@@ -8,7 +8,7 @@
 #ifndef ARBRE_H
 #define	ARBRE_H
 
-class Arbre {
+class Arbre : public Element {
 public:
   Arbre();
   Arbre(const Arbre& orig);

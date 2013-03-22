@@ -8,7 +8,7 @@
 #ifndef SANGLIER_H
 #define	SANGLIER_H
 
-class Sanglier {
+class Sanglier : public Element {
 public:
   Sanglier();
   Sanglier(const Sanglier& orig);
