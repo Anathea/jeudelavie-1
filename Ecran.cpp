@@ -5,6 +5,10 @@
  * Created on 15 mars 2013, 11:31
  */
 #include "Ecran.h"
+#include "Homme.h"
+#include "Femme.h"
+#include "RessourceFixe.h"
+#include "RessourceMobile.h"
 
 Ecran::Ecran()
 {
@@ -34,37 +38,48 @@ void Ecran::clear()
 
 void Ecran::affMonde(Monde _monde)
 {
+  cout << "taille monde : " << _monde.size() << "\n";
+  
   for(long unsigned int i=0 ; i<_monde.size() ; i++)
   {
     Position pos = _monde.at(i)->getPos();
     int type = 0;
+    
     if (pos.estValide())
     {
-      if(typeid(_monde.at(i)) == typeid(Humain))
-        cout << "humain\n";//type = 2;
-      /*else if(typeid(_monde.at(i)) == typeid(Femme))
-        type = 3;*/
-      else if(typeid(_monde.at(i)) == typeid(Fixe))
-        cout << "fixe\n";//type = 4;
-      else if(typeid(_monde.at(i)) == typeid(Mobile))
-        cout << "mobile\n";//type = 5;
+      if(typeid(_monde.at(i)) == typeid(Homme))
+        type = 2;
+      else if(typeid(_monde.at(i)) == typeid(Femme))
+        type = 3;
+      else if(typeid(_monde.at(i)) == typeid(Arbre))
+        type = 4;
+      else if(typeid(_monde.at(i)) == typeid(Baie))
+        type = 5;
+      else if(typeid(_monde.at(i)) == typeid(Sanglier))
+        type = 6;
+      else if(typeid(_monde.at(i)) == typeid(Lapin))
+        type = 7;
       else
-        cout << "Aucun\n";
+        type = 1;
     }
     else
       cout << "\n!! Affichage d'un élément à une position non valide !!\n";
-    
+        
     affElement(type, pos);
+    cout << "type : " << type;
   }
 }
+
 /*
  * type :
  * 0 | . | case inexistante
  * 1 | * | case vide
- * 2 | H | homme
- * 3 | F | femme
- * 4 | I | ressource immobile
- * 5 | M | ressource mobile
+ * 2 | H | Homme
+ * 3 | F | Femme
+ * 4 | H | Arbre
+ * 5 | F | Baie
+ * 6 | M | Sanglier
+ * 7 | I | Lapin
  */
 void Ecran::affElement(int _type, Position _pos)
 {
@@ -77,8 +92,10 @@ void Ecran::affElement(int _type, Position _pos)
     case 1 : cout << "*"; break;
     case 2 : cout << "H"; break;
     case 3 : cout << "F"; break;
-    case 4 : cout << "I"; break;
-    case 5 : cout << "M"; break;
+    case 4 : cout << "A"; break;
+    case 5 : cout << "B"; break;
+    case 6 : cout << "S"; break;
+    case 7 : cout << "L"; break;
     default : break;
   }
 
