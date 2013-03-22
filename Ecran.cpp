@@ -16,13 +16,13 @@ Ecran::~Ecran()
 
 void Ecran::clear()
 {
-  unsigned int tailleX = 10; // à changer : tailleX/Y doit être dans le fichier paramètres
-  unsigned int tailleY = 10;
+  int tailleX = 10; // à changer : tailleX/Y doit être dans le fichier paramètres
+  int tailleY = 10;
   
   cout << "\033[H\033[2J";
   Position pos;
-  for(unsigned int x=0 ; x<tailleX+1 ; x++)
-    for(unsigned int y=0 ; y<tailleY+2 ; y++)
+  for(int x=0 ; x<tailleX+1 ; x++)
+    for(int y=0 ; y<tailleY+2 ; y++)
     {
       pos = Position(x, y);
       if (pos.estValide())

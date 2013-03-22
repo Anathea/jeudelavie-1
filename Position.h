@@ -16,28 +16,29 @@ class Position
 {
 public:
   // Constructeurs
-  Position(const unsigned int _x = 0, const unsigned int _y = 0);
+  Position();
+  Position(const int _x, const int _y);
   virtual
   ~Position();
 
   // Getters & setters
   void
-  setPos(const unsigned int, const unsigned int);
-  unsigned int getX() const;
-  unsigned int getY() const;
+  setPos(const int _x, const int _y);
+  int getX() const;
+  int getY() const;
   bool operator < (const Position & p2) const;
   void
-  setX(unsigned int x);
+  setX(int _x);
   void
-  setY(unsigned int y);
+  setY(int _y);
 
   // Autres méthodes
   void afficher();
   bool estValide();
 
 private:
-  unsigned int x;
-  unsigned int y;
+  int x;
+  int y;
 };
 
 ostream & operator << (ostream & Out, const Position &pos);

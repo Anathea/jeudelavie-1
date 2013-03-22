@@ -8,7 +8,12 @@
 #include "Position.h"
 
 
-Position::Position(const unsigned int _x, const unsigned int _y) :
+Position::Position() :
+  x(0), y(0)
+{
+}
+
+Position::Position(const int _x, const int _y) :
     x(_x), y(_y)
 {
 }
@@ -17,32 +22,32 @@ Position::~Position()
 {
 }
 
-unsigned int
+int
 Position::getX() const
 {
   return this->x;
 }
 
-unsigned int
+int
 Position::getY() const
 {
   return this->y;
 }
 
 void
-Position::setX(unsigned int x)
+Position::setX(int _x)
 {
-  this->x = x;
+  this->x = _x;
 }
 
 void
-Position::setY(unsigned int y)
+Position::setY(int _y)
 {
-  this->y = y;
+  this->y = _y;
 }
 
 void
-Position::setPos(const unsigned int _x, const unsigned int _y)
+Position::setPos(const int _x, const int _y)
 {
   this->x = _x;
   this->x = _y;
@@ -71,7 +76,6 @@ operator <<(ostream& Out, const Position& pos)
 bool
 Position::estValide ()
 {
-  bool res = (((this->x%2 == 0 && this->y%2 == 0) || (this->x%2 != 0 && this->y%2 != 0)));
-  return res;
+  return (((this->x%2 == 0 && this->y%2 == 0) || (this->x%2 != 0 && this->y%2 != 0)));
 }
 

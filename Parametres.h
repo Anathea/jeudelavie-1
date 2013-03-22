@@ -31,7 +31,7 @@ public:
   virtual
   ~Parametres();
 
-  const int getValeurParametre( const string );
+  int getValeurParametre( const string ) const;
   const void setValeurParam(const string, const int );
 };
 

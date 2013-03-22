@@ -10,8 +10,7 @@
 
 using namespace std;
 
-Monde::Monde() :
-    vector<Element *>(), wMap()
+Monde::Monde()
 {
   srand (time(NULL));
   cout << "Création du Monde...\n";
@@ -28,7 +27,7 @@ Monde::estValide(Position _pos) const
   bool occupied = false;
   map<Position, unsigned int>::const_iterator it;
 
-  if(_pos.getX() < 0 || _pos.getX() > 20 || _pos.getY() < 0 || _pos.getY() > 20)
+  if(_pos.getX() < 0 || _pos.getX() > param.getValeurParametre("l_carte") || _pos.getY() < 0 || _pos.getY() > param.getValeurParametre("h_carte"))
     outOfMap = true;
 
   if (wMap.find(_pos) != wMap.end())
