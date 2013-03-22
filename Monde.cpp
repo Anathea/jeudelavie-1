@@ -14,13 +14,6 @@ Monde::Monde()
 {
   srand (time(NULL));
   cout << "Création du Monde...\n";
-  
-  ajouter(Element(Position(2,6), string("Toto"), &this));
-  ajouter(Element(Position(3,9), string("Tata"), &this));
-  ajouter(Element(Position(2,6), string("Tutu"), &this));
-  ajouter(Element(Position(2,8), string("Titi"), &this));
-  ajouter(Element(Position(7,1), string("Toutou"), &this));
-  ajouter(Element(Position(5,5), string("Tonton"), &this));
 }
 
 Monde::~Monde()

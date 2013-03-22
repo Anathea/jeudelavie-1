@@ -7,12 +7,12 @@
 
 #include "Homme.h"
 
-Homme::Homme() {
+Homme::Homme(Monde *_monde) :
+    Element(_monde), Humain(_monde)
+{
 }
 
-Homme::Homme(const Homme& orig) {
-}
-
-Homme::~Homme() {
+Homme::~Homme()
+{
 }
 

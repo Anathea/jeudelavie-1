@@ -6,12 +6,13 @@
  */
 
 #ifndef FEMME_H
-#define	FEMME_H
+#define FEMME_H
 
-class Femme : public Element {
+#include "Humain.h"
+
+class Femme : public Humain {
 public:
-  Femme();
-  Femme(const Femme& orig);
+  Femme(Monde *_monde);
   virtual ~Femme();
 private:
 

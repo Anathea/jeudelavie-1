@@ -12,7 +12,6 @@ using namespace std;
 Element::Element(Monde *_monde) :
     pos(), nom("Inconnu")
 {
-  cout << "Création d'un Element...\n";
   monde = _monde;
 }
 

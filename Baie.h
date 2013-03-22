@@ -6,12 +6,13 @@
  */
 
 #ifndef BAIE_H
-#define	BAIE_H
+#define	 BAIE_H
 
-class Baie : public Element {
+#include "Ressource.h"
+
+class Baie : public Ressource {
 public:
-  Baie();
-  Baie(const Baie& orig);
+  Baie(Monde *_monde);
   virtual ~Baie();
 private:
 

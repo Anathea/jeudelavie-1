@@ -6,13 +6,16 @@
  */
 
 #ifndef HOMME_H
-#define	HOMME_H
+#define HOMME_H
 
-class Homme : public Element {
+#include "Humain.h"
+
+class Homme : public Humain
+{
 public:
-  Homme();
-  Homme(const Homme& orig);
-  virtual ~Homme();
+  Homme(Monde *_monde);
+  virtual
+  ~Homme();
 private:
 
 };

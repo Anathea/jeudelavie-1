@@ -7,12 +7,12 @@
 
 #include "Femme.h"
 
-Femme::Femme() {
+Femme::Femme(Monde *_monde) :
+    Element(_monde), Humain(_monde)
+{
 }
 
-Femme::Femme(const Femme& orig) {
-}
-
-Femme::~Femme() {
+Femme::~Femme()
+{
 }
 

@@ -10,6 +10,7 @@
 
 #include <string>
 #include "Element.h"
+#include "Monde.h"
 
 using namespace std;
 
@@ -22,7 +23,7 @@ typedef enum {
   NORDOUEST
 } Direction;
 
-class Mobile : public Element
+class Mobile : public virtual Element
 {
 public:
   // Constructeurs

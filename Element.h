@@ -10,10 +10,10 @@
 
 #include <string>
 #include <iostream>
-#include "Monde.h"
 #include "Position.h"
+#include "Parametres.h"
 
-class Monde;
+class Monde; // Contre problème d'inclusion cyclique
 
 class Element
 {
@@ -41,8 +41,8 @@ public:
   // Autres méthodes
   void
   afficher() const;
-  //virtual void
-  //agir() const;
+//  virtual void
+//  agir() const;
 
 private:
   Position pos;

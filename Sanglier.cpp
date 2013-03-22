@@ -7,12 +7,12 @@
 
 #include "Sanglier.h"
 
-Sanglier::Sanglier() {
+Sanglier::Sanglier(Monde *_monde) :
+    Element(_monde), Ressource(_monde), Mobile(_monde)
+{
 }
 
-Sanglier::Sanglier(const Sanglier& orig) {
-}
-
-Sanglier::~Sanglier() {
+Sanglier::~Sanglier()
+{
 }
 

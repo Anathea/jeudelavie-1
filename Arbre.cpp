@@ -7,12 +7,13 @@
 
 #include "Arbre.h"
 
-Arbre::Arbre() {
+Arbre::Arbre(Monde *_monde) :
+    Element(_monde), Ressource(_monde)
+{
+
 }
 
-Arbre::Arbre(const Arbre& orig) {
-}
-
-Arbre::~Arbre() {
+Arbre::~Arbre()
+{
 }
 

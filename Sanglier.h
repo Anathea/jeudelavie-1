@@ -6,13 +6,17 @@
  */
 
 #ifndef SANGLIER_H
-#define	SANGLIER_H
+#define	 SANGLIER_H
 
-class Sanglier : public Element {
+#include "Ressource.h"
+#include "Mobile.h"
+
+class Sanglier : public Ressource, public Mobile
+{
 public:
-  Sanglier();
-  Sanglier(const Sanglier& orig);
-  virtual ~Sanglier();
+  Sanglier(Monde *_monde);
+  virtual
+  ~Sanglier();
 private:
 
 };

@@ -8,7 +8,7 @@
 #include "Humain.h"
 
 Humain::Humain(Monde *_monde) :
-    Mobile(_monde), age(0), vie(100), espVie(7000)
+    Element(_monde), Mobile(_monde), age(0), vie(100), espVie(7000)
 {
 }
 
@@ -16,7 +16,7 @@ Humain::Humain(const Position &_pos, const string &_nom,
     const unsigned int _vitesse, const unsigned int _vision,
     const unsigned int _age, const unsigned int _vie,
     const unsigned int _espVie, Monde *_monde) :
-    Mobile(Element(_pos, _nom, _monde), _vitesse, _vision), age(_age), vie(
+    Element(_monde), Mobile(Element(_pos, _nom, _monde), _vitesse, _vision), age(_age), vie(
         _vie), espVie(_espVie)
 {
   cout << "Création d'un Humain...\n";

@@ -6,13 +6,17 @@
  */
 
 #ifndef LAPIN_H
-#define	LAPIN_H
+#define LAPIN_H
 
-class Lapin : public Element {
+#include "Ressource.h"
+#include "Mobile.h"
+
+class Lapin : public Ressource, public Mobile
+{
 public:
-  Lapin();
-  Lapin(const Lapin& orig);
-  virtual ~Lapin();
+  Lapin(Monde *_monde);
+  virtual
+  ~Lapin();
 private:
 
 };

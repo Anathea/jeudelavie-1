@@ -6,12 +6,13 @@
  */
 
 #ifndef ARBRE_H
-#define	ARBRE_H
+#define ARBRE_H
 
-class Arbre : public Element {
+#include "Ressource.h"
+
+class Arbre : public Ressource {
 public:
-  Arbre();
-  Arbre(const Arbre& orig);
+  Arbre(Monde *_monde);
   virtual ~Arbre();
 private:
 

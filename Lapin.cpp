@@ -7,12 +7,12 @@
 
 #include "Lapin.h"
 
-Lapin::Lapin() {
+Lapin::Lapin(Monde *_monde) :
+    Element(_monde), Ressource(_monde), Mobile(_monde)
+{
 }
 
-Lapin::Lapin(const Lapin& orig) {
-}
-
-Lapin::~Lapin() {
+Lapin::~Lapin()
+{
 }
 

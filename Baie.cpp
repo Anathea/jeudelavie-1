@@ -7,12 +7,12 @@
 
 #include "Baie.h"
 
-Baie::Baie() {
+Baie::Baie(Monde *_monde) :
+    Element(_monde), Ressource(_monde)
+{
 }
 
-Baie::Baie(const Baie& orig) {
-}
-
-Baie::~Baie() {
+Baie::~Baie()
+{
 }
 

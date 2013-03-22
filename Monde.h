@@ -10,20 +10,10 @@
 
 #include <vector>
 #include <map>
-#include "Position.h"
-#include "Element.h"
-#include "Parametres.h"
 #include <stdlib.h>
 #include <time.h>
-#include "Homme.h"
-#include "Femme.h"
-#include "Arbre.h"
-#include "Baie.h"
-#include "Sanglier.h"
-#include "Lapin.h"
+#include "Element.h"
 
-class Element;
-// Contre problème d'inclusion cyclique
 
 class Monde : public vector<Element *>
 {
