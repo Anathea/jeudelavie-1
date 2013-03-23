@@ -30,19 +30,21 @@ void Ecran::clear() const
   {
     for(int x=0 ; x<tailleX ; x++) // ligne 1
     {
-      cout << "/ \\ ";
+      cout << "  }---{   * ";
     }
     cout << "\n";
     
     for(int x=0 ; x<tailleX ; x++) // ligne 2
     {
-      cout << " * |";
+      cout << " /     \\    ";
     }
     cout << "\n";
     
     for(int x=0 ; x<tailleX ; x++) // ligne 3
     {
-      cout << "\\ / ";
+      cout << "{   *   }---";
+      /*if (x<tailleX-1)
+        cout << "{   ---{";*/
     }
     cout << "\n";
     
@@ -50,9 +52,7 @@ void Ecran::clear() const
     {
       for(int x=0 ; x<tailleX ; x++) // ligne 4
       {
-        cout << " | ";
-        if (x < tailleX-1)
-          cout << "*";
+        cout << " \\     /    ";
       }
       cout << "\n";
     }
