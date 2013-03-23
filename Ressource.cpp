@@ -31,6 +31,11 @@ Ressource::Ressource(const unsigned int& _posX, const unsigned int& _posY,
 {
 }
 
+void
+Ressource::agir() const
+{
+}
+
 Ressource::~Ressource()
 {
   // TODO Auto-generated destructor stub

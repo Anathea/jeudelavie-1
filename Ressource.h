@@ -10,7 +10,7 @@
 
 #include "Element.h"
 
-class Ressource : public virtual Element
+class Ressource : public Element
 {
 
 public:
@@ -19,6 +19,10 @@ public:
   Ressource(const Position & _pos, const string & _nom, Monde *_monde);
   Ressource(const unsigned int & _posX, const unsigned int & _posY,
       const string & _nom, Monde *_monde);
+
+  void
+  agir() const;
+
   virtual
   ~Ressource();
 };

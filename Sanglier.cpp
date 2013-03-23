@@ -8,7 +8,7 @@
 #include "Sanglier.h"
 
 Sanglier::Sanglier(Monde *_monde) :
-    Element(_monde), Ressource(_monde), Mobile(_monde)
+    Ressource(_monde), Mobile(_monde)
 {
 }
 

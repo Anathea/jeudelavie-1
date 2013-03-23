@@ -15,9 +15,9 @@ main(int argc, char** argv)
 {
   cout << "Lancement du programme\n";
   Monde monde;
-  // Test test(monde);
-  Ecran e;
-  e.affMonde(monde);
+  Test test(monde);
+//  Ecran e;
+//  e.affMonde(monde);
 
   return 0;
 

@@ -16,9 +16,9 @@ Test::Test(Monde &_mondeTest) :
   testPosition();
   testDeplacement();
 
-  cout << "Ajout d'un élément Toto en (1;3)" << endl;
+  cout << "Ajout d'un mobile Toto en (1;3)" << endl;
 
-  Element *toto = new Element(1, 3, "Toto", &mondeTest);
+  Mobile *toto = new Mobile(Position(1, 3), "Toto", 1, 1, &mondeTest);
   mondeTest.ajouter(toto);
 
   mondeTest.afficher();
@@ -55,23 +55,28 @@ Test::testDeplacement()
   Monde monde;
   cout << "== Déplacement d'un Mobile ==" << endl;
   cout << "- Création et ajout de Mobile1 en (3,1)" << endl;
-  Position posMobile1(3,1);
+  Position posMobile1(3, 1);
   Mobile mobile1(posMobile1, "Mobile1", 1, 1, &monde);
   monde.ajouter(&mobile1);
   cout << "- Création et ajout de Mobile2 en (3,5)" << endl;
-  Position posMobile2(3,5);
+  Position posMobile2(3, 5);
   Mobile mobile2(posMobile2, "Mobile1", 1, 1, &monde);
   monde.ajouter(&mobile2);
-  if(mobile1.seDeplacer(NORD))
+  if (mobile1.seDeplacer(NORD))
     cout << "NOK : déplacement possible au nord, en haut de la map" << endl;
   else
     cout << "OK : déplacement impossible au nord, en haut de la map" << endl;
-  if(mobile1.seDeplacer(SUD))
+  if (mobile1.seDeplacer(SUD))
     cout << "OK : déplacement normal possible" << endl;
   else
     cout << "NOK : déplacement normal impossible" << endl;
-  if(mobile1.seDeplacer(SUD))
+  if (mobile1.seDeplacer(SUD))
     cout << "NOK : déplacement possible sur une place occupée" << endl;
   else
     cout << "OK : déplacement impossible, place occupée" << endl;
+  Direction rDir = mobile2.getRandomDirection();
+  if (mobile2.seDeplacer(SUD) && mobile2.seDeplacer(rDir))
+    cout << "OK : déplacement aléatoire (" << rDir << ") possible" << endl;
+  else
+    cout << "NOK : déplacement aléatoire (" << rDir << ") impossible" << endl;
 }

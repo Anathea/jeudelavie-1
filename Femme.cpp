@@ -8,7 +8,7 @@
 #include "Femme.h"
 
 Femme::Femme(Monde *_monde) :
-    Element(_monde), Humain(_monde)
+    Humain(_monde)
 {
 }
 

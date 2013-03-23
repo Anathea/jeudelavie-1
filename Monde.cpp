@@ -7,12 +7,11 @@
 
 #include "Monde.h"
 #include "Element.h" // Contre problème d'inclusion cyclique
-
 using namespace std;
 
 Monde::Monde()
 {
-  srand (time(NULL));
+  srand(time(NULL));
   cout << "Création du Monde...\n";
 }
 
@@ -27,7 +26,8 @@ Monde::estValide(Position _pos) const
   bool occupied = false;
   map<Position, unsigned int>::const_iterator it;
 
-  if(_pos.getX() < 0 || _pos.getX() > param.getValeurParametre("l_carte") || _pos.getY() < 0 || _pos.getY() > param.getValeurParametre("h_carte"))
+  if (_pos.getX() < 0 || _pos.getX() > param.getValeurParametre("l_carte")
+      || _pos.getY() < 0 || _pos.getY() > param.getValeurParametre("h_carte"))
     outOfMap = true;
 
   if (wMap.find(_pos) != wMap.end())
@@ -51,16 +51,19 @@ Monde::afficher() const
 void
 Monde::ajouter(Element *_elt)
 {
-  if (estValide(_elt->getPos())){
+  if (estValide(_elt->getPos()))
+    {
       push_back(_elt); // ajoute un élément dans le vecteur
       wMap.insert(pair<Position, unsigned int>(_elt->getPos(), size() - 1)); // size() car Monde hérite de Vecteur
     }
 }
 
-Position Monde::posAleatoire(){
-  return ( Position(1+rand()%param.getValeurParametre("l_carte"), 1+rand()%param.getValeurParametre("h_carte")));
+Position
+Monde::posAleatoire()
+{
+  return (Position(1 + rand() % param.getValeurParametre("l_carte"),
+      1 + rand() % param.getValeurParametre("h_carte")));
 }
-
 
 const map<Position, unsigned int>&
 Monde::getMap() const

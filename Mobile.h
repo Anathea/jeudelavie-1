@@ -14,22 +14,20 @@
 
 using namespace std;
 
-typedef enum {
-  NORD,
-  NORDEST,
-  SUDEST,
-  SUD,
-  SUDOUEST,
-  NORDOUEST
+typedef enum
+{
+  NORD = 0, NORDEST, SUDEST, SUD, SUDOUEST, NORDOUEST
 } Direction;
 
-class Mobile : public virtual Element
+class Mobile : public Element
 {
 public:
   // Constructeurs
   Mobile(Monde *_monde);
-  Mobile(const Element &_elem, const unsigned int _vision, const unsigned int _vitesse);
-  Mobile(const Position & _pos, const string & _nom, const unsigned int _vision, const unsigned int _vitesse, Monde *_monde);
+  Mobile(const Element &_elem, const unsigned int _vision,
+      const unsigned int _vitesse);
+  Mobile(const Position & _pos, const string & _nom, const unsigned int _vision,
+      const unsigned int _vitesse, Monde *_monde);
 
   virtual
   ~Mobile();
@@ -43,9 +41,14 @@ public:
   getVision() const;
   void
   setVision(const unsigned int _vision);
+  Direction
+  getRandomDirection() const;
 
   //Autres méthodes
-  bool seDeplacer(const Direction _dir);
+  bool
+  seDeplacer(const Direction _dir);
+  void
+  agir() const;
 
 private:
   unsigned int vision;

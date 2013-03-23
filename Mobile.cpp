@@ -60,6 +60,7 @@ Mobile::seDeplacer(const Direction _dir)
   Monde *monde = this->getMonde();
   unsigned int indice = monde->getMap().at(curPos);
   bool possible;
+
   switch (_dir)
     {
   case NORD:
@@ -88,14 +89,27 @@ Mobile::seDeplacer(const Direction _dir)
     break;
     }
   possible = monde->estValide(nouvPos);
-  if (possible) {
-    // Modification de la position de l'élément
-    setPos(nouvPos);
-    // Modification de la map
-    monde->getMap().erase(curPos);
-    monde->getMap().insert(pair<Position, unsigned int>(nouvPos,indice));
+  if (possible)
+    {
+      // Modification de la position de l'élément
+      setPos(nouvPos);
+      // Modification de la map
+      monde->getMap().erase(curPos);
+      monde->getMap().insert(pair<Position, unsigned int>(nouvPos, indice));
 
-  }
+    }
 
   return possible;
+}
+
+void
+Mobile::agir() const
+{
+
+}
+
+Direction
+Mobile::getRandomDirection() const
+{
+  return (Direction)(rand() % 6);
 }

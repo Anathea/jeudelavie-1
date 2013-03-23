@@ -8,7 +8,7 @@
 #include "Arbre.h"
 
 Arbre::Arbre(Monde *_monde) :
-    Element(_monde), Ressource(_monde)
+    Ressource(_monde)
 {
 
 }
