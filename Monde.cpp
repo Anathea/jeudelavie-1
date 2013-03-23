@@ -73,3 +73,9 @@ Monde::getMap()
 {
   return wMap;
 }
+
+Parametres
+Monde::getParam() const
+{
+  return param;
+}

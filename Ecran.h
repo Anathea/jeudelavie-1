@@ -7,13 +7,15 @@
 
 #ifndef ECRAN_H
 #define	ECRAN_H
+
 #include <unistd.h>
 #include <iostream>
 #include <sstream>
 #include <typeinfo>
+#include <vector>
+
 #include "Position.h"
 #include "Monde.h"
-#include <vector>
 #include "Element.h"
 #include "Arbre.h"
 #include "Baie.h"
@@ -25,7 +27,7 @@ using namespace std;
 
 class Ecran {
 public:
-  Ecran();
+  Ecran(Monde * _monde);
   virtual ~Ecran();
   
   void clear() const;
@@ -33,9 +35,11 @@ public:
   void pause() const;
 private:
   void affElement(Element *_elt) const;
-  void txtPos(Position _pos, string _s) const;
-  void txtPos(Position _pos, string _s, int color) const;
+  void txtPos(int _x, int _y, string _s) const;
+  void txtPos(int _x, int _y, string _s, int color) const;
   void changeColor(int couleur) const;
+  
+  Monde * monde;
 };
 
 #endif	/* ECRAN_H */

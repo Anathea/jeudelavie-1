@@ -12,16 +12,23 @@ using namespace std;
 
 Test::Test(Monde &_mondeTest) :
     mondeTest(_mondeTest)
-{
+{ 
   testPosition();
   testDeplacement();
 
-  cout << "Ajout d'un élément Toto en (1;3)" << endl;
-
-  Element *toto = new Element(1, 3, "Toto", &mondeTest);
-  mondeTest.ajouter(toto);
+  cout << "Ajout de 3 éléments en (1;3), (4;4), (7,5)" << endl;
+  
+  Element *pierre = new Element(1, 3, "Pierre", &mondeTest);
+  Element *jean = new Element(4, 4, "Jean", &mondeTest);
+  Element *jacques = new Element(7, 5, "Jacques", &mondeTest);
+  
+  mondeTest.ajouter(pierre);
+  mondeTest.ajouter(jean);
+  mondeTest.ajouter(jacques);
 
   mondeTest.afficher();
+  
+  testAffichage();
 }
 
 Test::~Test()
@@ -29,7 +36,15 @@ Test::~Test()
 }
 
 void
-Test::testPosition()
+Test::testAffichage() const
+{
+  cout << "=== Démarrage test Affichage ===" << endl;
+  Ecran e = new Monde(mondeTest);
+  e.affMonde(mondeTest);
+}
+
+void
+Test::testPosition() const
 {
   Position posOK(1, 3);
   Position posNOK(1, 4);
