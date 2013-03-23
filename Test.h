@@ -10,14 +10,20 @@
 
 #include "Monde.h"
 #include "Mobile.h"
+#include "Ecran.h"
+#include "Homme.h"
+#include "Femme.h"
+#include "Sanglier.h"
+#include "Lapin.h"
 
 class Test {
 public:
   Test(Monde &_mondeTest);
   virtual ~Test();
   
-  void testPosition();
   void testCreation();
+  void testAffichage() const;
+  void testPosition() const;
   void testDeplacement();
   
 private:

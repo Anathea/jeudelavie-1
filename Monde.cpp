@@ -86,3 +86,9 @@ Monde::addRandomElements()
       ajouter(new Mobile(posAleatoire(), Element::getRandomName(), 1, 1, this));
   }
 }
+
+Parametres
+Monde::getParam() const
+{
+  return param;
+}

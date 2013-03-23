@@ -12,7 +12,7 @@ using namespace std;
 
 Test::Test(Monde &_mondeTest) :
     mondeTest(_mondeTest)
-{
+{ 
   testPosition();
   testDeplacement();
 
@@ -22,6 +22,8 @@ Test::Test(Monde &_mondeTest) :
   mondeTest.ajouter(toto);
 
   mondeTest.afficher();
+  
+  testAffichage();
 }
 
 Test::~Test()
@@ -29,7 +31,15 @@ Test::~Test()
 }
 
 void
-Test::testPosition()
+Test::testAffichage() const
+{
+  cout << "=== Démarrage test Affichage ===" << endl;
+  Ecran e = new Monde(mondeTest);
+  e.affMonde(mondeTest);
+}
+
+void
+Test::testPosition() const
 {
   Position posOK(1, 3);
   Position posNOK(1, 4);

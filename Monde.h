@@ -28,7 +28,8 @@ public:
   getMap() const;
   map<Position, unsigned int>&
   getMap();
-
+  Parametres getParam() const;
+  
   // Autres méthodes
   void
   afficher() const;

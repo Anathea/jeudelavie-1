@@ -12,10 +12,10 @@ int
 main(int argc, char** argv)
 {
   cout << "Lancement du programme\n";
-  Monde monde;
+  Monde *monde = new Monde();
   // Test test(monde);
-  Ecran e;
-  e.affMonde(monde);
+  Ecran e(monde);
+  e.affMonde(*monde);
 
   return 0;
 
