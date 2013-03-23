@@ -1,3 +1,5 @@
 tpause 5
 l_carte 20
 h_carte 10
+nb_mobile 5
+nb_ressource 5

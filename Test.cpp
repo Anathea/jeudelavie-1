@@ -49,6 +49,13 @@ Test::testPosition()
 }
 
 void
+Test::testCreation()
+{
+  cout << "=== Démarrage tests Création d'éléments ===" << endl;
+  Monde monde;
+}
+
+void
 Test::testDeplacement()
 {
   cout << "=== Démarrage tests Deplacement ===" << endl;

@@ -17,6 +17,7 @@ public:
   virtual ~Test();
   
   void testPosition();
+  void testCreation();
   void testDeplacement();
   
 private:

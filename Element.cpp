@@ -6,12 +6,20 @@
  */
 
 #include "Element.h"
+#include <time.h>
+#include <stdlib.h>
 
 using namespace std;
+
+const string Element::tnames[] =
+  { "Cyrano", "Christian", "Roxanne", "DeGuiche", "Raguenaud" };
+const vector<string> Element::names(tnames,
+    tnames + (sizeof(tnames) / sizeof(tnames[0])));
 
 Element::Element(Monde *_monde) :
     pos(), nom("Inconnu")
 {
+  srand(time(0));
   monde = _monde;
 }
 
@@ -60,6 +68,12 @@ Monde *
 Element::getMonde() const
 {
   return monde;
+}
+
+string
+Element::getRandomName() const
+{
+  return names.at(rand() % names.size());
 }
 
 void

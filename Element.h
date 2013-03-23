@@ -38,6 +38,8 @@ public:
   setPos(const Position _pos);
   Monde *
   getMonde() const;
+  string
+  getRandomName() const;
 
   // Autres méthodes
   void
@@ -49,6 +51,8 @@ private:
   Position pos;
   string nom;
   Monde *monde;
+  static const string tnames[];
+  static const vector<string> names;
 
 };
 
