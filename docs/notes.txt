@@ -6,7 +6,8 @@ Pour compiler et lancer à la main :
 Executer l'executable généré par l'éditeur :
 NetBeans : dist/Debug/GNU-Linux-x86/jeudelavie
 OU
-g++ -Wall -Werror main.cpp Ecran.cpp Element.cpp Fixe.cpp Humain.cpp Parametres.cpp Mobile.cpp Monde.cpp Position.cpp Test.cpp -o /tmp/jeudelavie; /tmp/jeudelavie
+g++ -Wall -Werror main.cpp Ecran.cpp Element.cpp Fixe.cpp Humain.cpp Homme.cpp Femme.cpp Arbre.cpp Baie.cpp Sanglier.cpp Lapin.cpp Parametres.cpp Mobile.cpp Monde.cpp Position.cpp Ressource.cpp Test.cpp -o /tmp/jeudelavie
+
 
 **Énoncé**
 

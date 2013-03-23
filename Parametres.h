@@ -32,7 +32,7 @@ public:
   ~Parametres();
 
   int getValeurParametre( const string ) const;
-  const void setValeurParam(const string, const int );
+  void setValeurParam(const string _cle, const int _valeur);
 };
 
 #endif /* PARAMETRES_H_ */

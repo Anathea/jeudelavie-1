@@ -64,7 +64,7 @@ Parametres::getValeurParametre(const string _cle) const
   return param.find(_cle)->second;
 }
 
-const void
+void
 Parametres::setValeurParam(const string _cle, const int _valeur)
 {
 
