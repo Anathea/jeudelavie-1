@@ -38,8 +38,8 @@ public:
   setPos(const Position _pos);
   Monde *
   getMonde() const;
-  string
-  getRandomName() const;
+  static string
+  getRandomName();
 
   // Autres méthodes
   void

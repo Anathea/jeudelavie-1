@@ -71,7 +71,7 @@ Element::getMonde() const
 }
 
 string
-Element::getRandomName() const
+Element::getRandomName()
 {
   return names.at(rand() % names.size());
 }

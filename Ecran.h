@@ -28,25 +28,14 @@ public:
   Ecran();
   virtual ~Ecran();
   
-  void clear();
-  
-  void affMonde(Monde _monde);
-  /*
- * type :
- * 0 | . | case inexistante
- * 1 | * | case vide
- * 2 | H | homme
- * 3 | F | femme
- * 4 | H | Arbre
- * 5 | F | Baie
- * 6 | M | Sanglier
- * 7 | I | Lapin
- */
-  void affElement(int type, Position _pos);
-  void txtPos(int _x, int _y);
-  void pause();
+  void clear() const;
+  void affMonde(Monde _monde) const;
+  void pause() const;
 private:
-  void changeColor(int couleur);
+  void affElement(Element *_elt) const;
+  void txtPos(Position _pos, string _s) const;
+  void txtPos(Position _pos, string _s, int color) const;
+  void changeColor(int couleur) const;
 };
 
 #endif	/* ECRAN_H */

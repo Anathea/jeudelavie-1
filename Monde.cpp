@@ -6,6 +6,7 @@
  */
 
 #include "Monde.h"
+#include "Mobile.h"
 #include "Element.h" // Contre problème d'inclusion cyclique
 using namespace std;
 
@@ -59,7 +60,7 @@ Monde::ajouter(Element *_elt)
 }
 
 Position
-Monde::posAleatoire()
+Monde::posAleatoire() const
 {
   return (Position(1 + rand() % param.getValeurParametre("l_carte"),
       1 + rand() % param.getValeurParametre("h_carte")));
@@ -75,4 +76,13 @@ map<Position, unsigned int>&
 Monde::getMap()
 {
   return wMap;
+}
+
+void
+Monde::addRandomElements()
+{
+  int nbMobile = param.getValeurParametre("nb_mobile");
+  for(int i = 0;i<nbMobile;i++) {
+      ajouter(new Mobile(posAleatoire(), Element::getRandomName(), 1, 1, this));
+  }
 }
