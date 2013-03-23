@@ -20,42 +20,67 @@ Ecran::~Ecran()
 
 void Ecran::clear() const
 {
-  int tailleX = 10; // à changer : tailleX/Y doit être dans le fichier paramètres
-  int tailleY = 5;
+  changeColor(14);
+  int tailleX = 20; // à changer : tailleX/Y doit être dans le fichier paramètres
+  int tailleY = 10;
   
   cout << "\033[H\033[2J"; // efface l'écran
   
   Position pos;
-  for(int y=0 ; y<tailleY ; y++)
+  for(int y=0 ; y<tailleY ; y+=2)
   {
-    for(int x=0 ; x<tailleX ; x++) // ligne 1
+    for(int x=0 ; x<tailleX/2 ; x++) // ligne 1
     {
-      cout << "  }---{   * ";
+      if (y==0)
+        cout << "  .---.     ";
+      else if (y >= tailleY-2 && x==0)
+        cout << "  `---(   * ";
+      else
+        cout << "  )---(   * ";
     }
-    cout << "\n";
-    
-    for(int x=0 ; x<tailleX ; x++) // ligne 2
-    {
-      cout << " /     \\    ";
-    }
-    cout << "\n";
-    
-    for(int x=0 ; x<tailleX ; x++) // ligne 3
-    {
-      cout << "{   *   }---";
-      /*if (x<tailleX-1)
-        cout << "{   ---{";*/
-    }
-    cout << "\n";
-    
-    if (y != tailleY-1) // On affiche pas la dernière ligne
-    {
-      for(int x=0 ; x<tailleX ; x++) // ligne 4
-      {
-        cout << " \\     /    ";
-      }
+    if (y == 0)
       cout << "\n";
+    else
+      cout << "  )\n";
+    
+    for(int x=0 ; x<tailleX/2 ; x++) // ligne 2
+    {
+      if (y >= tailleY-2 && x==0)
+        cout << "       \\    ";
+      else
+        cout << " /     \\    ";
     }
+    if (y == 0)
+      cout << "\n";
+    else
+      cout << " /\n";
+    
+    for(int x=0 ; x<tailleX/2 ; x++) // ligne 3
+    {
+      if (y >= tailleY-2 && x==0)
+        cout << "        `---";
+      else if (y >= tailleY-2)
+        cout << "`       `---";
+      else
+        cout << "(   *   )---";
+
+    }
+    if (y == 0)
+      cout << ".\n";
+    else if (y >= tailleY-2)
+      cout << "`\n";
+    else
+      cout << "(\n";
+    
+      for(int x=0 ; x<tailleX/2 ; x++) // ligne 4
+      {
+        if (y < tailleY-2)
+          cout << " \\     /    ";
+      }
+    if (y < tailleY-2)
+    cout << " \\\n";
+    else
+      cout << "\n";
   }
 
 }
