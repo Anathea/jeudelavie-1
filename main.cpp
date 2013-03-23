@@ -7,9 +7,7 @@
 #include "Parametres.h"
 
 using namespace std;
-/*
- * 
- */
+
 int
 main(int argc, char** argv)
 {
@@ -17,7 +15,7 @@ main(int argc, char** argv)
   Monde monde;
   // Test test(monde);
   Ecran e;
-  e.affMonde(monde);
+  // e.affMonde(monde);
 
   return 0;
 

@@ -21,20 +21,43 @@ Ecran::~Ecran()
 void Ecran::clear() const
 {
   int tailleX = 10; // à changer : tailleX/Y doit être dans le fichier paramètres
-  int tailleY = 10;
+  int tailleY = 5;
   
   cout << "\033[H\033[2J"; // efface l'écran
   
   Position pos;
-  for(int x=0 ; x<tailleX+1 ; x++)
-    for(int y=0 ; y<tailleY+2 ; y++)
+  for(int y=0 ; y<tailleY ; y++)
+  {
+    for(int x=0 ; x<tailleX ; x++) // ligne 1
     {
-      pos = Position(x, y);
-      if (pos.estValide())
-        txtPos(pos, "*", 0);
-      else
-        txtPos(pos, ".", 1);
+      cout << "/ \\ ";
     }
+    cout << "\n";
+    
+    for(int x=0 ; x<tailleX ; x++) // ligne 2
+    {
+      cout << " * |";
+    }
+    cout << "\n";
+    
+    for(int x=0 ; x<tailleX ; x++) // ligne 3
+    {
+      cout << "\\ / ";
+    }
+    cout << "\n";
+    
+    if (y != tailleY-1) // On affiche pas la dernière ligne
+    {
+      for(int x=0 ; x<tailleX ; x++) // ligne 4
+      {
+        cout << " | ";
+        if (x < tailleX-1)
+          cout << "*";
+      }
+      cout << "\n";
+    }
+  }
+
 }
 
 void Ecran::affMonde(Monde _monde) const
