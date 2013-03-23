@@ -98,6 +98,8 @@ void Ecran::affElement(Element *_elt) const
 {
   Position pos = _elt->getPos();
   int type = 0;
+  int posX = pos.getX()*6+5;
+  int posY = pos.getY()*2+3;
   
   if (_elt->getMonde()->estValide(pos))
   {
@@ -116,13 +118,29 @@ void Ecran::affElement(Element *_elt) const
     
     switch(type)
     {
-      case 0 : txtPos(pos.getX()*3+2, pos.getY()+2, "H", 1); break;
-      case 1 : txtPos(pos.getX()*3+2, pos.getY()+2, "F", 1); break;
-      case 2 : txtPos(pos.getX()*3+4, pos.getY()+2, "A", 2); break;
-      case 3 : txtPos(pos.getX()*3+4, pos.getY()*2+2, "B", 2); break;
-      case 4 : txtPos(pos.getX()*3+4, pos.getY()*2+2, "S", 3); break;
-      case 5 : txtPos(pos.getX()*3+4, pos.getY()*2+2, "L", 3); break;
-      case 6 : txtPos(pos.getX()*6+5, pos.getY()*2+3, "E", 0); break;
+      case 0 :
+        txtPos(posX, posY, "H", 1);
+      break;
+      case 1 :
+        txtPos(posX, posY, "F", 1);
+        break;
+      case 2 :
+        txtPos(posX, posY, "A", 2);
+        break;
+      case 3 :
+        txtPos(posX, posY, "B", 2);
+        break;
+      case 4 :
+        txtPos(posX, posY, "S", 3);
+        break;
+      case 5 :
+        txtPos(posX, posY, "L", 3);
+        break;
+      case 6 :
+        txtPos(posX-2, posY-1, "\\\\|//", 0);
+        txtPos(posX-3, posY, ">~~+~~<", 0);
+        txtPos(posX-2, posY+1, "//|\\\\", 0);
+        break;
       default : cout << "\nErreur lors de l'affichage d'un élement.\n"; break;
     }
   }
