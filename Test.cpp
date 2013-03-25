@@ -13,17 +13,11 @@ using namespace std;
 Test::Test(Monde &_mondeTest) :
     mondeTest(_mondeTest)
 { 
+  testCreation();
   testPosition();
   testDeplacement();
-
-  cout << "Ajout d'un mobile Toto en (1;3)" << endl;
-
-  Mobile *toto = new Mobile(Position(1, 3), "Toto", 1, 1, &mondeTest);
-  mondeTest.ajouter(toto);
-
-  mondeTest.afficher();
   
-  testAffichage();
+  // testAffichage();
 }
 
 Test::~Test()
@@ -46,7 +40,7 @@ Test::testPosition() const
 
   Monde monde;
 
-  cout << "=== Démarrage tests Position ===" << endl;
+  // cout << "=== Démarrage tests Position ===" << endl;
   if (monde.estValide(posOK))
     cout << "OK : position " << posOK << " valide" << endl;
   else
@@ -63,19 +57,21 @@ Test::testCreation()
 {
   cout << "=== Démarrage tests Création d'éléments ===" << endl;
   Monde monde;
+  monde.addRandomElements();
+  monde.afficher();
 }
 
 void
 Test::testDeplacement()
 {
-  cout << "=== Démarrage tests Deplacement ===" << endl;
+  // cout << "=== Démarrage tests Deplacement ===" << endl;
   Monde monde;
-  cout << "== Déplacement d'un Mobile ==" << endl;
-  cout << "- Création et ajout de Mobile1 en (3,1)" << endl;
+  // cout << "== Déplacement d'un Mobile ==" << endl;
+  // cout << "- Création et ajout de Mobile1 en (3,1)" << endl;
   Position posMobile1(3, 1);
   Mobile mobile1(posMobile1, "Mobile1", 1, 1, &monde);
   monde.ajouter(&mobile1);
-  cout << "- Création et ajout de Mobile2 en (3,5)" << endl;
+  // cout << "- Création et ajout de Mobile2 en (3,5)" << endl;
   Position posMobile2(3, 5);
   Mobile mobile2(posMobile2, "Mobile1", 1, 1, &monde);
   monde.ajouter(&mobile2);

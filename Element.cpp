@@ -12,7 +12,7 @@
 using namespace std;
 
 const string Element::tnames[] =
-  { "Cyrano", "Christian", "Roxanne", "DeGuiche", "Raguenaud" };
+  { "Cyrano", "Christian", "Roxane", "DeGuiche", "Raguenaud" };
 const vector<string> Element::names(tnames,
     tnames + (sizeof(tnames) / sizeof(tnames[0])));
 

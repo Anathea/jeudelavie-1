@@ -82,8 +82,14 @@ void
 Monde::addRandomElements()
 {
   int nbMobile = param.getValeurParametre("nb_mobile");
+  Position pos;
   for(int i = 0;i<nbMobile;i++) {
-      ajouter(new Mobile(posAleatoire(), Element::getRandomName(), 1, 1, this));
+      // On cherche une position inocuppée
+      do {
+          pos = posAleatoire();
+      } while(!estValide(pos));
+      // On ajoute dans le monde
+      ajouter(new Mobile(pos, Element::getRandomName(), 1, 1, this));
   }
 }
 
