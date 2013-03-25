@@ -9,6 +9,7 @@
 #define HUMAIN_H
 
 #include <string>
+#include <vector>
 #include "Mobile.h"
 using namespace std;
 
@@ -25,6 +26,9 @@ public:
 
   virtual
   ~Humain();
+  
+  vector<Element *>
+  voir() const;
 
   // Getters & setters
   unsigned int

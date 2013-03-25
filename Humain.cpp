@@ -26,6 +26,43 @@ Humain::~Humain()
 {
 }
 
+vector<Element *>
+Humain::voir(int profondeur, vector<Element *> vecteur) const
+{
+  // Test d'arret : si on a parcouru tous les niveaux de vision
+  if (profondeur == this->getVision())
+  {
+    for(int i=0 ; i<vecteur.size() ; i++)
+      cout << vecteur.at(i) << " - ";
+  }
+  else
+  {
+    vector<Element *> vectProv;
+    
+    vectProv = voir(Position(this->getPos().getX(), this->getPos().getY()-2)); // Nord
+    vecteur.insert( vecteur.end(), vectProv.begin(), vectProv.end() );
+
+    voir(Position(this->getPos().getX()+1, this->getPos().getY()+1)); // Nord-Est
+    vecteur.insert( vecteur.end(), vectProv.begin(), vectProv.end() );
+    
+    voir(Position(this->getPos().getX()+1, this->getPos().getY()-1)); // Sud-Est
+    vecteur.insert( vecteur.end(), vectProv.begin(), vectProv.end() );
+    
+    voir(Position(this->getPos().getX(), this->getPos().getY()+2)); // Sud
+    vecteur.insert( vecteur.end(), vectProv.begin(), vectProv.end() );
+    
+    voir(Position(this->getPos().getX()-1, this->getPos().getY()-1)); // Sud-Ouest
+    vecteur.insert( vecteur.end(), vectProv.begin(), vectProv.end() );
+    
+    voir(Position(this->getPos().getX()-1, this->getPos().getY()+1)); // Nord-Ouest
+    vecteur.insert( vecteur.end(), vectProv.begin(), vectProv.end() );
+    
+    profondeur++;
+  }
+
+  return vecteur;
+}
+
 unsigned int
 Humain::getAge() const
 {

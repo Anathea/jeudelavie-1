@@ -17,15 +17,24 @@ Test::Test(Monde &_mondeTest) :
   testDeplacement();
 
   cout << "Ajout de 3 éléments en (1;3), (4;4), (7,5)" << endl;
+  Mobile *m = new Mobile(1, 3, "Jean", &mondeTest);
+  mondeTest.ajouter(m);
+  m->seDeplacer();
+  /*
+  Homme *h = new Homme(1, 3, "Jean", &mondeTest);
+  Femme *f = new Femme(4, 4, "Marie", &mondeTest);
+  Arbre *a = new Arbre(7, 5, &mondeTest);
+  Baie *b = new Baie(8, 2, &mondeTest);
+  Sanglier *s = new Sanglier(7, 5, &mondeTest);
+  Lapin *l = new Lapin(7, 5, &mondeTest);
   
-  Element *pierre = new Element(1, 3, "Pierre", &mondeTest);
-  Element *jean = new Element(4, 4, "Jean", &mondeTest);
-  Element *jacques = new Element(7, 5, "Jacques", &mondeTest);
-  
-  mondeTest.ajouter(pierre);
-  mondeTest.ajouter(jean);
-  mondeTest.ajouter(jacques);
-
+  mondeTest.ajouter(h);
+  mondeTest.ajouter(f);
+  mondeTest.ajouter(a);
+  mondeTest.ajouter(b);
+  mondeTest.ajouter(s);
+  mondeTest.ajouter(l);
+*/
   mondeTest.afficher();
   
   testAffichage();

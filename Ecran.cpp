@@ -85,11 +85,11 @@ void Ecran::clear() const
 
 }
 
-void Ecran::affMonde(Monde _monde) const
+void Ecran::affMonde() const
 {
-  for(long unsigned int i=0 ; i<_monde.size() ; i++)
+  for(long unsigned int i=0 ; i<this->monde.size() ; i++)
   {
-    affElement(_monde.at(i)); 
+    affElement(this->monde.at(i)); 
   }
   txtPos(10*2+3, 0, "\n\n");
 }
@@ -120,7 +120,7 @@ void Ecran::affElement(Element *_elt) const
         asciiArt(_elt->getPos(), "(o.O)", " /|x|\\ ","  W");
       break;
       case 1 : // Femme
-        asciiArt(_elt->getPos(), "#0,0#", " /|M|\\ ","  w");
+        asciiArt(_elt->getPos(), "/..\\", " /00\\ "," VV");
         break;
       case 2 : // Arbre
         asciiArt(_elt->getPos(), ".\\Y./", "  \\Y/. ","__|__");
