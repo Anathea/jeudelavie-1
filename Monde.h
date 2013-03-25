@@ -38,7 +38,9 @@ public:
   void
   ajouter(Element *_elt);
   Position
-  posAleatoire();
+  posAleatoire() const;
+  void
+  addRandomElements();
 
 private:
   map<Position, unsigned int> wMap;

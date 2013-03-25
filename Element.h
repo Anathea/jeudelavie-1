@@ -13,13 +13,15 @@
 #include "Position.h"
 #include "Parametres.h"
 
-class Monde; // Contre problème d'inclusion cyclique
+class Monde;
+// Contre problème d'inclusion cyclique
 
 class Element
 {
 public:
   // Constructeurs
   Element(Monde *_monde);
+  Element(const Position &_pos, Monde *_monde);
   Element(const Position & _pos, const string & _nom, Monde *_monde);
   Element(const unsigned int _posX, const unsigned int _posY, const string _nom,
       Monde *_monde);
@@ -37,17 +39,21 @@ public:
   setPos(const Position _pos);
   Monde *
   getMonde() const;
+  static string
+  getRandomName();
 
   // Autres méthodes
   void
   afficher() const;
-//  virtual void
-//  agir() const;
+  virtual void
+  agir() const = 0;
 
 private:
   Position pos;
   string nom;
   Monde *monde;
+  static const string tnames[];
+  static const vector<string> names;
 
 };
 

@@ -18,7 +18,9 @@ class Humain : public Mobile
 public:
   //Constructeurs
   Humain(Monde *_monde);
-
+  Humain(const Position &_pos, const unsigned int _vitesse,
+      const unsigned int _vision, const unsigned int _age,
+      const unsigned int _vie, const unsigned int _espVie, Monde *_monde);
   Humain(const Position & _pos, const string & _nom,
       const unsigned int _vitesse, const unsigned int _vision,
       const unsigned int _age, const unsigned int _vie,
@@ -27,8 +29,11 @@ public:
   virtual
   ~Humain();
   
-  vector<Element *>
-  voir() const;
+  vector<Position>
+  voir(Position pos) const;
+  
+  vector<Position>
+  rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;
 
   // Getters & setters
   unsigned int

@@ -8,9 +8,13 @@
 #include "Arbre.h"
 
 Arbre::Arbre(Monde *_monde) :
-    Element(_monde), Ressource(_monde)
+    Ressource(_monde)
 {
+}
 
+Arbre::Arbre(const Position& _pos, Monde* _monde) :
+    Ressource(_pos, _monde)
+{
 }
 
 Arbre::~Arbre()

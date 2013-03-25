@@ -18,6 +18,17 @@ Mobile::Mobile(const Element &_elem, const unsigned int _vision,
 {
 }
 
+Mobile::Mobile(const Position& _pos, const unsigned int _vitesse, Monde* _monde) :
+    Element(_pos, _monde), vision(0), vitesse(_vitesse)
+{
+}
+
+Mobile::Mobile(const Position& _pos, const unsigned int _vision,
+    const unsigned int _vitesse, Monde* _monde) :
+    Element(_pos, _monde), vision(_vision), vitesse(_vitesse)
+{
+}
+
 Mobile::Mobile(const Position & _pos, const string & _nom,
     const unsigned int _vision, const unsigned int _vitesse, Monde *_monde) :
     Element(_pos, _nom, _monde), vision(_vision), vitesse(_vitesse)
@@ -60,6 +71,7 @@ Mobile::seDeplacer(const Direction _dir)
   Monde *monde = this->getMonde();
   unsigned int indice = monde->getMap().at(curPos);
   bool possible;
+
   switch (_dir)
     {
   case NORD:
@@ -88,14 +100,27 @@ Mobile::seDeplacer(const Direction _dir)
     break;
     }
   possible = monde->estValide(nouvPos);
-  if (possible) {
-    // Modification de la position de l'élément
-    setPos(nouvPos);
-    // Modification de la map
-    monde->getMap().erase(curPos);
-    monde->getMap().insert(pair<Position, unsigned int>(nouvPos,indice));
+  if (possible)
+    {
+      // Modification de la position de l'élément
+      setPos(nouvPos);
+      // Modification de la map
+      monde->getMap().erase(curPos);
+      monde->getMap().insert(pair<Position, unsigned int>(nouvPos, indice));
 
-  }
+    }
 
   return possible;
+}
+
+void
+Mobile::agir() const
+{
+
+}
+
+Direction
+Mobile::getRandomDirection() const
+{
+  return (Direction) (rand() % 6);
 }

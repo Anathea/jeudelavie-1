@@ -21,6 +21,7 @@ public:
   Test(Monde &_mondeTest);
   virtual ~Test();
   
+  void testCreation();
   void testAffichage() const;
   void testPosition() const;
   void testDeplacement();

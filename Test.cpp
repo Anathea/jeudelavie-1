@@ -13,31 +13,9 @@ using namespace std;
 Test::Test(Monde &_mondeTest) :
     mondeTest(_mondeTest)
 { 
+  testCreation();
   testPosition();
   testDeplacement();
-
-  cout << "Ajout de 3 éléments en (1;3), (4;4), (7,5)" << endl;
-  Mobile *m = new Mobile(1, 3, "Jean", &mondeTest);
-  mondeTest.ajouter(m);
-  m->seDeplacer();
-  /*
-  Homme *h = new Homme(1, 3, "Jean", &mondeTest);
-  Femme *f = new Femme(4, 4, "Marie", &mondeTest);
-  Arbre *a = new Arbre(7, 5, &mondeTest);
-  Baie *b = new Baie(8, 2, &mondeTest);
-  Sanglier *s = new Sanglier(7, 5, &mondeTest);
-  Lapin *l = new Lapin(7, 5, &mondeTest);
-  
-  mondeTest.ajouter(h);
-  mondeTest.ajouter(f);
-  mondeTest.ajouter(a);
-  mondeTest.ajouter(b);
-  mondeTest.ajouter(s);
-  mondeTest.ajouter(l);
-*/
-  mondeTest.afficher();
-  
-  testAffichage();
 }
 
 Test::~Test()
@@ -49,7 +27,7 @@ Test::testAffichage() const
 {
   cout << "=== Démarrage test Affichage ===" << endl;
   Ecran e = new Monde(mondeTest);
-  e.affMonde(mondeTest);
+  e.affMonde();
 }
 
 void
@@ -60,7 +38,7 @@ Test::testPosition() const
 
   Monde monde;
 
-  cout << "=== Démarrage tests Position ===" << endl;
+  // cout << "=== Démarrage tests Position ===" << endl;
   if (monde.estValide(posOK))
     cout << "OK : position " << posOK << " valide" << endl;
   else
@@ -73,29 +51,43 @@ Test::testPosition() const
 }
 
 void
+Test::testCreation()
+{
+  cout << "=== Démarrage tests Création d'éléments ===" << endl;
+  Monde monde;
+  monde.addRandomElements();
+  monde.afficher();
+}
+
+void
 Test::testDeplacement()
 {
-  cout << "=== Démarrage tests Deplacement ===" << endl;
+  // cout << "=== Démarrage tests Deplacement ===" << endl;
   Monde monde;
-  cout << "== Déplacement d'un Mobile ==" << endl;
-  cout << "- Création et ajout de Mobile1 en (3,1)" << endl;
-  Position posMobile1(3,1);
+  // cout << "== Déplacement d'un Mobile ==" << endl;
+  // cout << "- Création et ajout de Mobile1 en (3,1)" << endl;
+  Position posMobile1(3, 1);
   Mobile mobile1(posMobile1, "Mobile1", 1, 1, &monde);
   monde.ajouter(&mobile1);
-  cout << "- Création et ajout de Mobile2 en (3,5)" << endl;
-  Position posMobile2(3,5);
+  // cout << "- Création et ajout de Mobile2 en (3,5)" << endl;
+  Position posMobile2(3, 5);
   Mobile mobile2(posMobile2, "Mobile1", 1, 1, &monde);
   monde.ajouter(&mobile2);
-  if(mobile1.seDeplacer(NORD))
+  if (mobile1.seDeplacer(NORD))
     cout << "NOK : déplacement possible au nord, en haut de la map" << endl;
   else
     cout << "OK : déplacement impossible au nord, en haut de la map" << endl;
-  if(mobile1.seDeplacer(SUD))
+  if (mobile1.seDeplacer(SUD))
     cout << "OK : déplacement normal possible" << endl;
   else
     cout << "NOK : déplacement normal impossible" << endl;
-  if(mobile1.seDeplacer(SUD))
+  if (mobile1.seDeplacer(SUD))
     cout << "NOK : déplacement possible sur une place occupée" << endl;
   else
     cout << "OK : déplacement impossible, place occupée" << endl;
+  Direction rDir = mobile2.getRandomDirection();
+  if (mobile2.seDeplacer(SUD) && mobile2.seDeplacer(rDir))
+    cout << "OK : déplacement aléatoire (" << rDir << ") possible" << endl;
+  else
+    cout << "NOK : déplacement aléatoire (" << rDir << ") impossible" << endl;
 }

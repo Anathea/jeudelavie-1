@@ -8,7 +8,11 @@
 #include "Baie.h"
 
 Baie::Baie(Monde *_monde) :
-    Element(_monde), Ressource(_monde)
+    Ressource(_monde)
+{
+}
+
+Baie::Baie(const Position& _pos, Monde* _monde) : Ressource(_pos, _monde)
 {
 }
 

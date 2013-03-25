@@ -15,6 +15,9 @@ class Lapin : public Ressource, public Mobile
 {
 public:
   Lapin(Monde *_monde);
+  Lapin(const Position &_pos, const unsigned int _vitesse, Monde *_monde);
+  Lapin(const Position &_pos, const string &_nom,
+        const unsigned int _vitesse, Monde *_monde);
   virtual
   ~Lapin();
 private:

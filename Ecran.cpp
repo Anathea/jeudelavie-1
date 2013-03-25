@@ -7,8 +7,6 @@
 #include "Ecran.h"
 #include "Homme.h"
 #include "Femme.h"
-#include "RessourceFixe.h"
-#include "RessourceMobile.h"
 
 Ecran::Ecran(Monde * _monde) : monde(_monde)
 {
@@ -82,14 +80,13 @@ void Ecran::clear() const
     else
       cout << "\n";
   }
-
 }
 
 void Ecran::affMonde() const
 {
-  for(long unsigned int i=0 ; i<this->monde.size() ; i++)
+  for(long unsigned int i=0 ; i<this->monde->size() ; i++)
   {
-    affElement(this->monde.at(i)); 
+    affElement(this->monde->at(i)); 
   }
   txtPos(10*2+3, 0, "\n\n");
 }

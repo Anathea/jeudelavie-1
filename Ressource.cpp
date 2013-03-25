@@ -17,7 +17,11 @@ Ressource::Ressource(Monde *_monde) :
 Ressource::Ressource(const Element & _elt) :
     Element(_elt)
 {
-  cout << "Création d'une ressource...\n";
+}
+
+Ressource::Ressource(const Position &_pos, Monde *_monde) :
+    Element(_pos, _monde)
+{
 }
 
 Ressource::Ressource(const Position& _pos, const string& _nom, Monde *_monde) :
@@ -28,6 +32,11 @@ Ressource::Ressource(const Position& _pos, const string& _nom, Monde *_monde) :
 Ressource::Ressource(const unsigned int& _posX, const unsigned int& _posY,
     const string& _nom, Monde *_monde) :
     Element(_posX, _posY, _nom, _monde)
+{
+}
+
+void
+Ressource::agir() const
 {
 }
 

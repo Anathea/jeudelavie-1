@@ -8,7 +8,19 @@
 #include "Lapin.h"
 
 Lapin::Lapin(Monde *_monde) :
-    Element(_monde), Ressource(_monde), Mobile(_monde)
+    Ressource(_monde), Mobile(_monde)
+{
+}
+
+Lapin::Lapin(const Position &_pos, const unsigned int _vitesse,
+    Monde* _monde) :
+    Ressource(_pos, _monde), Mobile(_pos, _vitesse, _monde)
+{
+}
+
+Lapin::Lapin(const Position& _pos, const string& _nom,
+    const unsigned int _vitesse, Monde* _monde) :
+    Ressource(_pos, _nom, _monde), Mobile(_pos, _vitesse, _monde)
 {
 }
 

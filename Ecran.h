@@ -31,7 +31,7 @@ public:
   virtual ~Ecran();
   
   void clear() const;
-  void affMonde(Monde _monde) const;
+  void affMonde() const;
   void pause() const;
 private:
   void affElement(Element *_elt) const;
