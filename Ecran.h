@@ -35,6 +35,7 @@ public:
   void pause() const;
 private:
   void affElement(Element *_elt) const;
+  void asciiArt(Position _pos, string _ch1, string _ch2, string _ch3) const;
   void txtPos(int _x, int _y, string _s) const;
   void txtPos(int _x, int _y, string _s, int color) const;
   void changeColor(int couleur) const;

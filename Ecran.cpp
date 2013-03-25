@@ -98,8 +98,6 @@ void Ecran::affElement(Element *_elt) const
 {
   Position pos = _elt->getPos();
   int type = 0;
-  int posX = pos.getX()*6+5;
-  int posY = pos.getY()*2+3;
   
   if (_elt->getMonde()->estValide(pos))
   {
@@ -118,34 +116,42 @@ void Ecran::affElement(Element *_elt) const
     
     switch(type)
     {
-      case 0 :
-        txtPos(posX, posY, "H", 1);
+      case 0 : // Homme
+        asciiArt(_elt->getPos(), "(o.O)", " /|x|\\ ","  W");
       break;
-      case 1 :
-        txtPos(posX, posY, "F", 1);
+      case 1 : // Femme
+        asciiArt(_elt->getPos(), "#0,0#", " /|M|\\ ","  w");
         break;
-      case 2 :
-        txtPos(posX, posY, "A", 2);
+      case 2 : // Arbre
+        asciiArt(_elt->getPos(), ".\\Y./", "  \\Y/. ","__|__");
         break;
-      case 3 :
-        txtPos(posX, posY, "B", 2);
+      case 3 : // Baie
+        asciiArt(_elt->getPos(), "####o", "#.#####","###o#");
         break;
-      case 4 :
-        txtPos(posX, posY, "S", 3);
+      case 4 : // Sanglier
+        asciiArt(_elt->getPos(), "\\/-\\/", " ). .( ", "((^))");
         break;
-      case 5 :
-        txtPos(posX, posY, "L", 3);
+      case 5 : // Lapin
+        asciiArt(_elt->getPos(), "_(.)<", "~\\__)~~", "~~~~~");
         break;
-      case 6 :
-        txtPos(posX-2, posY-1, "\\\\|//", 0);
-        txtPos(posX-3, posY, ">~~+~~<", 0);
-        txtPos(posX-2, posY+1, "//|\\\\", 0);
+      case 6 : // Element
+        asciiArt(_elt->getPos(), "_(.)<", "~\\__)~~", "~~~~~");
+
         break;
       default : cout << "\nErreur lors de l'affichage d'un élement.\n"; break;
     }
   }
 }
 
+void Ecran::asciiArt(Position _pos, string _ch1, string _ch2, string _ch3) const
+{
+  int posX = _pos.getX()*6+5;
+  int posY = _pos.getY()*2+3;
+
+  txtPos(posX-2, posY-1, _ch1, 0);
+  txtPos(posX-3, posY, _ch2, 0);
+  txtPos(posX-2, posY+1, _ch3, 0);
+}
 void Ecran::changeColor(int couleur) const
 {
   std::stringstream ss;
