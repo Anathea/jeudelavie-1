@@ -132,10 +132,10 @@ void Ecran::affElement(Element *_elt) const
         asciiArt(_elt->getPos(), "\\/-\\/", " ). .( ", "((^))");
         break;
       case 5 : // Lapin
-        asciiArt(_elt->getPos(), "_(.)<", "~\\__)~~", "~~~~~");
+        asciiArt(_elt->getPos(), "__(.)<", "~\\___)~~", "~~~~~~");
         break;
       case 6 : // Element
-        asciiArt(_elt->getPos(), "_(.)<", "~\\__)~~", "~~~~~", 3);
+        asciiArt(_elt->getPos(), "__(.)<", "~\\___)~~", "~~~~~~", 3);
 
         break;
       default : cout << "\nErreur lors de l'affichage d'un élement.\n"; break;
