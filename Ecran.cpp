@@ -135,7 +135,7 @@ void Ecran::affElement(Element *_elt) const
         asciiArt(_elt->getPos(), "_(.)<", "~\\__)~~", "~~~~~");
         break;
       case 6 : // Element
-        asciiArt(_elt->getPos(), "_(.)<", "~\\__)~~", "~~~~~");
+        asciiArt(_elt->getPos(), "_(.)<", "~\\__)~~", "~~~~~", 3);
 
         break;
       default : cout << "\nErreur lors de l'affichage d'un élement.\n"; break;
@@ -148,10 +148,21 @@ void Ecran::asciiArt(Position _pos, string _ch1, string _ch2, string _ch3) const
   int posX = _pos.getX()*6+5;
   int posY = _pos.getY()*2+3;
 
-  txtPos(posX-2, posY-1, _ch1, 0);
-  txtPos(posX-3, posY, _ch2, 0);
-  txtPos(posX-2, posY+1, _ch3, 0);
+  txtPos(posX-2, posY-1, _ch1);
+  txtPos(posX-3, posY, _ch2);
+  txtPos(posX-2, posY+1, _ch3);
 }
+
+void Ecran::asciiArt(Position _pos, string _ch1, string _ch2, string _ch3, int _couleur) const
+{
+  int posX = _pos.getX()*6+5;
+  int posY = _pos.getY()*2+3;
+
+  txtPos(posX-2, posY-1, _ch1, _couleur);
+  txtPos(posX-3, posY, _ch2, _couleur);
+  txtPos(posX-2, posY+1, _ch3, _couleur);
+}
+
 void Ecran::changeColor(int couleur) const
 {
   std::stringstream ss;
