@@ -12,14 +12,21 @@ Humain::Humain(Monde *_monde) :
 {
 }
 
+Humain::Humain(const Position &_pos, const unsigned int _vitesse,
+    const unsigned int _vision, const unsigned int _age,
+    const unsigned int _vie, const unsigned int _espVie, Monde *_monde) :
+    Mobile(_pos, _vision, _vitesse, _monde), age(_age), vie(_vie), espVie(
+        _espVie)
+{
+}
+
 Humain::Humain(const Position &_pos, const string &_nom,
     const unsigned int _vitesse, const unsigned int _vision,
     const unsigned int _age, const unsigned int _vie,
     const unsigned int _espVie, Monde *_monde) :
-    Mobile(_pos, _nom, _vision, _vitesse, _monde), age(_age), vie(
-        _vie), espVie(_espVie)
+    Mobile(_pos, _nom, _vision, _vitesse, _monde), age(_age), vie(_vie), espVie(
+        _espVie)
 {
-  cout << "Création d'un Humain...\n";
 }
 
 Humain::~Humain()

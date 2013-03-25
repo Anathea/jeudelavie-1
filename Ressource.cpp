@@ -17,7 +17,11 @@ Ressource::Ressource(Monde *_monde) :
 Ressource::Ressource(const Element & _elt) :
     Element(_elt)
 {
-  cout << "Création d'une ressource...\n";
+}
+
+Ressource::Ressource(const Position &_pos, Monde *_monde) :
+    Element(_pos, _monde)
+{
 }
 
 Ressource::Ressource(const Position& _pos, const string& _nom, Monde *_monde) :

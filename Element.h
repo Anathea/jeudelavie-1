@@ -21,6 +21,7 @@ class Element
 public:
   // Constructeurs
   Element(Monde *_monde);
+  Element(const Position &_pos, Monde *_monde);
   Element(const Position & _pos, const string & _nom, Monde *_monde);
   Element(const unsigned int _posX, const unsigned int _posY, const string _nom,
       Monde *_monde);

@@ -7,8 +7,6 @@
 #include "Ecran.h"
 #include "Homme.h"
 #include "Femme.h"
-#include "RessourceFixe.h"
-#include "RessourceMobile.h"
 
 Ecran::Ecran(Monde * _monde) : monde(_monde)
 {

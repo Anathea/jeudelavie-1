@@ -10,10 +10,13 @@
 
 #include "Ressource.h"
 
-class Arbre : public Ressource {
+class Arbre : public Ressource
+{
 public:
   Arbre(Monde *_monde);
-  virtual ~Arbre();
+  Arbre(const Position &_pos, Monde *_monde);
+  virtual
+  ~Arbre();
 private:
 
 };

@@ -12,6 +12,10 @@ Baie::Baie(Monde *_monde) :
 {
 }
 
+Baie::Baie(const Position& _pos, Monde* _monde) : Ressource(_pos, _monde)
+{
+}
+
 Baie::~Baie()
 {
 }

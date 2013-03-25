@@ -13,6 +13,7 @@
 class Baie : public Ressource {
 public:
   Baie(Monde *_monde);
+  Baie(const Position &_pos, Monde *_monde);
   virtual ~Baie();
 private:
 

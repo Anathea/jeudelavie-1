@@ -12,6 +12,18 @@ Sanglier::Sanglier(Monde *_monde) :
 {
 }
 
+Sanglier::Sanglier(const Position &_pos, const unsigned int _vitesse,
+    Monde* _monde) :
+    Ressource(_pos, _monde), Mobile(_pos, _vitesse, _monde)
+{
+}
+
+Sanglier::Sanglier(const Position& _pos, const string& _nom,
+    const unsigned int _vitesse, Monde* _monde) :
+    Ressource(_pos, _nom, _monde), Mobile(_pos, _vitesse, _monde)
+{
+}
+
 Sanglier::~Sanglier()
 {
 }

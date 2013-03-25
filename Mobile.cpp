@@ -18,6 +18,17 @@ Mobile::Mobile(const Element &_elem, const unsigned int _vision,
 {
 }
 
+Mobile::Mobile(const Position& _pos, const unsigned int _vitesse, Monde* _monde) :
+    Element(_pos, _monde), vision(0), vitesse(_vitesse)
+{
+}
+
+Mobile::Mobile(const Position& _pos, const unsigned int _vision,
+    const unsigned int _vitesse, Monde* _monde) :
+    Element(_pos, _monde), vision(_vision), vitesse(_vitesse)
+{
+}
+
 Mobile::Mobile(const Position & _pos, const string & _nom,
     const unsigned int _vision, const unsigned int _vitesse, Monde *_monde) :
     Element(_pos, _nom, _monde), vision(_vision), vitesse(_vitesse)
@@ -111,5 +122,5 @@ Mobile::agir() const
 Direction
 Mobile::getRandomDirection() const
 {
-  return (Direction)(rand() % 6);
+  return (Direction) (rand() % 6);
 }
