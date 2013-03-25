@@ -22,7 +22,7 @@ public:
   virtual ~Test();
   
   void testCreation();
-  void testAffichage() const;
+  void testAffichage();
   void testPosition() const;
   void testDeplacement();
   
