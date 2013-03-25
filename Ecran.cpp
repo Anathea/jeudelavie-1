@@ -32,11 +32,11 @@ void Ecran::clear() const
     for(int x=0 ; x<tailleX/2 ; x++) // ligne 1
     {
       if (y==0)
-        cout << "  .---.     ";
+        cout << "  .----.      ";
       else if (y >= tailleY && x==0)
-        cout << "  `---(     ";
+        cout << "  `----(      ";
       else
-        cout << "  )---(     ";
+        cout << "  )----(      ";
     }
     if (y == 0)
       cout << "\n";
@@ -46,9 +46,9 @@ void Ecran::clear() const
     for(int x=0 ; x<tailleX/2 ; x++) // ligne 2
     {
       if (y >= tailleY && x==0)
-        cout << "       \\    ";
+        cout << "        \\     ";
       else
-        cout << " /     \\    ";
+        cout << " /      \\     ";
     }
     if (y == 0)
       cout << "\n";
@@ -58,11 +58,11 @@ void Ecran::clear() const
     for(int x=0 ; x<tailleX/2 ; x++) // ligne 3
     {
       if (y >= tailleY && x==0)
-        cout << "        `---";
+        cout << "         `----";
       else if (y >= tailleY)
-        cout << "`       `---";
+        cout << "`        `----";
       else
-        cout << "(       )---";
+        cout << "(        )----";
 
     }
     if (y == 0)
@@ -75,7 +75,7 @@ void Ecran::clear() const
       for(int x=0 ; x<tailleX/2 ; x++) // ligne 4
       {
         if (y < tailleY)
-          cout << " \\     /    ";
+          cout << " \\      /     ";
       }
     if (y < tailleY)
     cout << " \\\n";
@@ -155,7 +155,7 @@ void Ecran::asciiArt(Position _pos, string _ch1, string _ch2, string _ch3) const
 
 void Ecran::asciiArt(Position _pos, string _ch1, string _ch2, string _ch3, int _couleur) const
 {
-  int posX = _pos.getX()*6+5;
+  int posX = _pos.getX()*7+5;
   int posY = _pos.getY()*2+3;
 
   txtPos(posX-2, posY-1, _ch1, _couleur);
