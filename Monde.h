@@ -33,6 +33,8 @@ public:
   // Autres méthodes
   void
   afficher() const;
+  int getL() const;
+  int getH() const;
   bool
   estValide(Position _pos) const; // Pour vérifier si la position est valide (renvoie 1) ou non (renvoie 0)
   void
