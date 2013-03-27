@@ -24,9 +24,8 @@ class Mobile : public virtual Element
 public:
   // Constructeurs
   Mobile(Monde *_monde);
-  Mobile(const Element &_elem, const unsigned int _vision,
-      const unsigned int _vitesse);
-  Mobile(const Position &_pos, const unsigned int _vitesse, Monde *_monde);
+  Mobile(const Position &_pos, Monde *_monde);
+  Mobile(const Position &_pos, unsigned int _vitesse, Monde *_monde);
   Mobile(const Position &_pos, const unsigned int _vision,
       const unsigned int _vitesse, Monde *_monde);
   Mobile(const Position & _pos, const string & _nom, const unsigned int _vision,

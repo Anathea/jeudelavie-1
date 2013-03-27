@@ -7,9 +7,12 @@
 
 #include "Humain.h"
 
+
 Humain::Humain(Monde *_monde) :
-    Element(_monde), Mobile(_monde), age(0), espVie(7000)
+    Element(_monde), Mobile(_monde)
 {
+  age = _monde->getRandomInt(_monde->getParam().getValeurParametre("min_age"), _monde->getParam().getValeurParametre("max_age"));
+  espVie = _monde->getRandomInt(_monde->getParam().getValeurParametre("min_esp_vie"), _monde->getParam().getValeurParametre("max_esp_vie"));
 }
 
 Humain::Humain(const Position &_pos, const unsigned int _vitesse,

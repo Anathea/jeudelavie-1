@@ -7,7 +7,6 @@
 
 #include "Monde.h"
 #include "Element.h" // Contre problème d'inclusion cyclique
-
 #include "Arbre.h"
 #include "Baie.h"
 #include "Lapin.h"
@@ -33,8 +32,8 @@ Monde::estValide(Position _pos) const
   bool occupied = false;
   map<Position, unsigned int>::const_iterator it;
 
-  if (_pos.getX() < 0 || _pos.getX() > this->getL()
-      || _pos.getY() < 0 || _pos.getY() > this->getH())
+  if (_pos.getX() < 0 || _pos.getX() > this->getL() || _pos.getY() < 0
+      || _pos.getY() > this->getH())
     outOfMap = true;
 
   if (wMap.find(_pos) != wMap.end())
@@ -80,8 +79,7 @@ Monde::ajouter(Element *_elt)
 Position
 Monde::posAleatoire() const
 {
-  return (Position(1 + rand() % this->getL(),
-      1 + rand() % this->getH()));
+  return (Position(1 + rand() % this->getL(), 1 + rand() % this->getH()));
 }
 
 const map<Position, unsigned int>&
@@ -111,4 +109,10 @@ Parametres
 Monde::getParam() const
 {
   return param;
+}
+
+int
+Monde::getRandomInt(const unsigned int nb1, const unsigned int nb2)
+{
+  return nb1+rand()%nb2;
 }

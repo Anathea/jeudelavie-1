@@ -12,15 +12,15 @@ Mobile::Mobile(Monde *_monde) :
 {
 }
 
-Mobile::Mobile(const Element &_elem, const unsigned int _vision,
-    const unsigned int _vitesse) :
-    Element(_elem), vision(_vision), vitesse(_vitesse)
+Mobile::Mobile(const Position& _pos, Monde* _monde) :
+    Element(_pos, _monde), vision(1), vitesse(1)
 {
 }
 
-Mobile::Mobile(const Position& _pos, const unsigned int _vitesse, Monde* _monde) :
-    Element(_pos, _monde), vision(0), vitesse(_vitesse)
+Mobile::Mobile(const Position &_pos, const unsigned int _vitesse, Monde *_monde) :
+    Element(_pos, _monde), vision(1), vitesse(_vitesse)
 {
+
 }
 
 Mobile::Mobile(const Position& _pos, const unsigned int _vision,

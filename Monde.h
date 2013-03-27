@@ -31,13 +31,16 @@ public:
   getMap() const;
   map<Position, unsigned int>&
   getMap();
-  Parametres getParam() const;
-  
+  Parametres
+  getParam() const;
+
   // Autres méthodes
   void
   afficher() const;
-  int getL() const;
-  int getH() const;
+  int
+  getL() const;
+  int
+  getH() const;
   bool
   estValide(Position _pos) const; // Pour vérifier si la position est valide (renvoie 1) ou non (renvoie 0)
   void
@@ -46,6 +49,8 @@ public:
   posAleatoire() const;
   void
   addRandomElements();
+  int
+  getRandomInt(const unsigned int nb1, const unsigned int nb2);
 
 private:
   map<Position, unsigned int> wMap;
