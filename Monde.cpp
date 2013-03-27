@@ -6,14 +6,20 @@
  */
 
 #include "Monde.h"
-#include "Mobile.h"
 #include "Element.h" // Contre problème d'inclusion cyclique
+
+#include "Arbre.h"
+#include "Baie.h"
+#include "Lapin.h"
+#include "Sanglier.h"
+#include "Homme.h"
+#include "Femme.h"
+
 using namespace std;
 
 Monde::Monde()
 {
   srand(time(NULL));
-  cout << "Création du Monde...\n";
 }
 
 Monde::~Monde()
@@ -81,16 +87,12 @@ Monde::getMap()
 void
 Monde::addRandomElements()
 {
-  int nbMobile = param.getValeurParametre("nb_mobile");
-  Position pos;
-  for(int i = 0;i<nbMobile;i++) {
-      // On cherche une position inocuppée
-      do {
-          pos = posAleatoire();
-      } while(!estValide(pos));
-      // On ajoute dans le monde
-      ajouter(new Mobile(pos, Element::getRandomName(), 1, 1, this));
-  }
+  Arbre::addRandomArbres(this);
+  Baie::addRandomBaies(this);
+  Lapin::addRandomLapins(this);
+  Sanglier::addRandomSangliers(this);
+  Homme::addRandomHommes(this);
+  Femme::addRandomFemmes(this);
 }
 
 Parametres

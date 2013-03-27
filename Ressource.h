@@ -10,7 +10,7 @@
 
 #include "Element.h"
 
-class Ressource : public Element
+class Ressource : public virtual Element
 {
 
 public:

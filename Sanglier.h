@@ -20,6 +20,12 @@ public:
       const unsigned int _vitesse, Monde *_monde);
   virtual
   ~Sanglier();
+
+  static void
+  addRandomSangliers(Monde *_monde);
+  void
+  agir() const;
+
 private:
 
 };

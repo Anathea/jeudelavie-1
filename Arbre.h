@@ -17,6 +17,13 @@ public:
   Arbre(const Position &_pos, Monde *_monde);
   virtual
   ~Arbre();
+
+  static void
+  addRandomArbres(Monde *_monde);
+
+  void
+  agir() const;
+
 private:
 
 };

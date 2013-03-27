@@ -1,5 +1,15 @@
 tpause 5
 l_carte 20
 h_carte 10
-nb_mobile 5
-nb_ressource 5
+nb_arbre 5
+nb_baie 5
+nb_femme 5
+nb_homme 5
+nb_lapin 5
+nb_sanglier 5
+min_age 18
+max_age 30
+min_esp_vie 50
+max_esp_vie 90
+min_vision 0
+max_vision 3

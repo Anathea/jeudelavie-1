@@ -6,20 +6,20 @@
  */
 
 #ifndef MOBILE_H
-#define	MOBILE_H
+#define	 MOBILE_H
 
 #include <string>
 #include "Element.h"
 #include "Monde.h"
 
-using namespace std;
+class Element;
 
 typedef enum
 {
   NORD = 0, NORDEST, SUDEST, SUD, SUDOUEST, NORDOUEST
 } Direction;
 
-class Mobile : public Element
+class Mobile : public virtual Element
 {
 public:
   // Constructeurs
@@ -50,8 +50,6 @@ public:
   //Autres méthodes
   bool
   seDeplacer(const Direction _dir);
-  void
-  agir() const;
 
 private:
   unsigned int vision;
