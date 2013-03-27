@@ -56,47 +56,48 @@ Humain::rechVoisins(int profondeur, Position pos, vector<Position> vecteur) cons
   }
   else
   {
-    Position posProv;
-
     // Si la position est valide, on l'ajoute au vecteur.
     if (this->getMonde()->estValide(pos.getVoisin(_NORD)))
     {
       cout << "_NORD" << endl;
-      vecteur.push_back(pos.getVoisin(_NORD));
+      vecteur.push_back(pos.getVoisin(_NORD)); // On insère cette position dans le vecteur
+      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
     }
     
-    else if (this->getMonde()->estValide(pos.getVoisin(NORD_EST)))
+    if (this->getMonde()->estValide(pos.getVoisin(NORD_EST)))
     {
       cout << "NORD_EST" << endl;
       vecteur.push_back(pos.getVoisin(NORD_EST));
+      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
     }
     
-    else if (this->getMonde()->estValide(pos.getVoisin(SUD_EST)))
+    if (this->getMonde()->estValide(pos.getVoisin(SUD_EST)))
     {
       cout << "SUD_EST" << endl;
       vecteur.push_back(pos.getVoisin(SUD_EST));
+      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
     }
     
-    else if (this->getMonde()->estValide(pos.getVoisin(_SUD)))
+    if (this->getMonde()->estValide(pos.getVoisin(_SUD)))
     {
       cout << "_SUD" << endl;
       vecteur.push_back(pos.getVoisin(_SUD));
+      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
     }
     
-    else if (this->getMonde()->estValide(pos.getVoisin(SUD_OUEST)))
+    if (this->getMonde()->estValide(pos.getVoisin(SUD_OUEST)))
     {
       cout << "SUD_OUEST" << endl;
       vecteur.push_back(pos.getVoisin(SUD_OUEST));
+      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
     }
     
-    else if (this->getMonde()->estValide(pos.getVoisin(NORD_OUEST)))
+    if (this->getMonde()->estValide(pos.getVoisin(NORD_OUEST)))
     {
       cout << "NORD_OUEST" << endl;
       vecteur.push_back(pos.getVoisin(NORD_OUEST));
+      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
     }
-    
-    else
-      cout << "Pas de position voisine valide (?)" << endl;
     
     cout << vecteur.back().toString();
     profondeur--;
@@ -104,7 +105,7 @@ Humain::rechVoisins(int profondeur, Position pos, vector<Position> vecteur) cons
   
   for (unsigned int i=0 ; i< vecteur.size() ; i++)
     cout << vecteur.at(i) << endl;
-  cout << "taille vecteur dans rechVoisins" << vecteur.size() << endl;
+  cout << "taille vecteur dans rechVoisins : " << vecteur.size() << endl;
   return vecteur;
 }
 

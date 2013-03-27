@@ -25,6 +25,8 @@ public:
 
   // Getters & setters
   
+  bool isEqual(Position pos) const;
+  
   Position
   getVoisin(DIRECTION dir);
   

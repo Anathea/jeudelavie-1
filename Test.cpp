@@ -31,7 +31,6 @@ Test::testVoir()
 {
   Homme h = Homme(Position(4,4), 2, 3, 20, 50, &mondeTest);
   vector<Position> vp = h.voir();
-  cout << "taille vecteur de Position : " << vp.size() << endl;
   /*for (unsigned int i=0 ; i< vp.size() ; i++)
     cout << vp.at(i) << endl;*/
 }

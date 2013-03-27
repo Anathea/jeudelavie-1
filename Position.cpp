@@ -22,6 +22,12 @@ Position::~Position()
 {
 }
 
+bool
+Position::isEqual(Position pos) const
+{
+  return (x == pos.getX() && y == pos.getY());
+}
+
 Position
 Position::getVoisin(DIRECTION dir)
 {
