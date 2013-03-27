@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include "Mobile.h"
+//#include "Position.h"
 
 using namespace std;
 
@@ -25,12 +26,12 @@ public:
   Humain(const Position & _pos, const string & _nom,
       const unsigned int _vitesse, const unsigned int _vision,
       const unsigned int _age, const unsigned int _espVie, Monde *_monde);
-
+  
   virtual
   ~Humain();
   
   vector<Position>
-  voir(Position pos) const;
+  voir() const;
   
   vector<Position>
   rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;
@@ -52,7 +53,6 @@ public:
 private:
   unsigned int age;
   unsigned int espVie;
-
 };
 
 #endif	/* HUMAIN_H */

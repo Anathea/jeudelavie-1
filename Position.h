@@ -10,7 +10,9 @@
 using namespace std;
 
 #include <iostream>
+#include <string>
 
+typedef enum {_NORD, NORD_EST, SUD_EST, _SUD, SUD_OUEST, NORD_OUEST} DIRECTION;
 
 class Position
 {
@@ -22,6 +24,10 @@ public:
   ~Position();
 
   // Getters & setters
+  
+  Position
+  getVoisin(DIRECTION dir);
+  
   void
   setPos(const int _x, const int _y);
   int getX() const;
@@ -33,8 +39,8 @@ public:
   setY(int _y);
 
   // Autres méthodes
-  void afficher();
-  bool estValide();
+  string toString() const;
+  bool estValide() const;
 
 private:
   int x;
