@@ -49,8 +49,9 @@ Sanglier::addRandomSangliers(Monde *_monde)
 }
 
 void
-Sanglier::agir() const
+Sanglier::agir()
 {
-
+  Mobile::agir();
+  Ressource::agir();
 }
 

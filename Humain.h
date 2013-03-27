@@ -11,7 +11,6 @@
 #include <string>
 #include <vector>
 #include "Mobile.h"
-//#include "Position.h"
 
 using namespace std;
 
@@ -42,17 +41,22 @@ public:
   void
   setAge(const unsigned int _age);
   unsigned int
+  getNourriture() const;
+  void
+  setNourriture(unsigned int nourriture);
+  unsigned int
   getEspVie() const;
   void
   setEspVie(const unsigned int _espVie);
 
   // Autres méthodes
   void
-  agir() const;
+  agir();
 
 private:
   unsigned int age;
   unsigned int espVie;
+  unsigned int nourriture;
 };
 
 #endif	/* HUMAIN_H */

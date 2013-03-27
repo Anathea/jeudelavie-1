@@ -40,7 +40,7 @@ Baie::addRandomBaies(Monde *_monde)
 }
 
 void
-Baie::agir() const
+Baie::agir()
 {
-
+  Ressource::agir();
 }

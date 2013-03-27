@@ -118,3 +118,9 @@ Mobile::getRandomDirection() const
 {
   return (Direction) (rand() % 6);
 }
+
+void
+Mobile::agir()
+{
+
+}

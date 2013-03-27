@@ -22,7 +22,7 @@ public:
   addRandomArbres(Monde *_monde);
 
   void
-  agir() const;
+  agir();
 
 private:
 

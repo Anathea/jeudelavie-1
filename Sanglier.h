@@ -24,7 +24,7 @@ public:
   static void
   addRandomSangliers(Monde *_monde);
   void
-  agir() const;
+  agir();
 
 private:
 

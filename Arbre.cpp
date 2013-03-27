@@ -22,9 +22,9 @@ Arbre::~Arbre()
 }
 
 void
-Arbre::agir() const
+Arbre::agir()
 {
-
+  Ressource::agir();
 }
 
 void
