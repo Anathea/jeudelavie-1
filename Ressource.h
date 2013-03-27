@@ -26,6 +26,9 @@ public:
 
   virtual
   ~Ressource();
+
+private:
+  unsigned int valRessource;
 };
 
 #endif /* RESSOURCE_H_ */

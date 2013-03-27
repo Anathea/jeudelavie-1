@@ -49,3 +49,9 @@ Femme::addRandomFemmes(Monde *_monde)
       _monde->ajouter(new Femme(pos, 1, 1, 25, 60, _monde));
     }
 }
+
+void
+Femme::agir()
+{
+  Humain::agir();
+}

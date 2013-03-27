@@ -52,6 +52,8 @@ public:
   //Autres méthodes
   bool
   seDeplacer(const Direction _dir);
+  void
+  agir();
 
 private:
   unsigned int vision;

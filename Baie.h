@@ -21,7 +21,7 @@ public:
   static void
   addRandomBaies(Monde *_monde);
   void
-  agir() const;
+  agir();
 
 private:
 

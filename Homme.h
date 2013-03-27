@@ -25,6 +25,8 @@ public:
 
   static void
   addRandomHommes(Monde *_monde);
+  void
+  agir();
 
 private:
 

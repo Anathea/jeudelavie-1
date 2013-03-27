@@ -48,8 +48,8 @@ Lapin::addRandomLapins(Monde *_monde)
 }
 
 void
-Lapin::agir() const
+Lapin::agir()
 {
-
+  Mobile::agir();
 }
 

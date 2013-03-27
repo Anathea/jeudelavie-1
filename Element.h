@@ -46,7 +46,7 @@ public:
   string
   toString() const;
   virtual void
-  agir() const = 0;
+  agir() = 0;
 
 private:
   Position pos;

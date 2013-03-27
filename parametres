@@ -13,3 +13,7 @@ min_esp_vie 50
 max_esp_vie 90
 min_vision 0
 max_vision 3
+nourriture_init 10
+conso_nourriture 1
+min_ressource_init 2
+max_ressource_init 5

@@ -25,6 +25,8 @@ public:
 
   static void
   addRandomFemmes(Monde *_monde);
+  void
+  agir();
 
 private:
 

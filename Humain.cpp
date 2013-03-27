@@ -13,6 +13,7 @@ Humain::Humain(Monde *_monde) :
 {
   age = _monde->getRandomInt(_monde->getParam().getValeurParametre("min_age"), _monde->getParam().getValeurParametre("max_age"));
   espVie = _monde->getRandomInt(_monde->getParam().getValeurParametre("min_esp_vie"), _monde->getParam().getValeurParametre("max_esp_vie"));
+  nourriture = _monde->getParam().getValeurParametre("nourriture_init");
 }
 
 Humain::Humain(const Position &_pos, const unsigned int _vitesse,
@@ -21,6 +22,7 @@ Humain::Humain(const Position &_pos, const unsigned int _vitesse,
     Element(_pos, _monde), Mobile(_pos, _vision, _vitesse, _monde), age(_age), espVie(
         _espVie)
 {
+  nourriture = _monde->getParam().getValeurParametre("nourriture_init");
 }
 
 Humain::Humain(const Position &_pos, const string &_nom,
@@ -30,6 +32,7 @@ Humain::Humain(const Position &_pos, const string &_nom,
     Element(_pos, _nom, _monde), Mobile(_pos, _nom, _vision, _vitesse, _monde), age(_age), espVie(
         _espVie)
 {
+  nourriture = _monde->getParam().getValeurParametre("nourriture_init");
 }
 
 Humain::~Humain()
@@ -144,8 +147,24 @@ Humain::setEspVie(const unsigned int _espVie)
   espVie = _espVie;
 }
 
-void
-Humain::agir() const
+unsigned int
+Humain::getNourriture() const
 {
+  return nourriture;
+}
+
+void
+Humain::setNourriture(unsigned int nourriture)
+{
+  this->nourriture = nourriture;
+}
+
+void
+Humain::agir()
+{
+  Mobile::agir();
+  // Début du tour
+  setAge(getAge()+1);
+  setNourriture(getNourriture()-1);
 
 }

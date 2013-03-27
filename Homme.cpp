@@ -48,3 +48,9 @@ Homme::addRandomHommes(Monde *_monde)
       _monde->ajouter(new Homme(pos, 1, 1, 25, 60, _monde));
     }
 }
+
+void
+Homme::agir()
+{
+  Humain::agir();
+}
