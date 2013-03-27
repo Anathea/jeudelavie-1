@@ -29,19 +29,19 @@ void
 Test::testAffichage()
 {
   cout << "=== Démarrage test Affichage ===" << endl;
-  Homme h = Homme(Position(12,0), 2, 3, 20, 50, 60, &mondeTest);
-  Femme f = Femme(Position(5,5), 2, 3, 20, 50, 60, &mondeTest);
+  Homme h = Homme(Position(12,0), 2, 3, 20, 50, &mondeTest);
+  Femme f = Femme(Position(5,5), 2, 3, 20, 60, &mondeTest);
   Arbre a = Arbre(Position(2,2), &mondeTest);
   Baie b = Baie(Position(16,8), &mondeTest);
-  // Sanglier s = new Sanglier(Position(7,7), 1, &mondeTest);
-  // Lapin l = new Lapin(Position(7,7), 3, &mondeTest);
-  
-  // cout << "position homme : [" << h.getPos().getX() << ";" << h.getPos().getY() << "]." << endl;
+  Sanglier s = Sanglier(Position(7,7), 1, &mondeTest);
+  Lapin l = Lapin(Position(10,6), 3, &mondeTest);
   
   this->mondeTest.ajouter(&h);
   this->mondeTest.ajouter(&f);
   this->mondeTest.ajouter(&a);
   this->mondeTest.ajouter(&b);
+  this->mondeTest.ajouter(&s);
+  this->mondeTest.ajouter(&l);
   
   Ecran e(&mondeTest);
   e.affMonde();
