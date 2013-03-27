@@ -13,11 +13,12 @@ using namespace std;
 Test::Test(Monde &_mondeTest) :
     mondeTest(_mondeTest)
 { 
-  testCreation();
-  testPosition();
-  testDeplacement();
+  // Décommentez si nécessaire
   
-  // testAffichage();
+  // testCreation();
+  // testPosition();
+  // testDeplacement();
+  testAffichage();
 }
 
 Test::~Test()
@@ -25,11 +26,25 @@ Test::~Test()
 }
 
 void
-Test::testAffichage() const
+Test::testAffichage()
 {
   cout << "=== Démarrage test Affichage ===" << endl;
-  Ecran e = new Monde(mondeTest);
-  e.affMonde(mondeTest);
+  Homme h = Homme(Position(0,0), 2, 3, 20, 50, 60, &mondeTest);
+  Femme f = Femme(Position(5,5), 2, 3, 20, 50, 60, &mondeTest);
+  Arbre a = Arbre(Position(2,2), &mondeTest);
+  Baie b = Baie(Position(1,3), &mondeTest);
+  // Sanglier s = new Sanglier(Position(7,7), 1, &mondeTest);
+  // Lapin l = new Lapin(Position(7,7), 3, &mondeTest);
+  
+  // cout << "position homme : [" << h.getPos().getX() << ";" << h.getPos().getY() << "]." << endl;
+  
+  this->mondeTest.ajouter(&h);
+  this->mondeTest.ajouter(&f);
+  this->mondeTest.ajouter(&a);
+  this->mondeTest.ajouter(&b);
+  
+  Ecran e(&mondeTest);
+  e.affMonde();
 }
 
 void

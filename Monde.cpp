@@ -33,8 +33,8 @@ Monde::estValide(Position _pos) const
   bool occupied = false;
   map<Position, unsigned int>::const_iterator it;
 
-  if (_pos.getX() < 0 || _pos.getX() > param.getValeurParametre("l_carte")
-      || _pos.getY() < 0 || _pos.getY() > param.getValeurParametre("h_carte"))
+  if (_pos.getX() < 0 || _pos.getX() > this->getL()
+      || _pos.getY() < 0 || _pos.getY() > this->getH())
     outOfMap = true;
 
   if (wMap.find(_pos) != wMap.end())
@@ -55,6 +55,18 @@ Monde::afficher() const
     cout << Iter->first << " " << Iter->second << endl;
 }
 
+int
+Monde::getL() const
+{
+  return param.getValeurParametre("l_carte");
+}
+
+int
+Monde::getH() const
+{
+  return param.getValeurParametre("h_carte");
+}
+
 void
 Monde::ajouter(Element *_elt)
 {
@@ -68,8 +80,8 @@ Monde::ajouter(Element *_elt)
 Position
 Monde::posAleatoire() const
 {
-  return (Position(1 + rand() % param.getValeurParametre("l_carte"),
-      1 + rand() % param.getValeurParametre("h_carte")));
+  return (Position(1 + rand() % this->getL(),
+      1 + rand() % this->getH()));
 }
 
 const map<Position, unsigned int>&

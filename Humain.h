@@ -9,6 +9,7 @@
 #define HUMAIN_H
 
 #include <string>
+#include <vector>
 #include "Mobile.h"
 using namespace std;
 
@@ -26,6 +27,12 @@ public:
 
   virtual
   ~Humain();
+  
+  vector<Position>
+  voir(Position pos) const;
+  
+  vector<Position>
+  rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;
 
   // Getters & setters
   unsigned int

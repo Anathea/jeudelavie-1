@@ -31,11 +31,10 @@ public:
   virtual ~Ecran();
   
   void clear() const;
-  void affMonde(Monde _monde) const;
+  void affMonde() const;
   void pause() const;
 private:
   void affElement(Element *_elt) const;
-  void asciiArt(Position _pos, string _ch1, string _ch2, string _ch3) const;
   void asciiArt(Position _pos, string _ch1, string _ch2, string _ch3, int _couleur) const;
   void txtPos(int _x, int _y, string _s) const;
   void txtPos(int _x, int _y, string _s, int color) const;
