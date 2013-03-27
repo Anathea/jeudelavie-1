@@ -29,10 +29,10 @@ void
 Test::testAffichage()
 {
   cout << "=== Démarrage test Affichage ===" << endl;
-  Homme h = Homme(Position(0,0), 2, 3, 20, 50, 60, &mondeTest);
+  Homme h = Homme(Position(12,0), 2, 3, 20, 50, 60, &mondeTest);
   Femme f = Femme(Position(5,5), 2, 3, 20, 50, 60, &mondeTest);
   Arbre a = Arbre(Position(2,2), &mondeTest);
-  Baie b = Baie(Position(1,3), &mondeTest);
+  Baie b = Baie(Position(16,8), &mondeTest);
   // Sanglier s = new Sanglier(Position(7,7), 1, &mondeTest);
   // Lapin l = new Lapin(Position(7,7), 3, &mondeTest);
   
