@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 #include "Mobile.h"
+#include "Position.h"
+
 using namespace std;
 
 class Humain : public Mobile
@@ -29,7 +31,7 @@ public:
   ~Humain();
   
   vector<Position>
-  voir(Position pos) const;
+  voir() const;
   
   vector<Position>
   rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;

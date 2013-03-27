@@ -48,7 +48,7 @@ Monde::afficher() const
 {
   cout << "Vector : " << endl;
   for (unsigned i = 0; i < size(); i++)
-    at(i)->afficher();
+    cout << at(i)->toString() << endl;
   cout << "Map : " << endl;
   map<Position, unsigned int>::const_iterator Iter;
   for (Iter = getMap().begin(); Iter != getMap().end(); Iter++)

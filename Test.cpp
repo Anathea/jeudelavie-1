@@ -17,12 +17,23 @@ Test::Test(Monde &_mondeTest) :
   
   // testCreation();
   // testPosition();
+  testVoir();
   // testDeplacement();
-  testAffichage();
+  // testAffichage();
 }
 
 Test::~Test()
 {
+}
+
+void
+Test::testVoir()
+{
+  Homme h = Homme(Position(4,4), 2, 3, 20, 50, &mondeTest);
+  vector<Position> vp = h.voir();
+  cout << "taille vecteur de Position : " << vp.size() << endl;
+  /*for (unsigned int i=0 ; i< vp.size() ; i++)
+    cout << vp.at(i) << endl;*/
 }
 
 void
@@ -66,10 +77,9 @@ Test::testPosition() const
   else
     cout << "NOK : position " << posNOK << " valide" << endl;
   
-  /*cout << "voisin nord de ";
-  posOK.afficher();
-  cout << " : ";
-  posOK.getVoisin(NORD).afficher();*/
+  Position voisinN = posOK.getVoisin(_SUD);
+  
+  cout << "Le voisin SUD de " << posOK.toString() << " est " << voisinN.toString() << endl;
 }
 
 void

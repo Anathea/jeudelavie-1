@@ -34,10 +34,10 @@ Humain::~Humain()
 }
 
 vector<Position>
-Humain::voir(Position pos) const
+Humain::voir() const
 {
   vector<Position> vect;
-  vect = rechVoisins(0, pos, vect);
+  vect = rechVoisins(3, this->getPos(), vect);
   
   return vect;
 }
@@ -54,28 +54,54 @@ Humain::rechVoisins(int profondeur, Position pos, vector<Position> vecteur) cons
   else
   {
     Position posProv;
-/*
+
     // Si la position est valide, on l'ajoute au vecteur.
-    if (this->getMonde()->estValide(pos.getVoisin(NORD)))
-      vecteur.push_back(pos.getVoisin(NORD));
+    if (this->getMonde()->estValide(pos.getVoisin(_NORD)))
+    {
+      cout << "_NORD" << endl;
+      vecteur.push_back(pos.getVoisin(_NORD));
+    }
     
-    if (this->getMonde()->estValide(pos.getVoisin(NORD_EST)))
+    else if (this->getMonde()->estValide(pos.getVoisin(NORD_EST)))
+    {
+      cout << "NORD_EST" << endl;
       vecteur.push_back(pos.getVoisin(NORD_EST));
+    }
     
-    if (this->getMonde()->estValide(pos.getVoisin(SUD_EST)))
+    else if (this->getMonde()->estValide(pos.getVoisin(SUD_EST)))
+    {
+      cout << "SUD_EST" << endl;
       vecteur.push_back(pos.getVoisin(SUD_EST));
+    }
     
-    if (this->getMonde()->estValide(pos.getVoisin(SUD)))
-      vecteur.push_back(pos.getVoisin(SUD));
+    else if (this->getMonde()->estValide(pos.getVoisin(_SUD)))
+    {
+      cout << "_SUD" << endl;
+      vecteur.push_back(pos.getVoisin(_SUD));
+    }
     
-    if (this->getMonde()->estValide(pos.getVoisin(SUD_OUEST)))
+    else if (this->getMonde()->estValide(pos.getVoisin(SUD_OUEST)))
+    {
+      cout << "SUD_OUEST" << endl;
       vecteur.push_back(pos.getVoisin(SUD_OUEST));
+    }
     
-    if (this->getMonde()->estValide(pos.getVoisin(NORD_OUEST)))
-      vecteur.push_back(pos.getVoisin(NORD_OUEST));*/
+    else if (this->getMonde()->estValide(pos.getVoisin(NORD_OUEST)))
+    {
+      cout << "NORD_OUEST" << endl;
+      vecteur.push_back(pos.getVoisin(NORD_OUEST));
+    }
+    
+    else
+      cout << "Pas de position voisine valide (?)" << endl;
+    
+    cout << vecteur.back().toString();
     profondeur--;
   }
-
+  
+  for (unsigned int i=0 ; i< vecteur.size() ; i++)
+    cout << vecteur.at(i) << endl;
+  cout << "taille vecteur dans rechVoisins" << vecteur.size() << endl;
   return vecteur;
 }
 

@@ -43,8 +43,8 @@ public:
   getRandomName();
 
   // Autres méthodes
-  void
-  afficher() const;
+  string
+  toString() const;
   virtual void
   agir() const = 0;
 
