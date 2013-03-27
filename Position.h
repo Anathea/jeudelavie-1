@@ -22,6 +22,11 @@ public:
   ~Position();
 
   // Getters & setters
+  typedef enum {NORD, NORD_EST, SUD_EST, SUD, SUD_OUEST, NORD_OUEST} DIRECTION;
+  
+  Position
+  getVoisin(DIRECTION dir);
+  
   void
   setPos(const int _x, const int _y);
   int getX() const;

@@ -54,32 +54,25 @@ Humain::rechVoisins(int profondeur, Position pos, vector<Position> vecteur) cons
   else
   {
     Position posProv;
-
+/*
     // Si la position est valide, on l'ajoute au vecteur.
-    posProv = Position(pos.getX(), pos.getY()-2);
-    if (this->getMonde()->estValide(posProv))
-      vecteur.push_back(posProv);
+    if (this->getMonde()->estValide(pos.getVoisin(NORD)))
+      vecteur.push_back(pos.getVoisin(NORD));
     
-    posProv = Position(pos.getX(), pos.getY()-2);
-    if (this->getMonde()->estValide(posProv))
-      vecteur.push_back(posProv);
+    if (this->getMonde()->estValide(pos.getVoisin(NORD_EST)))
+      vecteur.push_back(pos.getVoisin(NORD_EST));
     
-    posProv = Position(pos.getX(), pos.getY()-2);
-    if (this->getMonde()->estValide(posProv))
-      vecteur.push_back(posProv);
-        
-    posProv = Position(pos.getX(), pos.getY()-2);
-    if (this->getMonde()->estValide(posProv))
-      vecteur.push_back(posProv);
-            
-    posProv = Position(pos.getX(), pos.getY()-2);
-    if (this->getMonde()->estValide(posProv))
-      vecteur.push_back(posProv);
-                
-    posProv = Position(pos.getX(), pos.getY()-2);
-    if (this->getMonde()->estValide(posProv))
-      vecteur.push_back(posProv);
+    if (this->getMonde()->estValide(pos.getVoisin(SUD_EST)))
+      vecteur.push_back(pos.getVoisin(SUD_EST));
     
+    if (this->getMonde()->estValide(pos.getVoisin(SUD)))
+      vecteur.push_back(pos.getVoisin(SUD));
+    
+    if (this->getMonde()->estValide(pos.getVoisin(SUD_OUEST)))
+      vecteur.push_back(pos.getVoisin(SUD_OUEST));
+    
+    if (this->getMonde()->estValide(pos.getVoisin(NORD_OUEST)))
+      vecteur.push_back(pos.getVoisin(NORD_OUEST));*/
     profondeur--;
   }
 

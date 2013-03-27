@@ -65,6 +65,11 @@ Test::testPosition() const
     cout << "OK : position " << posNOK << " invalide" << endl;
   else
     cout << "NOK : position " << posNOK << " valide" << endl;
+  
+  /*cout << "voisin nord de ";
+  posOK.afficher();
+  cout << " : ";
+  posOK.getVoisin(NORD).afficher();*/
 }
 
 void

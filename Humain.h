@@ -24,7 +24,7 @@ public:
   Humain(const Position & _pos, const string & _nom,
       const unsigned int _vitesse, const unsigned int _vision,
       const unsigned int _age, const unsigned int _espVie, Monde *_monde);
-
+  
   virtual
   ~Humain();
   
@@ -51,7 +51,6 @@ public:
 private:
   unsigned int age;
   unsigned int espVie;
-
 };
 
 #endif	/* HUMAIN_H */

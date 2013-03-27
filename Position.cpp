@@ -22,6 +22,37 @@ Position::~Position()
 {
 }
 
+Position
+Position::getVoisin(DIRECTION dir)
+{
+  Position posVoisin;
+  switch (dir)
+  {
+    case NORD:
+      posVoisin = Position(x, y-2);
+    break;
+    case NORD_EST:
+      posVoisin = Position(x+1, y-1);
+    break;
+    case SUD_EST:
+      posVoisin = Position(x+1, y+1);
+    break;
+    case SUD:
+      posVoisin = Position(x, y+2);
+    break;
+    case SUD_OUEST:
+      posVoisin = Position(x-1, y+1);
+    break;
+    case NORD_OUEST:
+      posVoisin = Position(x-1, y-1);
+    break;
+  }
+  /*if (!this->getMonde()->estValide(posVoisin))
+    posVoisin = null;*/
+  
+  return posVoisin;
+}
+
 int
 Position::getX() const
 {
