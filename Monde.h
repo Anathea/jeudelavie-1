@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "Parametres.h"
+#include "Position.h"
 
 class Element;
 
@@ -35,8 +36,8 @@ public:
   // Autres méthodes
   void
   afficher() const;
-  //Element*
-  //getElbyPos(Position pos) const;
+  Element*
+  getElbyPos(Position pos) const;
   int
   getL() const;
   int

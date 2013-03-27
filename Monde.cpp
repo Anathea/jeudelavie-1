@@ -6,7 +6,6 @@
  */
 
 #include "Monde.h"
-#include "Position.h"
 #include "Element.h" // Contre problème d'inclusion cyclique
 #include "Arbre.h"
 #include "Baie.h"
@@ -25,27 +24,28 @@ Monde::Monde()
 Monde::~Monde()
 {
 }
-/*
+
 // Retourne un élement à partir de son id
 Element*
 Monde::getElbyPos(Position pos) const
 {
-  map<Position, unsigned int>::const_iterator it;
   bool trouve = false;
-  it = getMap().begin();
-          
-  while (!trouve && it != getMap().end())
+  unsigned int i = 0;
+  
+  // On parcours les élements du monde
+  while (!trouve && i < this->size())
   {
-    if(it->first.isEqual(pos))
+    // Si un des élements est égal à la position recherchée, on a trouvé
+    if(this->at(i)->getPos().isEqual(pos))
       trouve = true;
   }
   
   if (trouve)
-    return it->first;
+    return this->at(i);
   else
     return NULL;
 }
-*/
+
 bool
 Monde::estValide(Position _pos) const
 {

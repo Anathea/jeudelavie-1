@@ -34,8 +34,8 @@ public:
   virtual
   ~Mobile();
   
-  Position
-  getVoisin(DIRECTION dir);
+  Element *
+  getVoisin(Direction dir) const;
   
   // Getters & setters
   unsigned int

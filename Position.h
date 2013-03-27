@@ -13,8 +13,6 @@ using namespace std;
 #include <string>
 #include <vector>
 
-typedef enum {_NORD, NORD_EST, SUD_EST, _SUD, SUD_OUEST, NORD_OUEST} DIRECTION;
-
 class Position
 {
 public:

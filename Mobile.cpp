@@ -38,39 +38,40 @@ Mobile::Mobile(const Position & _pos, const string & _nom,
 Mobile::~Mobile()
 {
 }
-/*
-Mobile
-Mobile::getVoisin(DIRECTION dir)
+
+Element *
+Mobile::getVoisin(Direction dir) const
 {
-  Mobile voisin;
+  Element *voisin;
   
   switch (dir)
   {
-    case _NORD:
-      voisin = this->getMonde().getElbyPos(Position(getPos().getX(), getPos().getY()-2));
+    case NORD:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX(), getPos().getY()-2));
     break;
-    case NORD_EST:
-      voisin = Position(x+1, y-1);
+    case NORDEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()+1, getPos().getY()-1));
     break;
-    case SUD_EST:
-      voisin = Position(x+1, y+1);
+    case SUDEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()+1, getPos().getY()+1));
     break;
-    case _SUD:
-      voisin = Position(x, y+2);
+    case SUD:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX(), getPos().getY()+2));
     break;
-    case SUD_OUEST:
-      voisin = Position(x-1, y+1);
+    case SUDOUEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()-1, getPos().getY()+1));
     break;
-    case NORD_OUEST:
-      voisin = Position(x-1, y-1);
+    case NORDOUEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()-1, getPos().getY()-1));
     break;
   }
-  //if (!this->getMonde()->estValide(posVoisin))
-  //  posVoisin = null;
+  // Test si la position est valide
+  if (!this->getMonde()->estValide(voisin->getPos()))
+    voisin = NULL;
   
   return voisin;
 }
-*/
+
 unsigned int
 Mobile::getVitesse() const
 {
