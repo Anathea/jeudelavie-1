@@ -35,16 +35,19 @@ Humain::Humain(const Position &_pos, const string &_nom,
 Humain::~Humain()
 {
 }
-
+/*
 vector<Position>
 Humain::voir() const
 {
   vector<Position> vect;
+  vect.push_back(this->getPos().);
   vect = rechVoisins(3, this->getPos(), vect);
   
   return vect;
 }
+*/
 
+/*
 vector<Position>
 Humain::rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const
 {
@@ -56,47 +59,55 @@ Humain::rechVoisins(int profondeur, Position pos, vector<Position> vecteur) cons
   }
   else
   {
+    Position p;
+    
     // Si la position est valide, on l'ajoute au vecteur.
-    if (this->getMonde()->estValide(pos.getVoisin(_NORD)))
+    p = pos.getVoisin(_NORD);
+    if (this->getMonde()->estValide(p) && p.dansVecteur(vecteur))
     {
       cout << "_NORD" << endl;
-      vecteur.push_back(pos.getVoisin(_NORD)); // On insère cette position dans le vecteur
-      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
+      vecteur.push_back(p); // On insère cette position dans le vecteur
+      //vecteur = rechVoisins(profondeur, p, vecteur);
     }
     
-    if (this->getMonde()->estValide(pos.getVoisin(NORD_EST)))
+    p = pos.getVoisin(NORD_EST);
+    if (this->getMonde()->estValide(p) && p.dansVecteur(vecteur))
     {
       cout << "NORD_EST" << endl;
-      vecteur.push_back(pos.getVoisin(NORD_EST));
-      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
+      vecteur.push_back(p);
+      //vecteur = rechVoisins(profondeur, p, vecteur);
     }
     
-    if (this->getMonde()->estValide(pos.getVoisin(SUD_EST)))
+    p = pos.getVoisin(SUD_EST);
+    if (this->getMonde()->estValide(p) && p.dansVecteur(vecteur))
     {
       cout << "SUD_EST" << endl;
-      vecteur.push_back(pos.getVoisin(SUD_EST));
-      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
+      vecteur.push_back(p);
+      //vecteur = rechVoisins(profondeur, p, vecteur);
     }
     
-    if (this->getMonde()->estValide(pos.getVoisin(_SUD)))
+    p = pos.getVoisin(_SUD);
+    if (this->getMonde()->estValide(p) && p.dansVecteur(vecteur))
     {
       cout << "_SUD" << endl;
-      vecteur.push_back(pos.getVoisin(_SUD));
-      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
+      vecteur.push_back(p);
+      //vecteur = rechVoisins(profondeur, p, vecteur);
     }
     
-    if (this->getMonde()->estValide(pos.getVoisin(SUD_OUEST)))
+    p = pos.getVoisin(_SUD);
+    if (this->getMonde()->estValide(p) && p.dansVecteur(vecteur))
     {
       cout << "SUD_OUEST" << endl;
-      vecteur.push_back(pos.getVoisin(SUD_OUEST));
-      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
+      vecteur.push_back(p);
+      //vecteur = rechVoisins(profondeur, p, vecteur);
     }
     
-    if (this->getMonde()->estValide(pos.getVoisin(NORD_OUEST)))
+    p = pos.getVoisin(NORD_OUEST);
+    if (this->getMonde()->estValide(p) && p.dansVecteur(vecteur))
     {
       cout << "NORD_OUEST" << endl;
-      vecteur.push_back(pos.getVoisin(NORD_OUEST));
-      vecteur = rechVoisins(profondeur, pos.getVoisin(_NORD), vecteur);
+      vecteur.push_back(p);
+      //vecteur = rechVoisins(profondeur, p, vecteur);
     }
     
     cout << vecteur.back().toString();
@@ -108,7 +119,7 @@ Humain::rechVoisins(int profondeur, Position pos, vector<Position> vecteur) cons
   cout << "taille vecteur dans rechVoisins : " << vecteur.size() << endl;
   return vecteur;
 }
-
+*/
 unsigned int
 Humain::getAge() const
 {

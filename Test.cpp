@@ -68,9 +68,9 @@ Test::testPosition() const
   else
     cout << "NOK : position " << posNOK << " valide" << endl;
   
-  Position voisinN = posOK.getVoisin(_SUD);
+  // Position voisinN = posOK.getVoisin(_SUD);
   
-  cout << "Le voisin SUD de " << posOK.toString() << " est " << voisinN.toString() << endl;
+  // cout << "Le voisin SUD de " << posOK.toString() << " est " << voisinN.toString() << endl;
 }
 
 void

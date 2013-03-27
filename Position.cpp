@@ -5,6 +5,8 @@
  *      Author: thomas
  */
 
+#include <vector>
+
 #include "Position.h"
 
 
@@ -28,35 +30,21 @@ Position::isEqual(Position pos) const
   return (x == pos.getX() && y == pos.getY());
 }
 
-Position
-Position::getVoisin(DIRECTION dir)
+// Permet de savoir si une position se trouve dans un vecteur de Position
+bool
+Position::dansVecteur(vector<Position> v) const
 {
-  Position posVoisin;
-  switch (dir)
-  {
-    case _NORD:
-      posVoisin = Position(x, y-2);
-    break;
-    case NORD_EST:
-      posVoisin = Position(x+1, y-1);
-    break;
-    case SUD_EST:
-      posVoisin = Position(x+1, y+1);
-    break;
-    case _SUD:
-      posVoisin = Position(x, y+2);
-    break;
-    case SUD_OUEST:
-      posVoisin = Position(x-1, y+1);
-    break;
-    case NORD_OUEST:
-      posVoisin = Position(x-1, y-1);
-    break;
-  }
-  /*if (!this->getMonde()->estValide(posVoisin))
-    posVoisin = null;*/
+  bool trouve = false;
+  unsigned int i = 0;
   
-  return posVoisin;
+  while ((trouve == false) && i<v.size())
+  {
+    if (this->isEqual(v.at(i)))
+      trouve = true;
+    i++;
+  }
+  
+  return trouve;
 }
 
 int
