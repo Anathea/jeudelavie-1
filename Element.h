@@ -12,8 +12,8 @@
 #include <iostream>
 #include "Position.h"
 #include "Parametres.h"
-
-class Monde;
+#include "Monde.h"
+//class Monde;
 // Contre problème d'inclusion cyclique
 
 class Element

@@ -113,12 +113,6 @@ Mobile::seDeplacer(const Direction _dir)
   return possible;
 }
 
-void
-Mobile::agir() const
-{
-
-}
-
 Direction
 Mobile::getRandomDirection() const
 {

@@ -12,8 +12,11 @@
 #include <map>
 #include <stdlib.h>
 #include <time.h>
-#include "Element.h"
+#include "Parametres.h"
+//#include "Element.h"
+#include "Position.h"
 
+class Element;
 
 class Monde : public vector<Element *>
 {
