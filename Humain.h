@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include "Mobile.h"
+#include "Element.h"
 
 using namespace std;
 
@@ -34,6 +35,7 @@ public:
   
   vector<Position>
   rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;
+
 
   // Getters & setters
   unsigned int

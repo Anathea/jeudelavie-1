@@ -1,6 +1,12 @@
 tpause 5
 l_carte 20
 h_carte 10
+<<<<<<< HEAD
+nb_mobile 5
+nb_ressource 5
+temps_gestation 9
+temps_enfant 3
+=======
 nb_arbre 5
 nb_baie 5
 nb_femme 5
@@ -17,3 +23,4 @@ nourriture_init 10
 conso_nourriture 1
 min_ressource_init 2
 max_ressource_init 5
+>>>>>>> 149882bbadd671723881cd2f0b3dc49cef3f6128
