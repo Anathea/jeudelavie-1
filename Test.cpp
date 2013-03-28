@@ -19,8 +19,8 @@ Test::Test(Monde &_mondeTest) :
   // testSuppression();
   // testPosition();
   // testgetElByPos();
-  testgetVoisin();
-  // testVoir();
+  // testgetVoisin();
+  testVoir();
   // testDeplacement();
   // testAffichage();
 }
@@ -32,10 +32,20 @@ Test::~Test()
 void
 Test::testVoir()
 {
-  Homme h = Homme(Position(4,4), 2, 3, 20, 50, &mondeTest);
-  // vector<Position> vp = h.voir();
-  /*for (unsigned int i=0 ; i< vp.size() ; i++)
-    cout << vp.at(i) << endl;*/
+  Homme h1(Position(2,2), 1, 1, 25, 60, &mondeTest);
+  mondeTest.ajouter(&h1);
+
+  Homme h2(Position(3,3), 1, 1, 25, 60, &mondeTest);
+  mondeTest.ajouter(&h2);
+  
+  Homme h3(Position(2,0), 1, 1, 25, 60, &mondeTest);
+  mondeTest.ajouter(&h3);
+  
+  vector<Element*> vect = h1.voir();
+  
+  cout << "Elements à proximité :" << endl;
+  for (unsigned int i=0 ; i< vect.size() ; i++)
+    cout << vect.at(i)->toString() << endl;
 }
 
 void

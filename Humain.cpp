@@ -38,18 +38,33 @@ Humain::Humain(const Position &_pos, const string &_nom,
 Humain::~Humain()
 {
 }
-/*
-vector<Position>
+
+vector<Element*>
 Humain::voir() const
 {
-  vector<Position> vect;
-  vect.push_back(this->getPos().);
-  vect = rechVoisins(3, this->getPos(), vect);
+  vector<Element*> vect;
+  if (this->getVoisin(NORD) != NULL)
+    vect.push_back(this->getVoisin(NORD));
+  
+  if (this->getVoisin(NORDEST) != NULL)
+    vect.push_back(this->getVoisin(NORDEST));
+  
+  if (this->getVoisin(SUDEST) != NULL)
+    vect.push_back(this->getVoisin(SUDEST));
+  
+  if (this->getVoisin(SUD) != NULL)
+    vect.push_back(this->getVoisin(SUD));
+  
+  if (this->getVoisin(SUDOUEST) != NULL)
+    vect.push_back(this->getVoisin(SUDOUEST));
+  
+  if (this->getVoisin(NORDOUEST) != NULL)
+    vect.push_back(this->getVoisin(NORDOUEST));
+  
+  // vect = rechVoisins(3, this->getPos(), vect);
   
   return vect;
 }
-*/
-
 /*
 vector<Position>
 Humain::rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const

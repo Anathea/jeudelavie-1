@@ -30,11 +30,11 @@ public:
   virtual
   ~Humain();
   
-  vector<Position>
+  vector<Element*>
   voir() const;
   
-  vector<Position>
-  rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;
+  // vector<Position>
+  // rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;
 
 
   // Getters & setters
