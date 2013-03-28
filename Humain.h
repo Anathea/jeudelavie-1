@@ -35,6 +35,7 @@ public:
   vector<Position>
   rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;
 
+
   // Getters & setters
   unsigned int
   getAge() const;

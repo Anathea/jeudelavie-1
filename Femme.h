@@ -22,8 +22,11 @@ public:
         const unsigned int _vie, const unsigned int _espVie, Monde *_monde);
   virtual
   ~Femme();
-private:
 
+ void reproduction();
+ bool hommeACote();
+private:
+  bool enceinte;
 };
 
 #endif	/* FEMME_H */

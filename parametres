@@ -3,3 +3,5 @@ l_carte 20
 h_carte 10
 nb_mobile 5
 nb_ressource 5
+temps_gestation 9
+temps_enfant 3
