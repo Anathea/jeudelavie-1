@@ -90,6 +90,18 @@ Position::operator <(const Position & p2) const
   return this->x < p2.x || (this->x == p2.x && this->y < p2.y);
 }
 
+bool
+Position::operator ==(const Position& p2) const
+{
+  return (this->x == p2.getX() && this->y == p2.getY());
+}
+
+bool
+Position::operator !=(const Position& p2) const
+{
+  return !(*(this) == p2);
+}
+
 string
 Position::toString() const
 {
@@ -111,6 +123,7 @@ operator <<(ostream& Out, const Position& pos)
   Out << "(" << pos.getX() << ";" << pos.getY() << ")";
   return Out;
 }
+
 
 bool
 Position::estValide () const

@@ -15,11 +15,12 @@ Test::Test(Monde &_mondeTest) :
 { 
   // Décommentez si nécessaire
   
-  // testCreation();
-  // testPosition();
-  testVoir();
-  // testDeplacement();
-  // testAffichage();
+  testCreation();
+//  testSuppression();
+  testPosition();
+//  testVoir();
+  testDeplacement();
+//  testAffichage();
 }
 
 Test::~Test()
@@ -81,6 +82,29 @@ Test::testCreation()
   Monde monde;
   monde.addRandomElements();
   monde.afficher();
+}
+
+void
+Test::testSuppression()
+{
+  Monde monde;
+  Homme homme1(&monde);
+  Homme homme2(&monde);
+  monde.ajouter(&homme1);
+  monde.ajouter(&homme2);
+  monde.deleteElement(homme1.getPos());
+  if(monde.getMap().find(homme1.getPos()) == monde.getMap().end())
+    cout << "OK : élément supprimé dans la map" << endl;
+  else
+    cout << "NOK : élément non supprimé dans la map" << endl;
+  if(monde.getMap().find(homme2.getPos()) != monde.getMap().end() && monde.getMap().at(homme2.getPos()) == 0)
+    cout << "OK : élément décalé dans la map" << endl;
+  else
+    cout << "NOK : élément non décalé dans la map" << endl;
+  if(monde.size() == 1)
+    cout << "OK : élément supprimé du vecteur" << endl;
+  else
+    cout << "NOK : élément non supprimé du vecteur" << endl;
 }
 
 void

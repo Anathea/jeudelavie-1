@@ -33,6 +33,8 @@ public:
   int getX() const;
   int getY() const;
   bool operator < (const Position & p2) const;
+  bool operator == (const Position & p2) const;
+  bool operator != (const Position & p2) const;
   void
   setX(int _x);
   void

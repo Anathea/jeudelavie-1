@@ -116,3 +116,27 @@ Monde::getRandomInt(const unsigned int nb1, const unsigned int nb2)
 {
   return nb1+rand()%nb2;
 }
+
+void
+Monde::deleteElement(const Position &_pos)
+{
+  vector<Position> vecPosToChange;
+  unsigned int indice = wMap.at(_pos);
+  unsigned int indMap;
+  map<Position, unsigned int>::iterator it = wMap.begin();
+  while(it != wMap.end()) {
+      if(it->second > indice) {
+          vecPosToChange.push_back(it->first);
+      }
+      it++;
+  }
+  vector<Position>::const_iterator itv = vecPosToChange.begin();
+  while(itv != vecPosToChange.end()) {
+      indMap = wMap.at(*itv);
+      wMap.erase(*itv);
+      wMap.insert(pair<Position,unsigned int>(*itv, indMap));
+      itv++;
+  }
+  wMap.erase(wMap.find(_pos));
+  this->erase(this->begin()+indice);
+}

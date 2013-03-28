@@ -51,6 +51,8 @@ public:
   addRandomElements();
   int
   getRandomInt(const unsigned int nb1, const unsigned int nb2);
+  void
+  deleteElement(const Position &_pos);
 
 private:
   map<Position, unsigned int> wMap;
