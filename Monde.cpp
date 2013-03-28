@@ -6,18 +6,44 @@
  */
 
 #include "Monde.h"
-#include "Mobile.h"
 #include "Element.h" // Contre problème d'inclusion cyclique
+#include "Arbre.h"
+#include "Baie.h"
+#include "Lapin.h"
+#include "Sanglier.h"
+#include "Homme.h"
+#include "Femme.h"
+
 using namespace std;
 
 Monde::Monde()
 {
   srand(time(NULL));
-  cout << "Création du Monde...\n";
 }
 
 Monde::~Monde()
 {
+}
+
+// Retourne un élement à partir de son id
+Element*
+Monde::getElbyPos(Position pos) const
+{
+  bool trouve = false;
+  unsigned int i = 0;
+  
+  // On parcours les élements du monde
+  while (!trouve && i < this->size())
+  {
+    // Si un des élements est égal à la position recherchée, on a trouvé
+    if(this->at(i)->getPos().isEqual(pos))
+      trouve = true;
+  }
+  
+  if (trouve)
+    return this->at(i);
+  else
+    return NULL;
 }
 
 bool
@@ -27,8 +53,8 @@ Monde::estValide(Position _pos) const
   bool occupied = false;
   map<Position, unsigned int>::const_iterator it;
 
-  if (_pos.getX() < 0 || _pos.getX() > this->getL()
-      || _pos.getY() < 0 || _pos.getY() > this->getH())
+  if (_pos.getX() < 0 || _pos.getX() > this->getL() || _pos.getY() < 0
+      || _pos.getY() > this->getH())
     outOfMap = true;
 
   if (wMap.find(_pos) != wMap.end())
@@ -42,7 +68,7 @@ Monde::afficher() const
 {
   cout << "Vector : " << endl;
   for (unsigned i = 0; i < size(); i++)
-    at(i)->afficher();
+    cout << at(i)->toString() << endl;
   cout << "Map : " << endl;
   map<Position, unsigned int>::const_iterator Iter;
   for (Iter = getMap().begin(); Iter != getMap().end(); Iter++)
@@ -74,8 +100,7 @@ Monde::ajouter(Element *_elt)
 Position
 Monde::posAleatoire() const
 {
-  return (Position(1 + rand() % this->getL(),
-      1 + rand() % this->getH()));
+  return (Position(1 + rand() % this->getL(), 1 + rand() % this->getH()));
 }
 
 const map<Position, unsigned int>&
@@ -93,20 +118,22 @@ Monde::getMap()
 void
 Monde::addRandomElements()
 {
-  int nbMobile = param.getValeurParametre("nb_mobile");
-  Position pos;
-  for(int i = 0;i<nbMobile;i++) {
-      // On cherche une position inocuppée
-      do {
-          pos = posAleatoire();
-      } while(!estValide(pos));
-      // On ajoute dans le monde
-      ajouter(new Mobile(pos, Element::getRandomName(), 1, 1, this));
-  }
+  Arbre::addRandomArbres(this);
+  Baie::addRandomBaies(this);
+  Lapin::addRandomLapins(this);
+  Sanglier::addRandomSangliers(this);
+  Homme::addRandomHommes(this);
+  Femme::addRandomFemmes(this);
 }
 
 Parametres
 Monde::getParam() const
 {
   return param;
+}
+
+int
+Monde::getRandomInt(const unsigned int nb1, const unsigned int nb2)
+{
+  return nb1+rand()%nb2;
 }

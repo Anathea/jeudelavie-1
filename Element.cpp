@@ -81,8 +81,9 @@ Element::getRandomName()
   return names.at(rand() % names.size());
 }
 
-void
-Element::afficher() const
+string
+Element::toString() const
 {
-  cout << "Element " << getNom() << " : " << getPos() << endl;
+  string s  = "Element " + nom + " : " + pos.toString();
+  return s;
 }

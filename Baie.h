@@ -10,11 +10,19 @@
 
 #include "Ressource.h"
 
-class Baie : public Ressource {
+class Baie : public Ressource
+{
 public:
   Baie(Monde *_monde);
   Baie(const Position &_pos, Monde *_monde);
-  virtual ~Baie();
+  virtual
+  ~Baie();
+
+  static void
+  addRandomBaies(Monde *_monde);
+  void
+  agir();
+
 private:
 
 };

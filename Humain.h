@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 #include "Mobile.h"
+#include "Element.h"
+
 using namespace std;
 
 class Humain : public Mobile
@@ -20,17 +22,16 @@ public:
   Humain(Monde *_monde);
   Humain(const Position &_pos, const unsigned int _vitesse,
       const unsigned int _vision, const unsigned int _age,
-      const unsigned int _vie, const unsigned int _espVie, Monde *_monde);
+      const unsigned int _espVie, Monde *_monde);
   Humain(const Position & _pos, const string & _nom,
       const unsigned int _vitesse, const unsigned int _vision,
-      const unsigned int _age, const unsigned int _vie,
-      const unsigned int _espVie, Monde *_monde);
-
+      const unsigned int _age, const unsigned int _espVie, Monde *_monde);
+  
   virtual
   ~Humain();
   
   vector<Position>
-  voir(Position pos) const;
+  voir() const;
   
   vector<Position>
   rechVoisins(int profondeur, Position pos, vector<Position> vecteur) const;
@@ -42,21 +43,22 @@ public:
   void
   setAge(const unsigned int _age);
   unsigned int
-  getVie() const;
+  getNourriture() const;
   void
-  setVie(const unsigned int _vie);
+  setNourriture(unsigned int nourriture);
   unsigned int
   getEspVie() const;
   void
   setEspVie(const unsigned int _espVie);
 
   // Autres méthodes
+  void
+  agir();
 
 private:
   unsigned int age;
-  unsigned int vie;
   unsigned int espVie;
-
+  unsigned int nourriture;
 };
 
 #endif	/* HUMAIN_H */

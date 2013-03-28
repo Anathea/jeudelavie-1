@@ -12,8 +12,8 @@
 #include <iostream>
 #include "Position.h"
 #include "Parametres.h"
-
-class Monde;
+#include "Monde.h"
+//class Monde;
 // Contre problème d'inclusion cyclique
 
 class Element
@@ -43,10 +43,10 @@ public:
   getRandomName();
 
   // Autres méthodes
-  void
-  afficher() const;
+  string
+  toString() const;
   virtual void
-  agir() const = 0;
+  agir() = 0;
 
 private:
   Position pos;

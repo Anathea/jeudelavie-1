@@ -12,15 +12,15 @@ Mobile::Mobile(Monde *_monde) :
 {
 }
 
-Mobile::Mobile(const Element &_elem, const unsigned int _vision,
-    const unsigned int _vitesse) :
-    Element(_elem), vision(_vision), vitesse(_vitesse)
+Mobile::Mobile(const Position& _pos, Monde* _monde) :
+    Element(_pos, _monde), vision(1), vitesse(1)
 {
 }
 
-Mobile::Mobile(const Position& _pos, const unsigned int _vitesse, Monde* _monde) :
-    Element(_pos, _monde), vision(0), vitesse(_vitesse)
+Mobile::Mobile(const Position &_pos, const unsigned int _vitesse, Monde *_monde) :
+    Element(_pos, _monde), vision(1), vitesse(_vitesse)
 {
+
 }
 
 Mobile::Mobile(const Position& _pos, const unsigned int _vision,
@@ -37,6 +37,39 @@ Mobile::Mobile(const Position & _pos, const string & _nom,
 
 Mobile::~Mobile()
 {
+}
+
+Element *
+Mobile::getVoisin(Direction dir) const
+{
+  Element *voisin;
+  
+  switch (dir)
+  {
+    case NORD:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX(), getPos().getY()-2));
+    break;
+    case NORDEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()+1, getPos().getY()-1));
+    break;
+    case SUDEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()+1, getPos().getY()+1));
+    break;
+    case SUD:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX(), getPos().getY()+2));
+    break;
+    case SUDOUEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()-1, getPos().getY()+1));
+    break;
+    case NORDOUEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()-1, getPos().getY()-1));
+    break;
+  }
+  // Test si la position est valide
+  if (!this->getMonde()->estValide(voisin->getPos()))
+    voisin = NULL;
+  
+  return voisin;
 }
 
 unsigned int
@@ -113,14 +146,14 @@ Mobile::seDeplacer(const Direction _dir)
   return possible;
 }
 
-void
-Mobile::agir() const
-{
-
-}
-
 Direction
 Mobile::getRandomDirection() const
 {
   return (Direction) (rand() % 6);
+}
+
+void
+Mobile::agir()
+{
+
 }

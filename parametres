@@ -1,7 +1,26 @@
 tpause 5
 l_carte 20
 h_carte 10
+<<<<<<< HEAD
 nb_mobile 5
 nb_ressource 5
 temps_gestation 9
 temps_enfant 3
+=======
+nb_arbre 5
+nb_baie 5
+nb_femme 5
+nb_homme 5
+nb_lapin 5
+nb_sanglier 5
+min_age 18
+max_age 30
+min_esp_vie 50
+max_esp_vie 90
+min_vision 0
+max_vision 3
+nourriture_init 10
+conso_nourriture 1
+min_ressource_init 2
+max_ressource_init 5
+>>>>>>> 149882bbadd671723881cd2f0b3dc49cef3f6128

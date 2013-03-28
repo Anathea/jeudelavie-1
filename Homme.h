@@ -16,12 +16,18 @@ public:
   Homme(Monde *_monde);
   Homme(const Position &_pos, const unsigned int _vitesse,
       const unsigned int _vision, const unsigned int _age,
-      const unsigned int _vie, const unsigned int _espVie, Monde *_monde);
+      const unsigned int _espVie, Monde *_monde);
   Homme(const Position &_pos, const string &_nom, const unsigned int _vitesse,
       const unsigned int _vision, const unsigned int _age,
-      const unsigned int _vie, const unsigned int _espVie, Monde *_monde);
+      const unsigned int _espVie, Monde *_monde);
   virtual
   ~Homme();
+
+  static void
+  addRandomHommes(Monde *_monde);
+  void
+  agir();
+
 private:
 
 };

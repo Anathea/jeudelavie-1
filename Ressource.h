@@ -10,7 +10,7 @@
 
 #include "Element.h"
 
-class Ressource : public Element
+class Ressource : public virtual Element
 {
 
 public:
@@ -26,6 +26,9 @@ public:
 
   virtual
   ~Ressource();
+
+private:
+  unsigned int valRessource;
 };
 
 #endif /* RESSOURCE_H_ */

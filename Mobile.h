@@ -6,27 +6,26 @@
  */
 
 #ifndef MOBILE_H
-#define	MOBILE_H
+#define	 MOBILE_H
 
 #include <string>
 #include "Element.h"
 #include "Monde.h"
 
-using namespace std;
+class Element;
 
 typedef enum
 {
   NORD = 0, NORDEST, SUDEST, SUD, SUDOUEST, NORDOUEST
 } Direction;
 
-class Mobile : public Element
+class Mobile : public virtual Element
 {
 public:
   // Constructeurs
   Mobile(Monde *_monde);
-  Mobile(const Element &_elem, const unsigned int _vision,
-      const unsigned int _vitesse);
-  Mobile(const Position &_pos, const unsigned int _vitesse, Monde *_monde);
+  Mobile(const Position &_pos, Monde *_monde);
+  Mobile(const Position &_pos, unsigned int _vitesse, Monde *_monde);
   Mobile(const Position &_pos, const unsigned int _vision,
       const unsigned int _vitesse, Monde *_monde);
   Mobile(const Position & _pos, const string & _nom, const unsigned int _vision,
@@ -34,7 +33,10 @@ public:
 
   virtual
   ~Mobile();
-
+  
+  Element *
+  getVoisin(Direction dir) const;
+  
   // Getters & setters
   unsigned int
   getVitesse() const;
@@ -51,7 +53,7 @@ public:
   bool
   seDeplacer(const Direction _dir);
   void
-  agir() const;
+  agir();
 
 private:
   unsigned int vision;

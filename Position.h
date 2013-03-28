@@ -10,7 +10,8 @@
 using namespace std;
 
 #include <iostream>
-
+#include <string>
+#include <vector>
 
 class Position
 {
@@ -22,6 +23,9 @@ public:
   ~Position();
 
   // Getters & setters
+  bool dansVecteur(vector<Position>) const;
+  bool isEqual(Position pos) const;
+    
   void
   setPos(const int _x, const int _y);
   int getX() const;
@@ -33,8 +37,8 @@ public:
   setY(int _y);
 
   // Autres méthodes
-  void afficher();
-  bool estValide();
+  string toString() const;
+  bool estValide() const;
 
 private:
   int x;

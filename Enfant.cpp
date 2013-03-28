@@ -8,7 +8,8 @@
 #include "Enfant.h"
 //#include "Parametres.h"
 
-Enfant::Enfant(Monde *_monde) : Humain(_monde), age(0)
+Enfant::Enfant(Monde *_monde) :
+  Element(_monde),Humain(_monde),age(0)
 {
   // TODO Auto-generated constructor stub
 
@@ -20,7 +21,11 @@ Enfant::~Enfant()
 }
 
 void Enfant::devientAdulte(){
-  if( getMonde()->getParam().getValeurParametre("temps_enfant")== age ){
+  if( this->getMonde()->getParam().getValeurParametre("temps_enfant")== age ){
 
+      if( (rand()%1+2) == 1)
+          getMonde()->ajouter( new Femme( getMonde() ) );
+      else
+          getMonde()->ajouter( new Homme( getMonde() ) );
   }
 }

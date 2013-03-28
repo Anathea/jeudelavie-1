@@ -5,6 +5,8 @@
  *      Author: thomas
  */
 
+#include <vector>
+
 #include "Position.h"
 
 
@@ -20,6 +22,29 @@ Position::Position(const int _x, const int _y) :
 
 Position::~Position()
 {
+}
+
+bool
+Position::isEqual(Position pos) const
+{
+  return (x == pos.getX() && y == pos.getY());
+}
+
+// Permet de savoir si une position se trouve dans un vecteur de Position
+bool
+Position::dansVecteur(vector<Position> v) const
+{
+  bool trouve = false;
+  unsigned int i = 0;
+  
+  while ((trouve == false) && i<v.size())
+  {
+    if (this->isEqual(v.at(i)))
+      trouve = true;
+    i++;
+  }
+  
+  return trouve;
 }
 
 int
@@ -59,11 +84,19 @@ Position::operator <(const Position & p2) const
   return this->x < p2.x || (this->x == p2.x && this->y < p2.y);
 }
 
-
-void
-Position::afficher()
+string
+Position::toString() const
 {
-  cout << "X : " << getX() << " | Y : " << getY() << endl;
+  string strX = string(1, '0'+x);
+  string strY = string(1, '0'+y);
+  
+  string s = "[";
+  s.append(strX);
+  s.append(" ; ");
+  s.append(strY);
+  s.append("]");
+  
+  return s;
 }
 
 ostream&
@@ -74,7 +107,7 @@ operator <<(ostream& Out, const Position& pos)
 }
 
 bool
-Position::estValide ()
+Position::estValide () const
 {
   return (((this->x%2 == 0 && this->y%2 == 0) || (this->x%2 != 0 && this->y%2 != 0)));
 }

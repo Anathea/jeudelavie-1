@@ -9,6 +9,8 @@
 #define ENFANT_H_
 
 #include "Humain.h"
+#include "Femme.h"
+#include "Homme.h"
 
 class Enfant : public Humain
 {

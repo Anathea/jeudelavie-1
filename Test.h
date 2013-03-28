@@ -22,6 +22,9 @@ public:
   virtual ~Test();
   
   void testCreation();
+  void testgetElById();
+  void testgetVoisin();
+  void testVoir();
   void testAffichage();
   void testPosition() const;
   void testDeplacement();
