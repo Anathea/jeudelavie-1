@@ -39,6 +39,39 @@ Mobile::~Mobile()
 {
 }
 
+Element *
+Mobile::getVoisin(Direction dir) const
+{
+  Element *voisin;
+  
+  switch (dir)
+  {
+    case NORD:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX(), getPos().getY()-2));
+    break;
+    case NORDEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()+1, getPos().getY()-1));
+    break;
+    case SUDEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()+1, getPos().getY()+1));
+    break;
+    case SUD:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX(), getPos().getY()+2));
+    break;
+    case SUDOUEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()-1, getPos().getY()+1));
+    break;
+    case NORDOUEST:
+      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()-1, getPos().getY()-1));
+    break;
+  }
+  // Test si la position est valide
+  if (!this->getMonde()->estValide(voisin->getPos()))
+    voisin = NULL;
+  
+  return voisin;
+}
+
 unsigned int
 Mobile::getVitesse() const
 {

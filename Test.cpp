@@ -31,10 +31,32 @@ void
 Test::testVoir()
 {
   Homme h = Homme(Position(4,4), 2, 3, 20, 50, &mondeTest);
-  vector<Position> vp = h.voir();
-  cout << "taille vecteur de Position : " << vp.size() << endl;
+  // vector<Position> vp = h.voir();
   /*for (unsigned int i=0 ; i< vp.size() ; i++)
     cout << vp.at(i) << endl;*/
+}
+
+void
+Test::testgetElById()
+{
+  Homme homme(Position(0,0), 1, 1, 25, 60, &mondeTest);
+  mondeTest.ajouter(&homme);
+  Element *elt = mondeTest.getElbyPos(Position(0,0));
+  cout << elt->toString() << endl;
+}
+
+void
+Test::testgetVoisin()
+{
+  Homme h1(Position(0,0), 1, 1, 25, 60, &mondeTest);
+  mondeTest.ajouter(&h1);
+
+  Homme h2(Position(1,1), 1, 1, 25, 60, &mondeTest);
+  mondeTest.ajouter(&h2);
+  
+  Element *elt = h1.getVoisin(NORDOUEST);
+
+  cout << "Le voisin de " << h1.toString() << " est " << elt->toString() << endl;
 }
 
 void
@@ -70,9 +92,9 @@ Test::testPosition() const
   else
     cout << "NOK : position " << posNOK << " valide" << endl;
   
-  Position voisinN = posOK.getVoisin(_SUD);
+  // Position voisinN = posOK.getVoisin(_SUD);
   
-  cout << "Le voisin SUD de " << posOK.toString() << " est " << voisinN.toString() << endl;
+  // cout << "Le voisin SUD de " << posOK.toString() << " est " << voisinN.toString() << endl;
 }
 
 void

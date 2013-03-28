@@ -23,6 +23,8 @@ public:
   
   void testCreation();
   void testSuppression();
+  void testgetElById();
+  void testgetVoisin();
   void testVoir();
   void testAffichage();
   void testPosition() const;

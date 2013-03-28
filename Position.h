@@ -11,8 +11,7 @@ using namespace std;
 
 #include <iostream>
 #include <string>
-
-typedef enum {_NORD, NORD_EST, SUD_EST, _SUD, SUD_OUEST, NORD_OUEST} DIRECTION;
+#include <vector>
 
 class Position
 {
@@ -24,10 +23,9 @@ public:
   ~Position();
 
   // Getters & setters
-  
-  Position
-  getVoisin(DIRECTION dir);
-  
+  bool dansVecteur(vector<Position>) const;
+  bool isEqual(Position pos) const;
+    
   void
   setPos(const int _x, const int _y);
   int getX() const;

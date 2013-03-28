@@ -33,7 +33,10 @@ public:
 
   virtual
   ~Mobile();
-
+  
+  Element *
+  getVoisin(Direction dir) const;
+  
   // Getters & setters
   unsigned int
   getVitesse() const;
