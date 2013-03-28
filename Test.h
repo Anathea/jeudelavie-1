@@ -23,7 +23,7 @@ public:
   
   void testCreation();
   void testSuppression();
-  void testgetElById();
+  void testgetElByPos();
   void testgetVoisin();
   void testVoir();
   void testAffichage();

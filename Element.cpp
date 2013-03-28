@@ -84,6 +84,10 @@ Element::getRandomName()
 string
 Element::toString() const
 {
-  string s  = "Element " + nom + " : " + pos.toString();
+  string s;
+  if (this == NULL)
+    s = "Element inexistant";
+  else
+    s = "Element " + nom + " : " + pos.toString();
   return s;
 }

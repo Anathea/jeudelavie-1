@@ -42,33 +42,51 @@ Mobile::~Mobile()
 Element *
 Mobile::getVoisin(Direction dir) const
 {
-  Element *voisin;
+  Element *voisin = NULL;
+  Position pos;
   
   switch (dir)
   {
     case NORD:
-      voisin = this->getMonde()->getElbyPos(Position(getPos().getX(), getPos().getY()-2));
+      pos = Position(this->getPos().getX(), this->getPos().getY()-2);
+      if (this->getMonde()->getElbyPos(pos) != NULL)
+        voisin = this->getMonde()->getElbyPos(pos);
     break;
+    
     case NORDEST:
-      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()+1, getPos().getY()-1));
+      pos = Position(this->getPos().getX()+1, this->getPos().getY()-1);
+      if (this->getMonde()->getElbyPos(pos) != NULL)
+        voisin = this->getMonde()->getElbyPos(pos);
     break;
+    
     case SUDEST:
-      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()+1, getPos().getY()+1));
+      pos = Position(this->getPos().getX()+1, this->getPos().getY()+1);
+      if (this->getMonde()->getElbyPos(pos) != NULL)
+        voisin = this->getMonde()->getElbyPos(pos);
     break;
+    
     case SUD:
-      voisin = this->getMonde()->getElbyPos(Position(getPos().getX(), getPos().getY()+2));
+      pos = Position(this->getPos().getX(), this->getPos().getY()+2);
+      if (this->getMonde()->getElbyPos(pos) != NULL)
+        voisin = this->getMonde()->getElbyPos(pos);
     break;
+    
     case SUDOUEST:
-      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()-1, getPos().getY()+1));
+      pos = Position(this->getPos().getX()-1, this->getPos().getY()+1);
+      if (this->getMonde()->getElbyPos(pos) != NULL)
+        voisin = this->getMonde()->getElbyPos(pos);
     break;
+    
     case NORDOUEST:
-      voisin = this->getMonde()->getElbyPos(Position(getPos().getX()-1, getPos().getY()-1));
+      pos = Position(this->getPos().getX()-1, this->getPos().getY()-1);
+      if (this->getMonde()->getElbyPos(pos) != NULL)
+        voisin = this->getMonde()->getElbyPos(pos);
+    break;
+    
+    default:
+      cout << "Orientation invalide" << endl;
     break;
   }
-  // Test si la position est valide
-  if (!this->getMonde()->estValide(voisin->getPos()))
-    voisin = NULL;
-  
   return voisin;
 }
 

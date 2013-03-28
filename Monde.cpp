@@ -32,16 +32,20 @@ Monde::getElbyPos(Position pos) const
   bool trouve = false;
   unsigned int i = 0;
   
+  if (this->estValide(pos))
+    return NULL;
+  
   // On parcours les élements du monde
   while (!trouve && i < this->size())
   {
     // Si un des élements est égal à la position recherchée, on a trouvé
     if(this->at(i)->getPos().isEqual(pos))
       trouve = true;
+    i++;
   }
   
   if (trouve)
-    return this->at(i);
+    return this->at(i-1);
   else
     return NULL;
 }

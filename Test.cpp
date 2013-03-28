@@ -15,12 +15,14 @@ Test::Test(Monde &_mondeTest) :
 { 
   // Décommentez si nécessaire
   
-  testCreation();
-//  testSuppression();
-  testPosition();
-//  testVoir();
-  testDeplacement();
-//  testAffichage();
+  // testCreation();
+  // testSuppression();
+  // testPosition();
+  // testgetElByPos();
+  testgetVoisin();
+  // testVoir();
+  // testDeplacement();
+  // testAffichage();
 }
 
 Test::~Test()
@@ -37,26 +39,42 @@ Test::testVoir()
 }
 
 void
-Test::testgetElById()
+Test::testgetElByPos()
 {
-  Homme homme(Position(0,0), 1, 1, 25, 60, &mondeTest);
-  mondeTest.ajouter(&homme);
-  Element *elt = mondeTest.getElbyPos(Position(0,0));
-  cout << elt->toString() << endl;
+  cout << "=== Démarrage test getElByPos ===" << endl;
+  Homme h1(Position(0,0), 1, 1, 25, 60, &mondeTest);
+  Homme h2(Position(3,3), 1, 1, 25, 60, &mondeTest);
+  mondeTest.ajouter(&h1);
+  mondeTest.ajouter(&h2);
+  
+  Element *eltOK1 = mondeTest.getElbyPos(Position(0,0));
+  Element *eltOK2 = mondeTest.getElbyPos(Position(3,3));
+  Element *eltNOK = mondeTest.getElbyPos(Position(2,0));
+  
+  cout << "À la position (0,0), il y a : " << eltOK1->toString() << endl;
+  cout << "À la position (3,3), il y a : " << eltOK2->toString() << endl;
+  cout << "À la position (2,0), il y a : " << eltNOK->toString() << endl;
 }
 
 void
 Test::testgetVoisin()
 {
-  Homme h1(Position(0,0), 1, 1, 25, 60, &mondeTest);
+  cout << "=== Démarrage test getVoisin===" << endl;
+  Homme h1(Position(2,2), 1, 1, 25, 60, &mondeTest);
   mondeTest.ajouter(&h1);
 
-  Homme h2(Position(1,1), 1, 1, 25, 60, &mondeTest);
+  Homme h2(Position(3,3), 1, 1, 25, 60, &mondeTest);
   mondeTest.ajouter(&h2);
   
-  Element *elt = h1.getVoisin(NORDOUEST);
+  Homme h3(Position(2,0), 1, 1, 25, 60, &mondeTest);
+  mondeTest.ajouter(&h3);
 
-  cout << "Le voisin de " << h1.toString() << " est " << elt->toString() << endl;
+  cout << "Le voisin NORD de " << h1.toString() << " est " << h1.getVoisin(NORD)->toString() << endl;
+  cout << "Le voisin NORDEST de " << h1.toString() << " est " << h1.getVoisin(NORDEST)->toString() << endl;
+  cout << "Le voisin SUDEST de " << h1.toString() << " est " << h1.getVoisin(SUDEST)->toString() << endl;
+  cout << "Le voisin SUD de " << h1.toString() << " est " << h1.getVoisin(SUD)->toString() << endl;
+  cout << "Le voisin SUDOUEST de " << h1.toString() << " est " << h1.getVoisin(SUDOUEST)->toString() << endl;
+  cout << "Le voisin NORDOUEST de " << h1.toString() << " est " << h1.getVoisin(NORDOUEST)->toString() << endl;
 }
 
 void
@@ -76,7 +94,7 @@ Test::testAffichage()
 void
 Test::testPosition() const
 {
-  Position posOK(1, 3);
+  Position posOK(2, 0);
   Position posNOK(1, 4);
 
   Monde monde;
