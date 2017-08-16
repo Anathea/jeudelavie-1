@@ -1,29 +1,29 @@
-#Le jeu de la vie
+# Le jeu de la vie
 
-##Divers
+## Divers
 
-##Qt
+## Qt
 
-###Installation
+### Installation
 
 Sous linux : `sudo apt-get install libqt4-dev`
 Il existe un éditeur, QtCreator (lui-même développé en Qt :) ) : `sudo apt-get install qtcreator`
 
-###Pour compiler
+### Pour compiler
 
 `qmake -project`
 
 Voir sur la doc Ubuntu : http://doc.ubuntu-fr.org/qt
 
-##GIT
+## GIT
 
-##Instructions
+## Instructions
 * Suivre la branche dev : `git checkout -b dev origin/dev`
 
-###Configuration
+### Configuration
 .gitignore est configuré pour ignorer les fichiers générés par Eclipse et NEtBeans (.classpath, .metadata, ...).
 
-###Utilisation de Git :
+### Utilisation de Git :
 Se familiariser avec les commandes de base :
 status, add, commit, pull, push
 
@@ -31,7 +31,7 @@ Après avoir installé le client GitHub, vous devez vous créer un répertoire l
 En suite, passez en mode console et effectuez cette commande pour cloner le dépot distant avec votre répertoire local :
 `git clone https://github.com/roipoussiere/jeudelavie.git votre_repertoire`
 
-###Commandes de base
+### Commandes de base
 
 Ensuite, à chaque fois que vous travaillez et que vous voulez envoyer vos fichiers sur le dépot, il faudra effectuer ces commandes :
 
@@ -48,27 +48,27 @@ git pull
 * On envoie les fichiers locaux vers le dépot github :
 git push
 
-##Configuration d'Eclipse
+## Configuration d'Eclipse
 
-###Workspace
+### Workspace
 Travaillez sur celui du projet (le dossier src du dépot), pas sur votre workspace perso!!
 
-###Pour que les caractères soient en utf-8
+### Pour que les caractères soient en utf-8
 Window, General, Workspace, Text file encoding : UTF-8
 
-###Pour la javadoc
+### Pour la javadoc
 Project, Generate Javadoc..., sélectionner le programme javadoc.
 
-##Javadoc
+## Javadoc
 
 Pour ne pas s'embéter à rédiger la documentation, nous allons de la demander à un générateur de documentation de la générer.
 Pour cela, il faut insérer des commentaires petit à petit dans le code, avant chaque classe et chaque méthode.
 Il faut placer ces commentaires juste au dessus de la classe ou méthode à commenter.
 Il existe des tags qui seront compréhensibles par la javadoc, ils commencent par '@'.
 
-###Cela doit ressembler à ça :
+### Cela doit ressembler à ça :
 
-/**
+```/**
 Description de la methode.<br/>
 Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.
 **@author** Votre nom et prénom (si la classe a été réalisée à plusieurs, mettre tous les noms, séparés par une virgule). On ne peut placer ce tag que sur une classe (pas sur une méthode).
@@ -79,16 +79,17 @@ Il est necessaire d'insérer les '<br/>' pour faire plusieurs lignes.
 */
 public Methode (String _chaine, int _i)
 {...
+```
+### Pour générer la javadoc 
+Project, Generate Javadoc... , comme vu plus haut.
 
-###Pour générer la javadoc : Project, Generate Javadoc... , comme vu plus haut.
+## Généralités sur le code
 
-##Généralités sur le code
-
-###Respect du modèle MVC.
+### Respect du modèle MVC.
 Toutes les actions seront traitées dans le controleur.
 On créera une nouvelle classe dans un nouveau fichier pour chaque écouteur.
 
-###Normalisation du code
+### Normalisation du code
 
 * Les noms des arguments d'une méthodes seront précédés par un '_' pour les différencier des variables déclarées dans la méthode.
 
